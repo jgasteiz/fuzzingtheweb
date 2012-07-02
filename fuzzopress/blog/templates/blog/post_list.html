@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Fuzzopress{% endblock %}
+
+{% block content %}
+	
+	{% for post in post_list %}
+		<article>
+			<header>
+				<h1>
+					<a href="/single/{{ post.slug }}" class="title">
+						{{ post|title }}
+					</a>
+				</h1>
+				<!-- Date -->
+				<div class="date">
+					{{ post.published|date:"M" }} {{ post.published|date:"j" }}th, {{ post.published|date:"Y" }}
+				</div>
+			</header>
+			<div class="body">
+				{{ post.body|safe|linebreaks }}
+			</div>
+		</article>
+	{% empty %}
+		<h2>Nothing to show</h2>
+	{% endfor %}
+	
+	{% if is_paginated %}
+		{% if page_obj.has_previous %}
+			<a href="?page={{ page_obj.previous_page_number }}">
+				previous
+			</a>
+		{% endif %}
+		Page {{ page_obj.number }} of {{ paginator.num_pages }}
+		{% if page_obj.has_next %}
+			<a href="?page={{ page_obj.next_page_number }}">
+				next
+			</a>
+		{% endif %}
+	{% endif %}
+
+{% endblock %}

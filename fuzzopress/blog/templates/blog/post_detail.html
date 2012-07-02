@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post|title }} - Fuzzopress{% endblock %}
+
+{% block content %}
+	
+	{% if post %}
+		<h3 class="back">
+			<a href="/">←Back</a>
+		</h3>
+		<article>
+			<header>
+				<h1>
+					<a class="title">
+						{{ post|title }}
+					</a>
+				</h1>
+				<!-- Date -->
+				<div class="date">
+					{{ post.published|date:"M" }} {{ post.published|date:"j" }}th, {{ post.published|date:"Y" }}
+				</div>
+			</header>
+			<div class="body">
+				{{ post.body|safe|linebreaks }}
+			</div>
+		</article>
+	{% endif %}
+
+{% endblock %}
