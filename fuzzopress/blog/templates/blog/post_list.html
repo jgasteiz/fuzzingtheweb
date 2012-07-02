@@ -8,13 +8,13 @@
 		<article>
 			<header>
 				<h1>
-					<a href="/single/{{ post.slug }}" class="title">
+					<a href="{{ post.get_absolute_url }}" class="title">
 						{{ post|title }}
 					</a>
 				</h1>
 				<!-- Date -->
 				<div class="date">
-					{{ post.published|date:"M" }} {{ post.published|date:"j" }}th, {{ post.published|date:"Y" }}
+					{{ post.published|date }}
 				</div>
 			</header>
 			<div class="body">

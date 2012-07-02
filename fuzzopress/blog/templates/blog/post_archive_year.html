@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+    {{ year }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ year }}</h1>
+
+    {% if date_list %}
+        <ul>
+            {% for month in date_list %}
+                <li>
+                    <a href="{% url archive_month year=year month=month|date:"m" %}">{{month|date:"F"|capfirst}}</a>
+                    {% if post_list %}
+                        <ul>
+                            {% for post in post_list %}
+                                {% if post.published.month == month.month %}
+                                    <li>
+                                        <a href="{{ post.get_absolute_url }}">{{ post }}</a>
+                                        <span class="date">
+                                            -  {{ post.published|date }}
+                                        </span>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

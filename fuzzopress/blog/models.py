@@ -12,6 +12,9 @@ class PostManager(models.Manager):
         return self.all()
 
 class NavItem(models.Model):
+    """
+    Primary nav bar items
+    """
     name = models.CharField(__('Name'), blank=False, max_length=40)
     url = models.CharField(__('Url'), blank=False, max_length=240)
     weight = models.IntegerField(default=0)
@@ -23,6 +26,9 @@ class NavItem(models.Model):
         return self.name
 
 class Widget(models.Model):
+    """
+    Sidebar items
+    """
     name = models.CharField(__('Name'), blank=True, max_length=40)
     body = models.TextField(__('Body'), blank=True)
     weight = models.IntegerField(default=0)
@@ -34,6 +40,9 @@ class Widget(models.Model):
         return self.name
 
 class Post(models.Model):
+    """
+    Blog entry items
+    """
     title = models.CharField(__('Title'), blank=False, max_length=80, unique=True)
     slug = models.SlugField(__('Slug'), blank=True)
     body = models.TextField(__('Body'))

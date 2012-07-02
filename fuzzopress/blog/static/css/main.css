@@ -174,7 +174,6 @@ article header .title {
 }
 article header .date {
 	position: absolute;
-	color: #888;
 	right: 0;
 	top: 0;
 }
@@ -183,6 +182,11 @@ h3.back {
 }
 h3.back a {
 	text-decoration: none;
+}
+.date {
+	font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+	color: #AAA;
+	text-transform: uppercase;
 }
 /* End Main Content */
 
