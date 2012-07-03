@@ -60,12 +60,6 @@ class CustomDateMixin(CustomContextMixin, object):
     model = Post
     context_object_name = 'post_list'
 
-class ArchiveDay(CustomDateMixin, DayArchiveView):
-    """
-    For a day
-    """
-    month_format='%m'
-
 class ArchiveMonth(CustomDateMixin, MonthArchiveView):
     """
     For a month
