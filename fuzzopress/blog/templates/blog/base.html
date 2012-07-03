@@ -18,6 +18,16 @@
 			{% endif %}
 		</header>
 		<nav>
+			<select class="responsive-navbar" onchange="location.href=this.value">
+				<option selected value="/">Navigate</option>
+				<option value="/">Home</option>
+				<option value="/about-fuzzopress/">About Fuzzopress</option>
+				{% for item in navItems %}
+					<option value="{{ item.url }}">
+						{{ item.name }}
+					</option>
+				{% endfor %}
+			</select>
 			<ul>
 				<!-- You can delete this two items if you want -->
 				<li>

@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$(".toggle-sidebar").click(function() {
 		if (SIDEBAR_SHOWN == true) {
 			SIDEBAR_SHOWN = false;
-			$(".articles").css("width", "92%");
+			$(".articles").addClass("width-max");
 			$(".toggle-sidebar span").html("<<");
 			$(".sidebar").removeClass("open");
 			$(".sidebar").addClass("close");
@@ -13,7 +13,7 @@ $(document).ready(function() {
 		}
 		else {
 			SIDEBAR_SHOWN = true;
-			$(".articles").css("width", "70%");
+			$(".articles").removeClass("width-max");
 			$(".toggle-sidebar span").html(">>");
 			$(".sidebar").removeClass("close");
 			$(".sidebar").addClass("open");

@@ -80,6 +80,10 @@ a.navigation:hover {
 	text-decoration: none;
 	background: transparent;
 }
+.responsive-navbar {
+	margin: 16px;
+	display: none;
+}
 /* End NavBar */
 
 /*
@@ -93,6 +97,9 @@ a.navigation:hover {
 .articles {
 	width: 70%;
 	padding: 20px 2%;
+}
+.articles.width-max {
+	width: 92%;
 }
 .sidebar {
 	background: #F3F5F8;
@@ -247,7 +254,9 @@ img.float-right {
 	Responsive
 */
 @media(max-width:1100px) {
-	
+	.responsive-navbar {
+		display: none;
+	}
 }
 @media(max-width:800px) {
 	.articles {
@@ -257,13 +266,29 @@ img.float-right {
 	.sidebar.open {
 		width: 20%;
 	}
+	.responsive-navbar {
+		display: inline-block;
+	}
+	nav ul {
+		display: none;
+	}
 }
 @media(max-width:480px) {
-	.articles {
+	.articles,
+	.articles.width-max {
 		width: 95%;
 		padding: 20px 2%;
 	}
 	.sidebar {
+		display: none;
+	}
+	.responsive-navbar {
+		display: inline-block;
+	}
+	nav ul {
+		display: none;
+	}
+	header.main {
 		display: none;
 	}
 }
