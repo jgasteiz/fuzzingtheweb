@@ -107,7 +107,7 @@ a.navigation:hover {
 	width: 88%;
 }
 .sidebar-content section {
-	margin-bottom: 40px;
+	margin: 20px 0;
 }
 .sidebar-content section .title {
 	display: block;
@@ -156,7 +156,17 @@ a.navigation:hover {
 	border: 0;
 	border-radius: 0;
 }
-
+.months {
+	font-size: 0.8em;
+}
+.months a {
+	text-decoration: none;
+	font-weight: bold;
+}
+.months span {
+	display: inline-block;
+	margin-right: 5px;
+}
 article {
 	position: relative;
 	padding: 40px 0;
@@ -224,6 +234,12 @@ img.float-right {
 	float: right;
 	margin-left: 20px;
 	margin-bottom: 20px;
+}
+.block {
+	display: block;
+}
+.strong {
+	font-weight: bold;
 }
 /* End OOCSS */
 
