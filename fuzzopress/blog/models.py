@@ -8,8 +8,7 @@ from fuzzopress.blog.utils import uuslug as slugify
 
 class PostManager(models.Manager):
     def published(self):
-        #return self.filter(draft=False, published__lte=datetime.datetime.utcnow().replace(tzinfo=utc))
-        return self.all()
+        return self.filter(draft=False, published__lte=datetime.datetime.utcnow().replace(tzinfo=utc))
 
 class NavItem(models.Model):
     """
@@ -54,7 +53,7 @@ class Post(models.Model):
     objects = PostManager()
 
     class Meta:
-        ordering = ('-created',)
+        ordering = ('-published',)
         get_latest_by = ('published',)
         verbose_name, verbose_name_plural = 'Blog Post', 'Blog Posts'
 
