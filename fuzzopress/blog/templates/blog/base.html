@@ -19,6 +19,17 @@
 		</header>
 		<nav>
 			<ul>
+				<!-- You can delete this two items if you want -->
+				<li>
+					<a class="navigation" href="/">
+						Home
+					</a>
+				</li>
+				<li>
+					<a class="navigation" href="/about-fuzzopress/">
+						About Fuzzopress
+					</a>
+				</li>
 			{% for item in navItems %}
 				<li>
 					<a class="navigation" href="{{ item.url }}">
@@ -35,16 +46,30 @@
 			<aside class="sidebar open">
 				<div class="sidebar-content">
 
-					{% for year, month_list in archives %}
-						<span class="block strong">{{ year }} archives:</span>
-						<div class="months">
-						{% for month, has_link in month_list %}
-							{% if has_link %}<a href="/{{ month.year }}/{{ month.month }}/">{% endif %}
-								<span>{{ month|date:"M" }}</span>{% if has_link %}</a>{% endif %}
+					<!-- Archive month -->
+					{% if archives %}
+						{% for year, month_list in archives %}
+							<span class="block strong">
+								<a href="/{{ year }}/">{{ year }}</a> archives:
+							</span>
+							<div class="months">
+							{% for month, has_link in month_list %}
+								{% if has_link %}<a href="/{{ month.year }}/{{ month.month }}/">{% endif %}
+									<span>{{ month|date:"M" }}</span>{% if has_link %}</a>{% endif %}
+							{% endfor %}
+							</div>
 						{% endfor %}
-						</div>
-					{% endfor %}
+					{% endif %}
 					
+					<!-- You can delete this widget if you want -->
+					<section>
+						<span class="title">
+							Follow me on github
+						</span>
+						<a target="_blank" href="https://github.com/jgasteiz">
+							<img src="http://fuzzingtheweb.com/fuzzz/wp-content/uploads/2012/04/baracktocat.jpg">
+						</a>
+					</section>
 
 					{% for item in widgets %}
 						<section>
