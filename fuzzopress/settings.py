@@ -124,6 +124,13 @@ INSTALLED_APPS = (
     'fuzzopress.blog',
 )
 
+FUZZOPRESS_SETTINGS = {
+    'widgets': True,
+    'archive': True,
+    'tags': True,
+    'about': True,
+}
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

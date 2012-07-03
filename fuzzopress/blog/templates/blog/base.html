@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<title>{% block title %}{% endblock %}</title>
 		<meta name="author" content="Javi Manzano">
+		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/github.css" />
 		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
 	</head>
 	<body>
@@ -21,7 +22,9 @@
 			<select class="responsive-navbar" onchange="location.href=this.value">
 				<option selected value="/">Navigate</option>
 				<option value="/">Home</option>
-				<option value="/about-fuzzopress/">About Fuzzopress</option>
+				{% if settings.about %}
+					<option value="/about-fuzzopress/">About Fuzzopress</option>
+				{% endif %}
 				{% for item in navItems %}
 					<option value="{{ item.url }}">
 						{{ item.name }}
@@ -35,11 +38,13 @@
 						Home
 					</a>
 				</li>
-				<li>
-					<a class="navigation" href="/about-fuzzopress/">
-						About Fuzzopress
-					</a>
-				</li>
+				{% if settings.about %}
+					<li>
+						<a class="navigation" href="/about-fuzzopress/">
+							About Fuzzopress
+						</a>
+					</li>
+				{% endif %}
 			{% for item in navItems %}
 				<li>
 					<a class="navigation" href="{{ item.url }}">
@@ -50,6 +55,7 @@
 			</ul>
 		</nav>
 		<div class="main-content">
+
 			<div class="articles">
 				{% block content %}{% endblock %}
 			</div>
@@ -57,7 +63,7 @@
 				<div class="sidebar-content">
 
 					<!-- Archive month -->
-					{% if archives %}
+					{% if settings.archive and archives %}
 						{% for year, month_list in archives %}
 							<span class="block strong">
 								<a href="/{{ year }}/">{{ year }}</a> archives:
@@ -71,15 +77,17 @@
 						{% endfor %}
 					{% endif %}
 					
-					<!-- You can delete this widget if you want -->
-					<section>
-						<span class="title">
-							Follow me on github
-						</span>
-						<a target="_blank" href="https://github.com/jgasteiz">
-							<img src="http://fuzzingtheweb.com/fuzzz/wp-content/uploads/2012/04/baracktocat.jpg">
-						</a>
-					</section>
+					{% if settings.widgets %}
+						<!-- You can delete this widget if you want -->
+						<section>
+							<span class="title">
+								Follow me on github
+							</span>
+							<a target="_blank" href="https://github.com/jgasteiz">
+								<img src="http://fuzzingtheweb.com/fuzzz/wp-content/uploads/2012/04/baracktocat.jpg">
+							</a>
+						</section>
+					{% endif %}
 
 					{% for item in widgets %}
 						<section>
@@ -101,6 +109,7 @@
 		</footer>
 
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+		<!--<script type="text/javascript" src="{{ STATIC_URL }}js/rainbow-custom.min.js"></script>-->
 		<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 	</body>
 </html>
