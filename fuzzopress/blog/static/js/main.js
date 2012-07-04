@@ -1,5 +1,8 @@
-
-
+/*
+ *	JavaScript code for the sidebar-hider
+ *
+ *
+ */
 $(document).ready(function() {
 	var SIDEBAR_SHOWN = true;
 	$(".toggle-sidebar").click(function() {
