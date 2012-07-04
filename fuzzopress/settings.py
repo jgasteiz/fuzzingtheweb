@@ -1,5 +1,4 @@
-# Django settings for fuzzopress project.
-
+# -*- coding: utf-8 -*-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -128,7 +127,7 @@ INSTALLED_APPS = (
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'widgets': True, # If disabled, won't load default widgets (follow jgasteiz in github)
+    'widgets': True, # If disabled, won't load default widgets
     'archive': True, # If disabled, won't appear month archive sidebar widget
     #'tags': True, # If disabled, won't appear tags sidebar widget
     'about': True, # If disabled, won't appear about navbar item
