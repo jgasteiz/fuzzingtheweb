@@ -260,27 +260,7 @@ img.float-right {
 /*
 	Responsive
 */
-@media(max-width:1100px) {
-	.responsive-navbar {
-		display: none;
-	}
-}
 @media(max-width:800px) {
-	.articles {
-		width: 75%;
-		padding: 20px 2%;
-	}
-	.sidebar.open {
-		width: 20%;
-	}
-	.responsive-navbar {
-		display: inline-block;
-	}
-	nav ul {
-		display: none;
-	}
-}
-@media(max-width:480px) {
 	.articles,
 	.articles.width-max {
 		width: 95%;
