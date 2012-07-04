@@ -110,6 +110,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/ubuntu/django_apps/fuzzopress/fuzzopress/blog/templates',
 )
 
 INSTALLED_APPS = (
@@ -122,13 +123,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'markitup',
     'fuzzopress.blog',
+    'gunicorn',
 )
 
+# Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'widgets': True,
-    'archive': True,
-    'tags': True,
-    'about': True,
+    'widgets': True, # If disabled, won't load default widgets (follow jgasteiz in github)
+    'archive': True, # If disabled, won't appear month archive sidebar widget
+    #'tags': True, # If disabled, won't appear tags sidebar widget
+    'about': True, # If disabled, won't appear about navbar item
 }
 
 # A sample logging configuration. The only tangible logging
