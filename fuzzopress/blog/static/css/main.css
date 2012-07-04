@@ -24,6 +24,13 @@ a:hover {
 	background: #E0F2F7;
 	text-decoration: none;
 }
+pre code {
+	font-size: 0.9em;
+	line-height: 1.6em;
+	border-radius: 6px;
+	padding: 10px;
+	overflow: auto;
+}
 /* End General */
 
 /*

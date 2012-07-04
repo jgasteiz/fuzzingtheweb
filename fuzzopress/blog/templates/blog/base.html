@@ -5,8 +5,10 @@
 		<meta charset="utf-8">
 		<title>{% block title %}{% endblock %}</title>
 		<meta name="author" content="Javi Manzano">
-		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/github.css" />
-		<link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
+		<script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 	</head>
 	<body>
 		<header class="main">
@@ -109,7 +111,7 @@
 		</footer>
 
 		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
-		<!--<script type="text/javascript" src="{{ STATIC_URL }}js/rainbow-custom.min.js"></script>-->
+		
 		<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
 	</body>
 </html>
