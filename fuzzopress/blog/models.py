@@ -42,8 +42,8 @@ class Post(models.Model):
     """
     Blog entry items
     """
-    title = models.CharField(__('Title'), blank=False, max_length=80, unique=True)
-    slug = models.SlugField(__('Slug'), blank=True)
+    title = models.CharField(__('Title'), blank=False, max_length=120, unique=True)
+    slug = models.SlugField(__('Slug'), blank=True, max_length=120)
     body = models.TextField(__('Body'))
     created = models.DateTimeField(__('Creation Date'), auto_now_add=True)
     updated_at = models.DateTimeField(__('Last Updated'), auto_now=True)
