@@ -43,7 +43,7 @@ class BlogView(CustomContextMixin, ListView):
     """
     Main blog view
     """
-    paginate_by = 3
+    paginate_by = 5
     context_object_name = 'post_list'
 
     def get_queryset(self):
