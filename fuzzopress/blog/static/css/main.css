@@ -99,7 +99,7 @@ a.navigation:hover {
 .main-content {
 	position: relative;
 	background: white;
-	min-height: 600px;
+	min-height: 900px;
 }
 .articles {
 	width: 70%;
@@ -172,6 +172,7 @@ a.navigation:hover {
 }
 .months {
 	font-size: 0.8em;
+	margin-bottom: 20px;
 }
 .months a {
 	text-decoration: none;
