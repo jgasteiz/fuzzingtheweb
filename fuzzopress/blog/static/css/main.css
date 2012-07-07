@@ -99,7 +99,7 @@ a.navigation:hover {
 .main-content {
 	position: relative;
 	background: white;
-	min-height: 900px;
+	min-height: 950px;
 }
 .articles {
 	width: 70%;
@@ -117,8 +117,8 @@ a.navigation:hover {
 	top: 0;
 }
 .sidebar-content {
-	padding: 60px 0 0 12%;
-	width: 88%;
+	padding: 20px 4% 0 12%;
+    width: 84%;
 }
 .sidebar-content section {
 	margin: 20px 0;
@@ -175,11 +175,13 @@ a.navigation:hover {
 	margin-bottom: 20px;
 }
 .months a {
-	text-decoration: none;
+	display: inline-block;
 	font-weight: bold;
+	text-decoration: none;
 }
 .months span {
 	display: inline-block;
+	line-height: 1;
 	margin-right: 5px;
 }
 article {

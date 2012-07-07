@@ -67,10 +67,12 @@
                     <!-- Archive month -->
                     {% if settings.archive and archives %}
                         {% for year, month_list in archives %}
+                            <!-- year -->
                             <span class="block strong">
                                 <a href="/{{ year }}/">{{ year }}</a> archives:
                             </span>
                             <div class="months">
+                            <!-- months -->
                             {% for month, has_link in month_list %}
                                 {% if has_link %}<a href="/{{ month.year }}/{{ month.month }}/">{% endif %}
                                     <span>{{ month|date:"M" }}</span>{% if has_link %}</a>{% endif %}
