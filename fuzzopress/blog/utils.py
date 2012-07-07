@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import re
-from django.utils.encoding import smart_unicode
 from types import UnicodeType
+from xml.dom.minidom import parse, parseString
+from django.utils.encoding import smart_unicode
+
 
 def uuslug(s, instance=None):
     """This method tries a little harder than django's django.template.defaultfilters.slugify.
@@ -27,7 +29,6 @@ def uuslug(s, instance=None):
 
     Notes
     -----
-
     Taken from an old snippet, no longer available online
     """
 
@@ -56,3 +57,39 @@ def uuslug(s, instance=None):
             slug = "%s-%s" % (s, counter)
             counter += 1
     return slug
+
+def restore_wp_entries(xml_path, instance):
+    """
+    Import your wordpress entries from a wordpress backup xml
+
+    Parameters
+    ----------
+    xml_path : string
+        Must
+        The absolute path of the wordpress backup xml
+    instance : Post object
+        Must
+
+    Examples
+    --------
+    Example usage in save method for model:
+
+    import restore_wp_entries
+    restore_wp_entries('/Users/jgasteiz/Downloads/entries.xml')
+
+    Notes
+    -----
+    Works with wordpress 3.3 and you'll need to adapt to your Post model
+    """
+    dom1 = parse(xml_path)
+    for i in dom1.getElementsByTagName('item'):
+        title = i.getElementsByTagName('title')[0].firstChild.nodeValue.encode('utf-8')
+        body = i.getElementsByTagName('content:encoded')[0].firstChild.nodeValue.encode('utf-8')
+        created = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
+        updated_at = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
+        published = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
+        instance.__class__(title=title, 
+            body=body, 
+            created=created, 
+            updated_at=updated_at, 
+            published=published).save()

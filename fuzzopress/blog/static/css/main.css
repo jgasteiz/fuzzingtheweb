@@ -198,20 +198,36 @@ article header .title {
 	text-decoration: none;
 }
 article header .date {
+	color: #AAA;
+	font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+	left: 0;
+	position: absolute;
+	text-transform: uppercase;
+	top: 0;
+}
+article header .comments {
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+article header .comments a {
+	background-image: url("comments-bubble.png");
+    background-repeat: no-repeat;
+    color: #AAAAAA;
+    display: inline-block;
+    font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+    font-size: 0.8em;
+    height: 36px;
+    padding-top: 3px;
+    text-align: center;
+    text-decoration: none;
+    width: 54px;
 }
 h3.back {
 	margin: 0;
 }
 h3.back a {
 	text-decoration: none;
-}
-.date {
-	font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
-	color: #AAA;
-	text-transform: uppercase;
 }
 /* End Main Content */
 

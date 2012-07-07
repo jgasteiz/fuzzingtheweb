@@ -12,6 +12,11 @@
 						{{ post|title }}
 					</a>
 				</h1>
+				<div class="comments">
+					<a href="{{ post.get_absolute_url }}#disqus_thread">
+						{{ post|title }}
+					</a>
+				</div>
 				<!-- Date -->
 				<div class="date">
 					{{ post.published|date }}
