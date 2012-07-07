@@ -42,7 +42,7 @@ class Post(models.Model):
     """
     Blog entry items
     """
-    title = models.CharField(__('Title'), blank=False, max_length=120, unique=True)
+    title = models.CharField(__('Title'), blank=False, max_length=120)
     slug = models.SlugField(__('Slug'), blank=True, max_length=120)
     body = models.TextField(__('Body'))
     created = models.DateTimeField(__('Creation Date'), auto_now_add=True)
