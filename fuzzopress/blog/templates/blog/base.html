@@ -12,15 +12,7 @@
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
-        <header class="main">
-            {% if messages %}
-                <div class="messages">
-                    {% for message in messages %}
-                        <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </header>
+        <header class="main"></header>
         <nav>
             <select class="responsive-navbar" onchange="location.href=this.value">
                 <option selected value="/">Navigate</option>
@@ -33,6 +25,11 @@
                         {{ item.name }}
                     </option>
                 {% endfor %}
+                {% if user.is_superuser %}
+                    <option value="/admin/blog/post/add/">
+                            Post
+                    </option>
+                {% endif %}
             </select>
             <ul>
                 <!-- You can delete this two items if you want -->
@@ -55,6 +52,13 @@
                     </a>
                 </li>
             {% endfor %}
+            {% if user.is_superuser %}
+                <li class="add-post">
+                    <a target="_blank" class="navigation" href="/admin/blog/post/add/">
+                        Post
+                    </a>
+                </li>
+            {% endif %}
             </ul>
         </nav>
         <div class="main-content">

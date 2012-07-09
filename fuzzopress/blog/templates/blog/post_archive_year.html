@@ -18,7 +18,7 @@
                             {% for post in post_list %}
                                 {% if post.published.month == month.month %}
                                     <li>
-                                        <a href="{{ post.get_absolute_url }}">{{ post }}</a>
+                                        <a target="_blank" href="{{ post.get_absolute_url }}">{{ post }}</a>
                                         <span class="date">
                                             -  {{ post.published|date }}
                                         </span>
