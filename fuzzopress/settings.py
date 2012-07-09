@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Javi Manzano', 'javi.manzano.oller@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -80,9 +80,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'markitup',
+    'gunicorn',
     'fuzzopress.blog',
-    # Uncomment next line for production environment
-    #'gunicorn',
 )
 
 LOGGING = {
