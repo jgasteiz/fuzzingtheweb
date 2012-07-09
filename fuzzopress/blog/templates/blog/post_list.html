@@ -3,7 +3,7 @@
 {% block title %}Fuzzopress{% endblock %}
 
 {% block content %}
-	
+
 	{% for post in post_list %}
 		<article>
 			<header>
@@ -23,6 +23,9 @@
 			<div class="body">
 				{{ post.body|safe|linebreaks }}
 			</div>
+			{% if user.is_superuser %}
+				<a target="_blank" class="edit" href="/admin/blog/post/{{ post.pk }}/">Edit</a>
+			{% endif %}
 		</article>
 	{% empty %}
 		<h2>Nothing to show</h2>

@@ -11,6 +11,7 @@ body {
 }
 img {
 	max-width: 100%;
+	height: auto;
 }
 iframe {
 	max-width: 100%;
@@ -230,6 +231,21 @@ h3.back {
 }
 h3.back a {
 	text-decoration: none;
+}
+a.edit {
+	background: none repeat scroll 0 0 #FF4444;
+    border: 1px solid #AA2222;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 1px #666666;
+    color: white;
+    display: inline-block;
+    float: right;
+    line-height: 1;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+a.edit:hover {
+	box-shadow: 0 0 4px #666666;
 }
 /* End Main Content */
 
