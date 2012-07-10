@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 from types import UnicodeType
-from xml.dom.minidom import parse, parseString
+from xml.dom.minidom import parse
 from django.utils.encoding import smart_unicode
 
 
@@ -37,7 +37,7 @@ def uuslug(s, instance=None):
     s = smart_unicode(s)
 
     # replace unwanted characters
-    s = re.sub(r'[\']+', '', s.lower()) # replace ' with nothing instead with -
+    s = re.sub(r'[\']+', '', s.lower())  # replace ' with nothing instead with -
     s = re.sub(r'[^-a-z0-9]+', '-', s.lower())
 
     # remove redundant -
@@ -57,6 +57,7 @@ def uuslug(s, instance=None):
             slug = "%s-%s" % (s, counter)
             counter += 1
     return slug
+
 
 def restore_wp_entries(xml_path, instance):
     """
@@ -88,8 +89,8 @@ def restore_wp_entries(xml_path, instance):
         created = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
         updated_at = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
         published = i.getElementsByTagName('wp:post_date')[0].firstChild.nodeValue.encode('utf-8')
-        instance.__class__(title=title, 
-            body=body, 
-            created=created, 
-            updated_at=updated_at, 
+        instance.__class__(title=title,
+            body=body,
+            created=created,
+            updated_at=updated_at,
             published=published).save()

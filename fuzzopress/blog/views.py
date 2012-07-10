@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.views.generic.dates import YearArchiveView, MonthArchiveView, DayArchiveView
+from django.views.generic.dates import YearArchiveView, MonthArchiveView
 from django.views.generic import ListView, DetailView, TemplateView
 from fuzzopress.blog.models import Post, NavItem, Widget
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 from datetime import date
+
 
 class CustomContextMixin(object):
     """
@@ -18,26 +19,28 @@ class CustomContextMixin(object):
             year = i.year
             month = i.month
             try:
-                archives[year][month-1][1] = True
+                archives[year][month - 1][1] = True
             except KeyError:
                 # catch the KeyError, and set up list for that year
-                archives[year] = [[date(year, m ,1),False] for m in xrange(1,13)]
-                archives[year][month-1][1] = True
+                archives[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
+                archives[year][month - 1][1] = True
         context.update({
             'archives': sorted(archives.items(), reverse=True),
-            'navItems': NavItem.objects.all(), 
+            'navItems': NavItem.objects.all(),
             'widgets': Widget.objects.all(),
-            'settings': settings.FUZZOPRESS_SETTINGS })
+            'settings': settings.FUZZOPRESS_SETTINGS})
         return context
+
 
 class BlogPostView(CustomContextMixin, DetailView):
     """
     A single post view
     """
-    context_object_name='post'
+    context_object_name = 'post'
 
     def get_object(self):
-        return get_object_or_404(Post, slug=self.kwargs['slug'])    
+        return get_object_or_404(Post, slug=self.kwargs['slug'])
+
 
 class BlogView(CustomContextMixin, ListView):
     """
@@ -49,10 +52,12 @@ class BlogView(CustomContextMixin, ListView):
     def get_queryset(self):
         return Post.objects.published()
 
+
 class AboutView(CustomContextMixin, TemplateView):
     """
     For static pages. template_name can be set here or in urls.py
     """
+
 
 class CustomDateMixin(CustomContextMixin, object):
     """
@@ -62,14 +67,16 @@ class CustomDateMixin(CustomContextMixin, object):
     model = Post
     context_object_name = 'post_list'
 
+
 class ArchiveMonth(CustomDateMixin, MonthArchiveView):
     """
     For a month
     """
-    month_format='%m'
+    month_format = '%m'
+
 
 class ArchiveYear(CustomDateMixin, YearArchiveView):
     """
     For a year
     """
-    make_object_list=True
+    make_object_list = True

@@ -10,6 +10,7 @@ class PostManager(models.Manager):
     def published(self):
         return self.filter(draft=False, published__lte=datetime.datetime.utcnow().replace(tzinfo=utc))
 
+
 class NavItem(models.Model):
     """
     Primary nav bar items
@@ -17,12 +18,13 @@ class NavItem(models.Model):
     name = models.CharField(__('Name'), blank=False, max_length=40)
     url = models.CharField(__('Url'), blank=False, max_length=240)
     weight = models.IntegerField(default=0)
-    
+
     class Meta:
         ordering = ('weight',)
 
     def __unicode__(self):
         return self.name
+
 
 class Widget(models.Model):
     """
@@ -31,12 +33,13 @@ class Widget(models.Model):
     name = models.CharField(__('Name'), blank=True, max_length=40)
     body = models.TextField(__('Body'), blank=True)
     weight = models.IntegerField(default=0)
-    
+
     class Meta:
         ordering = ('weight',)
 
     def __unicode__(self):
         return self.name
+
 
 class Post(models.Model):
     """
