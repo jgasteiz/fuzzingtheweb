@@ -85,6 +85,13 @@
                             </div>
                         {% endfor %}
                     {% endif %}
+
+                    {% if settings.rss %}
+                        <!-- year -->
+                        <span class="block strong">
+                            <a target="_blank" href="/rssfeed/">RSS Feed</a>
+                        </span>
+                    {% endif %}
                     
                     {% if settings.widgets %}
                         <!-- You can delete this widget if you want -->

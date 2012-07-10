@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.views.generic.dates import YearArchiveView, MonthArchiveView
-from django.views.generic import ListView, DetailView, TemplateView
-from fuzzopress.blog.models import Post, NavItem, Widget
-from django.shortcuts import get_object_or_404
-from django.conf import settings
 from datetime import date
+from django.conf import settings
+from django.shortcuts import get_object_or_404
+from django.contrib.syndication.views import Feed
+from fuzzopress.blog.models import Post, NavItem, Widget
+from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic.dates import YearArchiveView, MonthArchiveView
 
 
 class CustomContextMixin(object):
@@ -40,6 +41,21 @@ class BlogPostView(CustomContextMixin, DetailView):
 
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
+
+
+class LatestEntriesFeed(Feed):
+    title = "Fuzzopress"
+    link = "/lastposts/"
+    description = "Last posts at this Fuzzopress blog"
+
+    def items(self):
+        return Post.objects.published()[:13]
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.body
 
 
 class BlogView(CustomContextMixin, ListView):

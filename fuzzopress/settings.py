@@ -11,12 +11,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db.sqlite',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -104,8 +104,8 @@ LOGGING = {
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'widgets': True, # If disabled, won't load default widgets
-    'archive': True, # If disabled, won't appear month archive sidebar widget
-    'about': True, # If disabled, won't appear about navbar item
+    'widgets': True,  # If disabled, won't load default widgets
+    'archive': True,  # If disabled, won't appear month archive sidebar widget
+    'about': True,  # If disabled, won't appear about navbar item
+    'rss': True,
 }
-
