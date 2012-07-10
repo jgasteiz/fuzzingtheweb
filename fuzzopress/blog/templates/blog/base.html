@@ -71,26 +71,54 @@
 
                     <!-- Archive month -->
                     {% if settings.archive and archives %}
-                        {% for year, month_list in archives %}
-                            <!-- year -->
-                            <span class="block strong">
-                                <a href="/{{ year }}/">{{ year }}</a> archives:
+                        <section>
+                            <span class="title">
+                                Archives
                             </span>
-                            <div class="months">
-                            <!-- months -->
-                            {% for month, has_link in month_list %}
-                                {% if has_link %}<a href="/{{ month.year }}/{{ month.month }}/">{% endif %}
-                                    <span>{{ month|date:"M" }}</span>{% if has_link %}</a>{% endif %}
+                            {% for year, month_list in archives %}
+                                <!-- year -->
+                                <span class="block strong">
+                                    <a href="/{{ year }}/">{{ year }}</a>
+                                </span>
+                                <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
+                                    <option selected="selected">
+                                        Choose month
+                                    </option>
+                                    <!-- <div class="months"></div> -->
+                                    {% for month, has_link in month_list %}
+                                        {% if has_link %}
+                                            <option value="/{{ month.year }}/{{ month.month }}/">
+                                                {{ month|date:"M" }}
+                                            </option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
                             {% endfor %}
-                            </div>
-                        {% endfor %}
+                        </section>
                     {% endif %}
 
+                    <!-- Tags -->
+                    {% if settings.tags %}
+                        <section>
+                            <span class="title">
+                                Tags
+                            </span>
+                            {% for tag in tags %}
+                                <a class="small" href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
+                            {% endfor %}
+                        </section>
+                    {% endif %}
+
+                    <!-- RSS feed url -->
                     {% if settings.rss %}
-                        <!-- year -->
-                        <span class="block strong">
-                            <a target="_blank" href="/rssfeed/">RSS Feed</a>
-                        </span>
+                        <section>
+                            <span class="title">
+                                RSS Feed
+                            </span>
+                            <a target="_blank" href="/rssfeed/">
+                                <img class="margin-top10 margin-left10" src="{{ STATIC_URL }}images/rss.png">
+                            </a>
+                        </section>
                     {% endif %}
                     
                     {% if settings.widgets %}
@@ -100,7 +128,7 @@
                                 Follow me on github
                             </span>
                             <a target="_blank" href="https://github.com/jgasteiz">
-                                <img src="{{ STATIC_URL }}images/baracktocat.jpg">
+                                <img class="margin-top10 margin-left10" src="{{ STATIC_URL }}images/baracktocat.jpg">
                             </a>
                         </section>
                     {% endif %}

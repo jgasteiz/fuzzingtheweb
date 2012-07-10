@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import date
+from taggit.models import Tag
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.contrib.syndication.views import Feed
@@ -29,8 +30,32 @@ class CustomContextMixin(object):
             'archives': sorted(archives.items(), reverse=True),
             'navItems': NavItem.objects.all(),
             'widgets': Widget.objects.all(),
+            'tags': Tag.objects.all(),
             'settings': settings.FUZZOPRESS_SETTINGS})
         return context
+
+
+class BlogView(CustomContextMixin, ListView):
+    """
+    Main blog view
+    """
+    paginate_by = 5
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        return Post.objects.published()
+
+
+class BlogTagView(CustomContextMixin, ListView):
+    """
+    A tag posts
+    """
+    paginate_by = 5
+    context_object_name = 'post_list'
+    template_name = "blog/post_list.html"
+
+    def get_queryset(self):
+        return Post.objects.published().filter(tags__name=self.kwargs['tag'])
 
 
 class BlogPostView(CustomContextMixin, DetailView):
@@ -56,17 +81,6 @@ class LatestEntriesFeed(Feed):
 
     def item_description(self, item):
         return item.body
-
-
-class BlogView(CustomContextMixin, ListView):
-    """
-    Main blog view
-    """
-    paginate_by = 5
-    context_object_name = 'post_list'
-
-    def get_queryset(self):
-        return Post.objects.published()
 
 
 class AboutView(CustomContextMixin, TemplateView):
