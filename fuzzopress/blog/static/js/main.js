@@ -6,7 +6,7 @@
 $(document).ready(function() {
 	var SIDEBAR_SHOWN = true;
 	$(".toggle-sidebar").click(function() {
-		if (SIDEBAR_SHOWN == true) {
+		if (SIDEBAR_SHOWN === true) {
 			SIDEBAR_SHOWN = false;
 			$(".articles").addClass("width-max");
 			$(".toggle-sidebar span").html("<<");
