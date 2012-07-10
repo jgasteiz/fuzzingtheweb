@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import datetime
-from django.utils.timezone import utc
 from django.db import models
+from django.utils.timezone import utc
+from taggit.managers import TaggableManager
 from django.utils.translation import ugettext_lazy as __
 from fuzzopress.blog.utils import uuslug as slugify
 
@@ -54,6 +55,7 @@ class Post(models.Model):
     draft = models.BooleanField(default=False, help_text=__('If checked, will not be displayed in the public site.'))
 
     objects = PostManager()
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-published',)

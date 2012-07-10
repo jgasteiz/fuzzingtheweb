@@ -79,9 +79,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'fuzzopress.blog',
     'markitup',
     'gunicorn',
-    'fuzzopress.blog',
+    'taggit',
 )
 
 LOGGING = {
