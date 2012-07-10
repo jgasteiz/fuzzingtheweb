@@ -9,6 +9,11 @@ body {
     background: #252525;
     margin: 0 auto;
 }
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    line-height: 1.2;
+}
 img {
     max-width: 100%;
     height: auto;
@@ -38,8 +43,7 @@ pre code {
     Header
 */
 header.main {
-    height: 180px;
-    padding: 30px 20px;
+    padding: 120px 20px;
     position: relative;
     background-image: url('fuzzzy.png');
     background-color: #263347;
@@ -52,7 +56,6 @@ header.main {
     NavBar
 */
 nav {
-    height: 50px;
     background-color: #222222;
     background-image: linear-gradient(bottom, #2E2E2E 100%, #242424 41%, #222 18%);
     background-image: -o-linear-gradient(bottom, #2E2E2E 100%, #242424 41%, #222 18%);
@@ -64,35 +67,29 @@ nav {
     width: 100%;
 }
 nav ul {
-    height: 100%;
     list-style-type: none;
     margin: 0;
 }
 nav ul li {
     display: inline-block;
     height: 100%;
-    padding: 0 10px;
-    margin-right: 20px;
-}
-nav ul li:hover {
-    background: #444;
-}
-nav ul li.add-post {
-    background: #FF4444;
-}
-nav ul li.add-post:hover {
-    background: #DD2222;
 }
 a.navigation {
     display: inline-block;
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    padding-top: 10px;
 }
 a.navigation:hover {
+    background: #444;
     color: white;
     text-decoration: none;
-    background: transparent;
+}
+a.navigation.add-post {
+    background: #FF4444;
+}
+a.navigation.add-post:hover {
+    background: #DD2222;
 }
 .responsive-navbar {
     margin: 16px;
@@ -109,11 +106,10 @@ a.navigation:hover {
     min-height: 950px;
 }
 .articles {
-    width: 70%;
-    padding: 20px 2%;
+    padding: 20px 28% 20px 2%;
 }
 .articles.width-max {
-    width: 92%;
+    padding: 20px 4% 20px 2%;
 }
 .sidebar {
     background: #F3F5F8;
@@ -125,7 +121,6 @@ a.navigation:hover {
 }
 .sidebar-content {
     padding: 20px 4% 0 12%;
-    width: 84%;
 }
 .sidebar-content section {
     margin: 20px 0;
@@ -173,7 +168,7 @@ a.navigation:hover {
 }
 .sidebar.close .toggle-sidebar span {
     background: transparent;
-    padding: 8px 0px 10px 2px;
+    padding: 8px 0 10px 2px;
     border: 0;
     border-radius: 0;
 }
@@ -196,11 +191,6 @@ article {
     padding: 40px 0;
     margin-bottom: 40px;
     background: url('dotted-border.png') bottom left repeat-x;
-}
-article header h1 {
-    font-size: 2em;
-    margin-top: 0;
-    line-height: 1.2;
 }
 article header .title {
     font-weight: bold;
@@ -226,7 +216,6 @@ article header .comments a {
     display: inline-block;
     font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
     font-size: 0.8em;
-    height: 36px;
     padding-top: 3px;
     text-align: center;
     text-decoration: none;
@@ -244,7 +233,6 @@ a.edit {
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 1px #666666;
     color: white;
-    display: inline-block;
     float: right;
     line-height: 1;
     padding: 4px 10px;
@@ -280,12 +268,12 @@ footer.main {
 /*
     OOCSS
 */
-img.float-left {
+.float-left {
     float: left;
     margin-right: 20px;
     margin-bottom: 20px;
 }
-img.float-right {
+.float-right {
     float: right;
     margin-left: 20px;
     margin-bottom: 20px;
@@ -304,7 +292,6 @@ img.float-right {
 @media(max-width:800px) {
     .articles,
     .articles.width-max {
-        width: 95%;
         padding: 20px 2%;
     }
     .sidebar {
