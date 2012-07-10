@@ -103,7 +103,7 @@ a.navigation.add-post:hover {
 .main-content {
     position: relative;
     background: white;
-    min-height: 950px;
+    min-height: 1100px;;
 }
 .articles {
     padding: 20px 28% 20px 2%;
@@ -283,6 +283,21 @@ footer.main {
 }
 .strong {
     font-weight: bold;
+}
+.small {
+    font-size: 0.8em;
+}
+.margin-top10 {
+    margin-top: 10px;
+}
+.margin-bottom10 {
+    margin-bottom: 10px;
+}
+.margin-left10 {
+    margin-left: 10px;
+}
+.margin-right10 {
+    margin-right: 10px;
 }
 /* End OOCSS */
 

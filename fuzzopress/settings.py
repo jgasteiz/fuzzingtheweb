@@ -109,4 +109,5 @@ FUZZOPRESS_SETTINGS = {
     'archive': True,  # If disabled, won't appear month archive sidebar widget
     'about': True,  # If disabled, won't appear about navbar item
     'rss': True,
+    'tags': True,
 }
