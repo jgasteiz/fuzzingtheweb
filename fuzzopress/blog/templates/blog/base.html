@@ -6,6 +6,7 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
         <meta name="author" content="Javi Manzano">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
@@ -27,7 +28,7 @@
                 {% endfor %}
                 {% if user.is_superuser %}
                     <option value="/admin/blog/post/add/">
-                            Post
+                        Post
                     </option>
                 {% endif %}
             </select>
@@ -55,7 +56,7 @@
             {% if user.is_superuser %}
                 <li>
                     <a target="_blank" class="navigation add-post" href="/admin/blog/post/add/">
-                        Post
+                        <i class="icon-pencil icon-large"></i>
                     </a>
                 </li>
             {% endif %}
@@ -115,8 +116,8 @@
                             <span class="title">
                                 RSS Feed
                             </span>
-                            <a target="_blank" href="/rssfeed/">
-                                <img class="margin-top10 margin-left10" src="{{ STATIC_URL }}images/rss.png">
+                            <a target="_blank" class="no-decoration" href="/rssfeed/">
+                                <i class="icon-rss icon-large huge-font-size margin20"></i>
                             </a>
                         </section>
                     {% endif %}
@@ -127,8 +128,8 @@
                             <span class="title">
                                 Follow me on github
                             </span>
-                            <a target="_blank" href="https://github.com/jgasteiz">
-                                <img class="margin-top10 margin-left10" src="{{ STATIC_URL }}images/baracktocat.jpg">
+                            <a target="_blank" class="no-decoration" href="https://github.com/jgasteiz">
+                                <i class="icon-github icon-large huge-font-size margin20"></i>
                             </a>
                         </section>
                     {% endif %}

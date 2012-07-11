@@ -1,7 +1,6 @@
 /*
  *	JavaScript code for the sidebar-hider
  *
- *
  */
 $(document).ready(function() {
 	var SIDEBAR_SHOWN = true;
@@ -23,4 +22,9 @@ $(document).ready(function() {
 			$(".sidebar-content").show();
 		}
 	});
+
+	var h1 = parseInt($(".sidebar-content").css("height").replace("px", ""), 10);
+	if (h1 > parseInt($(".main-content").css("height").replace("px", ""), 10)) {
+		$(".main-content").css("height", h1 + 40);
+	}
 });
