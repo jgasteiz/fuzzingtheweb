@@ -58,7 +58,26 @@ nav {
     background-color: #2E2E2E;
     border-top: 1px solid #282828;
     border-bottom: 1px solid #111;
+    position:relative;
     width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+nav .light-switch {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    background-image: url('img/switches.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 20px;
 }
 nav ul {
     list-style-type: none;
@@ -314,6 +333,51 @@ footer.main {
     line-height: 1;
 }
 /* End OOCSS */
+
+/*
+    Night-mode
+*/
+body.night-mode {
+    background: black;
+}
+nav.night-mode {
+    background: #222;
+}
+nav.night-mode .light-switch {
+    background-position: right bottom;
+}
+.sidebar.night-mode {
+    background: #2E2E2E;
+    border-left: 1px solid #222;
+}
+.sidebar.night-mode.open .toggle-sidebar span {
+    background: #2E2E2E;
+    border-color: #222;
+    border-left-color: #2E2E2E;
+}
+.sidebar.night-mode.close .toggle-sidebar span {
+    border-left-color: #222;
+}
+.toggle-sidebar.night-mode:hover {
+    background: #444;
+}
+.main-content.night-mode {
+    background: #2E2E2E;
+    color: #EEE;
+}
+.main-content.night-mode a {
+    color: #EEE;
+}
+.main-content.night-mode a:hover {
+    color: black;
+}
+footer.main.night-mode {
+    background: #444;
+    border-top: #222;
+    text-shadow: none;
+    color: #DDD;
+}
+/* End Night-mode */
 
 /*
     Responsive
