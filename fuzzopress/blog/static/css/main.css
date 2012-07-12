@@ -104,7 +104,8 @@ a.navigation.add-post:hover {
     padding: 20px 28% 20px 2%;
 }
 .articles.width-max {
-    padding: 20px 4% 20px 2%;
+    padding: 20px 2%;
+    width: 94%;
 }
 .sidebar {
     background: #F3F5F8;
@@ -321,6 +322,7 @@ footer.main {
     .articles,
     .articles.width-max {
         padding: 20px 2%;
+        width: 94%;
     }
     .sidebar {
         display: none;
