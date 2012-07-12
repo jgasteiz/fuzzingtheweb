@@ -98,7 +98,7 @@ a.navigation.add-post:hover {
 .main-content {
     position: relative;
     background: white;
-    /*min-height: 1100px;*/
+    min-height: 1200px;
 }
 .articles {
     padding: 20px 28% 20px 2%;
