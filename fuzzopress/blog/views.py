@@ -5,6 +5,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.contrib.syndication.views import Feed
 from fuzzopress.blog.models import Post, NavItem, Widget
+from fuzzopress.blog.utils import get_query as get_search_query
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.dates import YearArchiveView, MonthArchiveView
 
@@ -13,6 +14,9 @@ class CustomContextMixin(object):
     """
     Same context data for every class view
     """
+    paginate_by = 5
+    context_object_name = 'post_list'
+    template_name = "blog/post_list.html"
     def get_context_data(self, **kwargs):
         context = super(CustomContextMixin, self).get_context_data(**kwargs)
         arch = Post.objects.dates('published', 'month', order='DESC')
@@ -39,9 +43,6 @@ class BlogView(CustomContextMixin, ListView):
     """
     Main blog view
     """
-    paginate_by = 5
-    context_object_name = 'post_list'
-
     def get_queryset(self):
         return Post.objects.published()
 
@@ -50,12 +51,21 @@ class BlogTagView(CustomContextMixin, ListView):
     """
     A tag posts
     """
-    paginate_by = 5
-    context_object_name = 'post_list'
-    template_name = "blog/post_list.html"
-
     def get_queryset(self):
         return Post.objects.published().filter(tags__name=self.kwargs['tag'])
+
+
+class BlogSearchView(CustomContextMixin, ListView):
+    """
+    A search result posts
+    """
+    def get_queryset(self):
+        query_string = ''
+        if ('q' in self.request.GET) and self.request.GET['q'].strip():
+            query_string = self.request.GET['q']
+            entry_query = get_search_query(query_string, ['title', 'body',])
+            return Post.objects.published().filter(entry_query)
+        return Post.objects.published()
 
 
 class BlogPostView(CustomContextMixin, DetailView):
@@ -63,7 +73,7 @@ class BlogPostView(CustomContextMixin, DetailView):
     A single post view
     """
     context_object_name = 'post'
-
+    template_name = "blog/post_detail.html"
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 

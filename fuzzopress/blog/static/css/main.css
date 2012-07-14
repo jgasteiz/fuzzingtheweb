@@ -30,6 +30,25 @@ a:hover {
     background: #E0F2F7;
     text-decoration: none;
 }
+input[type=text] {
+    padding: 6px;
+    font-size: 0.8em;
+    border: 1px solid #E6E8EC;
+    color: #666;
+}
+input[type=submit] {
+    background: #F44;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 7px;
+    border-radius: 2px;
+    border: 1px solid #CE2B2B;
+    font-weight: bold;
+    color: white;
+}
+input[type=submit]:hover {
+    background: #EE4B4B;
+}
 pre code {
     font-size: 0.9em;
     line-height: 1.6em;

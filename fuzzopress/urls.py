@@ -1,5 +1,5 @@
 from fuzzopress.blog.views import (BlogView, BlogPostView, AboutView, ArchiveMonth,
-    ArchiveYear, LatestEntriesFeed, BlogTagView)
+    ArchiveYear, LatestEntriesFeed, BlogTagView, BlogSearchView)
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
@@ -21,6 +21,10 @@ urlpatterns = patterns('',
     url(r'^tag/(?P<tag>[-\w]+)/',
         BlogTagView.as_view(),
         name='tag'),
+
+    url(r'^search/',
+        BlogSearchView.as_view(),
+        name='search'),
 
     url(r'^(?P<year>\d{4})/(?P<month>\d{1,2})/',
         ArchiveMonth.as_view(),

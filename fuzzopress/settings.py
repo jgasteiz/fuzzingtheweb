@@ -105,9 +105,23 @@ LOGGING = {
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'widgets': True,  # If disabled, won't load default widgets
-    'archive': True,  # If disabled, won't appear month archive sidebar widget
-    'about': True,  # If disabled, won't appear about navbar item
-    'rss': True,
-    'tags': True,
+    'github': {  # Shows a 'Follow me on github sidebar widget'
+        'show': True,
+        'username': 'jgasteiz'
+    },
+    'archive': {  # Shows a <select> for each year of posts to select a month
+        'show': True
+    },
+    'aboutfuzzopress': {  # Shows an 'About fuzzopress' navbar item
+        'show': True
+    },
+    'rss': {  # Shows a 'RSS Feed' sidebar widget
+        'show': True
+    },
+    'tags': {
+        'show': True
+    },
+    'searchbox': {
+        'show': True
+    },
 }

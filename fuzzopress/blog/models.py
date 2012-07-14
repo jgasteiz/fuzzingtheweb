@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-import datetime
 from django.db import models
+from datetime import datetime
 from django.utils.timezone import utc
 from taggit.managers import TaggableManager
-from django.utils.translation import ugettext_lazy as __
 from fuzzopress.blog.utils import uuslug as slugify
+from django.utils.translation import ugettext_lazy as __
 
 
 class PostManager(models.Manager):
     def published(self):
-        return self.filter(draft=False, published__lte=datetime.datetime.utcnow().replace(tzinfo=utc))
+        return self.filter(draft=False, published__lte=datetime.utcnow().replace(tzinfo=utc))
 
 
 class NavItem(models.Model):
@@ -51,7 +51,7 @@ class Post(models.Model):
     body = models.TextField(__('Body'))
     created = models.DateTimeField(__('Creation Date'), auto_now_add=True)
     updated_at = models.DateTimeField(__('Last Updated'), auto_now=True)
-    published = models.DateTimeField(__('Publish Date'), default=datetime.datetime.utcnow().replace(tzinfo=utc), help_text=__('Future-dated posts will only be published at the specified date and time.'))
+    published = models.DateTimeField(__('Publish Date'), default=datetime.utcnow().replace(tzinfo=utc), help_text=__('Future-dated posts will only be published at the specified date and time.'))
     draft = models.BooleanField(default=False, help_text=__('If checked, will not be displayed in the public site.'))
 
     objects = PostManager()

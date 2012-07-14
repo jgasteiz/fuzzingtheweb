@@ -18,7 +18,7 @@
             <select class="responsive-navbar" onchange="location.href=this.value">
                 <option selected value="/">Navigate</option>
                 <option value="/">Home</option>
-                {% if settings.about %}
+                {% if settings.aboutfuzzopress.show %}
                     <option value="/about-fuzzopress/">About Fuzzopress</option>
                 {% endif %}
                 {% for item in navItems %}
@@ -39,7 +39,7 @@
                         Home
                     </a>
                 </li>
-                {% if settings.about %}
+                {% if settings.aboutfuzzopress.show %}
                     <li>
                         <a class="navigation" href="/about-fuzzopress/">
                             About Fuzzopress
@@ -71,8 +71,16 @@
             <aside class="sidebar open">
                 <div class="sidebar-content">
 
+                    <!-- Search -->
+                    {% if settings.searchbox.show %}
+                    <form action="/search/" method="get">
+                        <input id="id_q" name="q" placeholder="Find a post" type="text">
+                        <input type="submit" value="Go">
+                    </form>
+                    {% endif %}
+
                     <!-- Archive month -->
-                    {% if settings.archive and archives %}
+                    {% if settings.archive.show and archives %}
                         <section>
                             <span class="title">
                                 Archives
@@ -100,7 +108,7 @@
                     {% endif %}
 
                     <!-- Tags -->
-                    {% if settings.tags %}
+                    {% if settings.tags.show %}
                         <section>
                             <span class="title">
                                 Tags
@@ -112,7 +120,7 @@
                     {% endif %}
 
                     <!-- RSS feed url -->
-                    {% if settings.rss %}
+                    {% if settings.rss.show %}
                         <section>
                             <span class="title">
                                 RSS Feed
@@ -123,13 +131,13 @@
                         </section>
                     {% endif %}
                     
-                    {% if settings.widgets %}
+                    {% if settings.github.show %}
                         <!-- You can delete this widget if you want -->
                         <section>
                             <span class="title">
                                 Follow me on github
                             </span>
-                            <a target="_blank" class="no-decoration" href="https://github.com/jgasteiz">
+                            <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
                                 <i class="icon-github icon-large huge-font-size margin20"></i>
                             </a>
                         </section>
