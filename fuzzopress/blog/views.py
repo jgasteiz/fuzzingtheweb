@@ -60,9 +60,8 @@ class BlogSearchView(CustomContextMixin, ListView):
     A search result posts
     """
     def get_queryset(self):
-        query_string = ''
-        if ('q' in self.request.GET) and self.request.GET['q'].strip():
-            query_string = self.request.GET['q']
+        query_string = self.kwargs['search']
+        if query_string:
             entry_query = get_search_query(query_string, ['title', 'body',])
             return Post.objects.published().filter(entry_query)
         return Post.objects.published()

@@ -36,7 +36,7 @@ input[type=text] {
     border: 1px solid #E6E8EC;
     color: #666;
 }
-input[type=submit] {
+button {
     background: #F44;
     cursor: pointer;
     text-transform: uppercase;
@@ -46,7 +46,7 @@ input[type=submit] {
     font-weight: bold;
     color: white;
 }
-input[type=submit]:hover {
+button:hover {
     background: #EE4B4B;
 }
 pre code {

@@ -73,10 +73,8 @@
 
                     <!-- Search -->
                     {% if settings.searchbox.show %}
-                    <form action="/search/" method="get">
-                        <input id="id_q" name="q" placeholder="Find a post" type="text">
-                        <input type="submit" value="Go">
-                    </form>
+                        <input type="text" class="fuzz-finder" placeholder="Find a post">
+                        <button class="fuzz-finder-go">Go</button>
                     {% endif %}
 
                     <!-- Archive month -->

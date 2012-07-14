@@ -3,35 +3,35 @@
 {% block title %}{{ post|title }} - Fuzzopress{% endblock %}
 
 {% block content %}
-	
-	{% if post %}
-		<h3 class="back">
-			<a href="/">←Back</a>
-		</h3>
-		<article>
-			<header>
-				<h1>
-					<a class="title">
-						{{ post }}
-					</a>
-				</h1>
-				<!-- Date -->
-				<div class="date">
-					{{ post.published|date }}
-				</div>
-			</header>
-			<div class="body">
-				{{ post.body|safe|linebreaks }}
-			</div>
+    
+    {% if post %}
+        <h3 class="back">
+            <a href="/">←Back</a>
+        </h3>
+        <article>
+            <header>
+                <h1>
+                    <a class="title">
+                        {{ post }}
+                    </a>
+                </h1>
+                <!-- Date -->
+                <div class="date">
+                    {{ post.published|date }}
+                </div>
+            </header>
+            <div class="body">
+                {{ post.body|safe|linebreaks }}
+            </div>
             {% if user.is_superuser %}
                 <a target="_blank" class="edit" href="/admin/blog/post/{{ post.pk }}/">
                     <i class="icon-edit margin-top5"></i>
                 </a>
             {% endif %}
-		</article>
+        </article>
 
-		<!-- Disqus -->
-		<div id="disqus_thread"></div>
+        <!-- Disqus -->
+        <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'fuzzingtheweb';
@@ -48,6 +48,6 @@
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         <!-- End Disqus -->
 
-	{% endif %}
+    {% endif %}
 
 {% endblock %}
