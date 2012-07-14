@@ -22,7 +22,7 @@ urlpatterns = patterns('',
         BlogTagView.as_view(),
         name='tag'),
 
-    url(r'^search/(?P<search>[-\w]+)/',
+    url(r'^search/(?P<search>[-\w]+)',
         BlogSearchView.as_view(),
         name='search'),
 
