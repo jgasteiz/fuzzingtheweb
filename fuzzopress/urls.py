@@ -18,23 +18,23 @@ urlpatterns = patterns('',
             template_name="about/aboutfuzzopress.html"),
         name='about_fuzzopress'),
 
-    url(r'^tag/(?P<tag>[-\w]+)',
+    url(r'^tag/(?P<tag>[-\w]+)/',
         BlogTagView.as_view(),
         name='tag'),
 
-    url(r'^search/(?P<search>[-\w]+)',
+    url(r'^search/(?P<search>[-\w]+)/',
         BlogSearchView.as_view(),
         name='search'),
 
-    url(r'^(?P<year>\d{4})/(?P<month>\d{1,2})',
+    url(r'^(?P<year>\d{4})/(?P<month>\d{1,2})/',
         ArchiveMonth.as_view(),
         name='archive_month'),
 
-    url(r'^(?P<year>\d{4})',
+    url(r'^(?P<year>\d{4})/',
         ArchiveYear.as_view(),
         name='archive_year'),
 
-    url(r'^(?P<slug>[-\w]+)',
+    url(r'^(?P<slug>[-\w]+)/',
         BlogPostView.as_view(),
         name='post'),
 )
