@@ -1,6 +1,13 @@
 /*
     General
 */
+@font-face {
+    font-family: "404";
+    src: url('font/Starjedi.ttf');
+    src: url('font/Starjedi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     font-family: "PT Serif",Georgia,Times,"Times New Roman",serif;
     font-size: 18px;
@@ -274,6 +281,15 @@ a.edit {
 }
 a.edit:hover {
     box-shadow: 0 0 4px #666666;
+}
+.align-center {
+    text-align: center;
+}
+.not-found {
+    font-family: "404", Arial;
+    line-height: 1;
+    font-size: 3em;
+    display: block;
 }
 /* End Main Content */
 
