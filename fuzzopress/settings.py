@@ -82,7 +82,7 @@ INSTALLED_APPS = (
     'fuzzopress.blog',
     'markitup',
     'gunicorn',
-    'taggit',
+    'south',
 )
 
 LOGGING = {

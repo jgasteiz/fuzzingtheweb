@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 from datetime import date
-from taggit.models import Tag
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.contrib.syndication.views import Feed
-from fuzzopress.blog.models import Post, NavItem, Widget
+from fuzzopress.blog.models import Post, NavItem, Widget, Tag
 from fuzzopress.blog.utils import get_query as get_search_query
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.dates import YearArchiveView, MonthArchiveView
@@ -52,7 +51,7 @@ class BlogTagView(CustomContextMixin, ListView):
     A tag posts
     """
     def get_queryset(self):
-        return Post.objects.published().filter(tags__name=self.kwargs['tag'])
+        return Post.objects.published().filter(mytags__name=self.kwargs['tag'])
 
 
 class BlogSearchView(CustomContextMixin, ListView):

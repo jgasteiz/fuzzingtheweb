@@ -2,7 +2,6 @@
 from django.db import models
 from datetime import datetime
 from django.utils.timezone import utc
-from taggit.managers import TaggableManager
 from fuzzopress.blog.utils import uuslug as slugify
 from django.utils.translation import ugettext_lazy as __
 
@@ -42,6 +41,16 @@ class Widget(models.Model):
         return self.name
 
 
+class Tag(models.Model):
+    """
+    Tag item
+    """
+    name = models.CharField(__('Name'), max_length=60)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Post(models.Model):
     """
     Blog entry items
@@ -55,7 +64,7 @@ class Post(models.Model):
     draft = models.BooleanField(default=False, help_text=__('If checked, will not be displayed in the public site.'))
 
     objects = PostManager()
-    tags = TaggableManager()
+    mytags = models.ManyToManyField("Tag", blank=True, null=True)
 
     class Meta:
         ordering = ('-published',)
