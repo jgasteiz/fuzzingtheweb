@@ -82,6 +82,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'fuzzopress.blog',
     'markitup',
+    'markdown',
     'gunicorn',
     'south',
 )
