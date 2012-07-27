@@ -1,0 +1,21 @@
+@media(max-width:800px) {
+    #content,
+    #content.width-max {
+        width: 100%;
+    }
+    .articles {
+        border: 0;
+    }
+    .sidebar {
+        display: none;
+    }
+    .responsive-navbar {
+        display: inline-block;
+    }
+    nav ul {
+        display: none;
+    }
+    header.main {
+        display: none;
+    }
+}

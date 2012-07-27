@@ -124,4 +124,7 @@ FUZZOPRESS_SETTINGS = {
     'searchbox': {
         'show': True
     },
+    'sidebar': {
+        'show': True
+    },
 }

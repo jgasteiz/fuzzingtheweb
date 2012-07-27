@@ -7,7 +7,12 @@
         <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
         <meta name="author" content="Javi Manzano">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/default/default-theme.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/user/user-theme.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
@@ -66,12 +71,13 @@
         </nav>
         <div id="main">
 
-            <div id="content">
+            <div id="content" {% if settings.sidebar.show %}class="sidebar"{% endif %}>
 
                 <div class="articles">
                     {% block content %}{% endblock %}
                 </div>
 
+                {% if settings.sidebar.show %}
                 <aside class="sidebar">
                     <div class="sidebar-content">
 
@@ -158,6 +164,7 @@
                         <span>>></span>
                     </div>
                 </aside>
+                {% endif %}
 
                 <div class="clear-both"></div>
             </div>

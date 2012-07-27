@@ -1,0 +1,53 @@
+.float-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.float-right {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.block {
+    display: block;
+}
+.strong {
+    font-weight: bold;
+}
+.small {
+    font-size: 0.8em;
+}
+.margin-top5 {
+    margin-top: 5px;
+}
+.margin20 {
+    margin: 20px;
+}
+.margin10 {
+    margin: 10px;
+}
+.margin-top10 {
+    margin-top: 10px;
+}
+.margin-bottom10 {
+    margin-bottom: 10px;
+}
+.margin-left10 {
+    margin-left: 10px;
+}
+.margin-right10 {
+    margin-right: 10px;
+}
+.no-decoration {
+    text-decoration: none;
+}
+.no-decoration:hover {
+    background: transparent;
+}
+.huge-font-size {
+    font-size: 4em;
+    line-height: 1;
+}
+.clear-both {
+    clear: both;
+}

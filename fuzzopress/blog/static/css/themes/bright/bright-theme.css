@@ -1,0 +1,21 @@
+body {
+    background: white;
+    font-size: 16px;
+    line-height: 1.8em;
+    max-width: 800px;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: #263347;
+    background: #E0F2F7;
+}
+button {
+    background: #44A;
+    border: 1px solid #2B2B99;
+    color: white;
+}
+button:hover {
+    background: #EE4B4B;
+}
