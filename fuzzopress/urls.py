@@ -11,6 +11,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
+    #url(r'^admin/', include(admin.site.urls)),
+
     url(r'^rssfeed/$', LatestEntriesFeed()),
 
     url(r'^about-fuzzopress/$',

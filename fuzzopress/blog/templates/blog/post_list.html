@@ -1,5 +1,7 @@
 {% extends "blog/base.html" %}
 
+{% load markup %}
+
 {% block title %}Fuzzing the Web{% endblock %}
 
 {% block content %}
@@ -21,7 +23,7 @@
                 </div>
             </header>
             <div class="body">
-                {{ post.body|safe|linebreaks }}
+                {{ post.body|markdown:"safe"|linebreaks }}
             </div>
             {% if user.is_superuser %}
                 <a target="_blank" class="edit" href="/admin/blog/post/{{ post.pk }}/">

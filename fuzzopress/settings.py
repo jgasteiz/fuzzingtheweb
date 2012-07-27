@@ -79,6 +79,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.markup',
     'fuzzopress.blog',
     'markitup',
     'gunicorn',
@@ -102,6 +103,11 @@ LOGGING = {
         },
     }
 }
+
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
+MARKITUP_AUTO_PREVIEW = True
+MARKITUP_SET = 'markitup/sets/markdown'
+JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
