@@ -1,5 +1,4 @@
 Django==1.4
-Markdown==2.2.0
 South==0.7.5
 django-markitup==1.0.0
 gunicorn==0.14.5
