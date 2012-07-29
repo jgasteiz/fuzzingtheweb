@@ -6,13 +6,18 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
         <meta name="author" content="Javi Manzano">
+        
+        <!-- Fuzzopress styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
+        <!-- Themes -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/default/default-theme.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/user/user-theme.css"/>
+        <!-- Night mode and responsive css -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
+        <!-- Code block styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
@@ -41,27 +46,27 @@
             <ul>
                 <!-- You can delete this two items if you want -->
                 <li>
-                    <a class="navigation" href="/">
+                    <a href="/">
                         Home
                     </a>
                 </li>
                 {% if settings.aboutfuzzopress.show %}
                     <li>
-                        <a class="navigation" href="/about-fuzzopress/">
+                        <a href="/about-fuzzopress/">
                             About Fuzzopress
                         </a>
                     </li>
                 {% endif %}
             {% for item in navItems %}
                 <li>
-                    <a class="navigation" href="{{ item.url }}">
+                    <a href="{{ item.url }}">
                         {{ item.name }}
                     </a>
                 </li>
             {% endfor %}
             {% if user.is_superuser %}
                 <li>
-                    <a target="_blank" class="navigation add-post" href="/admin/blog/post/add/">
+                    <a target="_blank" class="add-post" href="/admin/blog/post/add/">
                         <i class="icon-pencil icon-large"></i>
                     </a>
                 </li>
@@ -83,13 +88,15 @@
 
                         <!-- Search -->
                         {% if settings.searchbox.show %}
-                            <input type="text" class="fuzz-finder" placeholder="Find a post">
-                            <button class="fuzz-finder-go">Go</button>
+                            <section class="margin-bottom20">
+                                <input type="text" class="width60per" placeholder="Find a post">
+                                <button class="fuzz-finder-go">Go</button>
+                            </section>
                         {% endif %}
 
                         <!-- Archive month -->
                         {% if settings.archive.show and archives %}
-                            <section>
+                            <section class="margin-bottom20">
                                 <span class="title">
                                     Archives
                                 </span>
@@ -117,7 +124,7 @@
 
                         <!-- Tags -->
                         {% if settings.tags.show %}
-                            <section>
+                            <section class="margin-bottom20">
                                 <span class="title">
                                     Tags
                                 </span>
@@ -129,7 +136,7 @@
 
                         <!-- RSS feed url -->
                         {% if settings.rss.show %}
-                            <section>
+                            <section class="margin-bottom20">
                                 <span class="title">
                                     RSS Feed
                                 </span>
@@ -141,7 +148,7 @@
                         
                         {% if settings.github.show %}
                             <!-- You can delete this widget if you want -->
-                            <section>
+                            <section class="margin-bottom20">
                                 <span class="title">
                                     Follow me on github
                                 </span>
@@ -152,7 +159,7 @@
                         {% endif %}
 
                         {% for item in widgets %}
-                            <section>
+                            <section class="margin-bottom20">
                                 <span class="title">
                                     {{ item.name }}
                                 </span>

@@ -11,11 +11,11 @@ a:hover {
     color: #263347;
     background: #E0F2F7;
 }
-button {
+button, a.btn {
     background: #F44;
     border: 1px solid #CE2B2B;
     color: white;
 }
-button:hover {
+button:hover, a.btn:hover {
     background: #EE4B4B;
 }

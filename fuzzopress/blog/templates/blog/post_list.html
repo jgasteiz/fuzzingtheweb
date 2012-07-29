@@ -24,7 +24,7 @@
                 {{ post.body|safe|linebreaks }}
             </div>
             {% if user.is_superuser %}
-                <a target="_blank" class="edit" href="/admin/blog/post/{{ post.pk }}/">
+                <a target="_blank" class="btn float-right" href="/admin/blog/post/{{ post.pk }}/">
                     <i class="icon-edit margin-top5"></i>
                 </a>
             {% endif %}

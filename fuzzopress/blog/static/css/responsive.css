@@ -1,12 +1,13 @@
 @media(max-width:800px) {
     #content,
+    #content.sidebar,
     #content.width-max {
         width: 100%;
     }
     .articles {
         border: 0;
     }
-    .sidebar {
+    aside.sidebar {
         display: none;
     }
     .responsive-navbar {

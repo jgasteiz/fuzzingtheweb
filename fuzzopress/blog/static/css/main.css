@@ -36,12 +36,13 @@ input[type=text] {
     border: 1px solid #E6E8EC;
     color: #666;
 }
-button {
+button, .btn {
     cursor: pointer;
     text-transform: uppercase;
     padding: 7px;
     border-radius: 2px;
     font-weight: bold;
+    text-decoration: none;
 }
 pre code {
     font-size: 0.9em;
@@ -100,22 +101,22 @@ nav ul li {
     display: inline-block;
     height: 100%;
 }
-a.navigation {
+nav a {
     color: white;
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     vertical-align: middle;
 }
-a.navigation:hover {
+nav a:hover {
     background: #444;
     color: white;
     text-decoration: none;
 }
-a.navigation.add-post {
+nav a.add-post {
     background: #FF4444;
 }
-a.navigation.add-post:hover {
+nav a.add-post:hover {
     background: #DD2222;
 }
 .responsive-navbar {
@@ -163,12 +164,6 @@ aside.close {
     margin: 0;
     padding: 0;
     width: 22px;
-}
-aside input[type="text"] {
-    width: 60%;
-}
-.sidebar-content section {
-    margin: 20px 0;
 }
 .sidebar-content section .title {
     display: block;
@@ -265,33 +260,10 @@ article header .comments a {
     text-decoration: none;
     width: 54px;
 }
-h3.back {
-    margin: 0;
-}
-h3.back a {
-    text-decoration: none;
-}
-a.edit {
-    background: none repeat scroll 0 0 #FF4444;
-    border: 1px solid #AA2222;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 1px #666666;
-    color: white;
-    float: right;
-    line-height: 1;
-    padding: 4px 10px;
-    text-decoration: none;
-}
-a.edit:hover {
-    box-shadow: 0 0 4px #666666;
-}
-.align-center {
-    text-align: center;
-}
 .not-found {
     font-family: "404", Arial;
     line-height: 1;
-    font-size: 3em;
+    font-size: 2.6em;
     display: block;
 }
 /* End Main Content */
