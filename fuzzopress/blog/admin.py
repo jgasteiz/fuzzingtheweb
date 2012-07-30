@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from markitup.widgets import AdminMarkItUpWidget
-from fuzzopress.blog.models import Post, NavItem, Widget, Tag#, File
+from fuzzopress.blog.models import Post, NavItem, Widget, Tag, File
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -20,9 +20,9 @@ class WidgetAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'weight')
 
 
-# class FileAdmin(admin.ModelAdmin):
-#     list_display = ('id', 'title', 'upload_path', 'url')
-#     readonly_fields = ('url',)
+class FileAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'upload_path', 'url')
+    readonly_fields = ('url',)
 
 
 class TagAdmin(admin.ModelAdmin):
@@ -32,5 +32,5 @@ class TagAdmin(admin.ModelAdmin):
 admin.site.register(NavItem, NavItemAdmin)
 admin.site.register(Widget, WidgetAdmin)
 admin.site.register(Post, PostAdmin)
-# admin.site.register(File, FileAdmin)
+admin.site.register(File, FileAdmin)
 admin.site.register(Tag, TagAdmin)
