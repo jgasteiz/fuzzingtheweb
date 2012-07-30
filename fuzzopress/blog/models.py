@@ -46,19 +46,19 @@ class Tag(models.Model):
         return self.name
 
 
-class File(models.Model):
-    """ File item """
-    title = models.CharField(__('Title'), blank=False, max_length=120)
-    upload_path = models.FileField(__('File'), blank=False, upload_to='%Y/%m/%d',
-        default='', help_text='Select a file to upload')
-    url = models.CharField(__('Url'), blank=True, max_length=240)
+# class File(models.Model):
+#     """ File item """
+#     title = models.CharField(__('Title'), blank=False, max_length=120)
+#     upload_path = models.FileField(__('File'), blank=False, upload_to='%Y/%m/%d',
+#         default='', help_text='Select a file to upload')
+#     url = models.CharField(__('Url'), blank=True, max_length=240)
 
-    def __unicode__(self):
-        return self.title
+#     def __unicode__(self):
+#         return self.title
 
-    def save(self, *args, **kwargs):
-        self.url = self.upload_path.url
-        super(File, self).save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         self.url = self.upload_path.url
+#         super(File, self).save(*args, **kwargs)
 
 
 class Post(models.Model):
