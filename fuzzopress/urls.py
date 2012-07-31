@@ -1,7 +1,8 @@
+from django.contrib import admin
+from fuzzopress.blog.api import entries
+from django.conf.urls import patterns, include, url
 from fuzzopress.blog.views import (BlogView, BlogPostView, AboutView, ArchiveMonth,
     ArchiveYear, LatestEntriesFeed, BlogTagView, BlogSearchView)
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -17,6 +18,8 @@ urlpatterns = patterns('',
         AboutView.as_view(
             template_name="about/aboutfuzzopress.html"),
         name='about_fuzzopress'),
+
+    url(r'^api/entries/', entries),
 
     url(r'^tag/(?P<tag>[-\w]+)/',
         BlogTagView.as_view(),
@@ -37,4 +40,5 @@ urlpatterns = patterns('',
     url(r'^(?P<slug>[-\w]+)/',
         BlogPostView.as_view(),
         name='post'),
+
 )
