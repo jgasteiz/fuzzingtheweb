@@ -25,9 +25,6 @@ header.main {
     background-position: center bottom;
     background-repeat: no-repeat;
 }
-header.main h1 {
-    display: none;
-}
 nav {
     background-color: #2E2E2E;
     border-top: 1px solid #282828;

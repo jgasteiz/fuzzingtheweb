@@ -28,30 +28,19 @@ button:hover {
     background: #E13E22;
 }
 header.main {
-    background-image: url('fuzzy-bright.png');
-    background-position: -341px center;
+    background-image: url('banner-bright.png');
+    background-position: center top;
     background-repeat: no-repeat;
-    height: 240px;
+    height: 220px;
+    margin: 20px 0;
     padding: 0;
-    position: relative;
-    width: 341px;
     -webkit-transition: background-position 0.4s ease;
     -moz-transition: background-position 0.4s ease;
     -o-transition: background-position 0.4s ease;
     transition: background-position 0.4s ease;
 }
 header.main:hover {
-    background-position: 0 center;
-}
-header.main h1 {
-    position: absolute;
-    top: 60px;
-    right: -440px;
-    font-family: "custom-impact", courier;
-    font-size: 3.8em;
-}
-header.main a {
-    text-decoration: none;
+    background-position: center bottom;
 }
 nav ul {
     padding: 0;
