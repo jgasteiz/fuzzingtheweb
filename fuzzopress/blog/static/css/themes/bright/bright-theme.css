@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: #F5F5F5;
     font-size: 16px;
     line-height: 1.8em;
     max-width: 800px;
@@ -14,8 +14,32 @@ a:hover {
 button {
     background: #44A;
     border: 1px solid #2B2B99;
-    color: white;
+    color: #F5F5F5;
 }
 button:hover {
-    background: #EE4B4B;
+    background: #339;
+}
+header.main {
+    background-image: url('fuzzy.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+nav a {
+    color: black;
+}
+nav a:hover {
+    background: transparent;
+    color: black;
+    text-decoration: underline;
+}
+#main {
+    background: #F5F5F5;
+    border-top: 1px solid #E6E8EC;
+    border-right: 1px solid #E6E8EC;
+}
+#content {
+    background: #FFF;
+}
+.articles {
+    border-left: 1px solid #E6E8EC;
 }

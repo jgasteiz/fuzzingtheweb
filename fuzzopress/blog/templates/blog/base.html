@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
         <!-- Themes -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/default/default-theme.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/bright/bright-theme.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/user/user-theme.css"/>
         <!-- Night mode and responsive css -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
@@ -89,7 +89,7 @@
                         <!-- Search -->
                         {% if settings.searchbox.show %}
                             <section class="margin-bottom20">
-                                <input type="text" class="width60per" placeholder="Find a post">
+                                <input type="text" class="fuzz-finder width60per" placeholder="Find a post">
                                 <button class="fuzz-finder-go">Go</button>
                             </section>
                         {% endif %}

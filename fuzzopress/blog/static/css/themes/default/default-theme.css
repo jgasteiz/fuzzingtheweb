@@ -19,3 +19,43 @@ button, a.btn {
 button:hover, a.btn:hover {
     background: #EE4B4B;
 }
+header.main {
+    background-image: url('fuzzzy.png');
+    background-color: #263347;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+nav {
+    background-color: #2E2E2E;
+    border-top: 1px solid #282828;
+    border-bottom: 1px solid #111;
+}
+nav a {
+    color: white;
+}
+nav a:hover {
+    background: #444;
+    color: white;
+}
+#main {
+    background: #F3F5F8;
+}
+#content {
+    background: #FFF;
+}
+footer.main {
+    background: -moz-linear-gradient(#EEEEEE, #DDDDDD, #CCCCCC) 
+                repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#EEEEEE, #DDDDDD, #CCCCCC) 
+                repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#EEEEEE, #DDDDDD, #CCCCCC) 
+                repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(#EEEEEE, #DDDDDD, #CCCCCC) 
+                repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#EEEEEE, #DDDDDD, #CCCCCC) 
+                repeat scroll 0 0 transparent;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    color: #444444;
+    text-shadow: 0 1px #D9D9D9;
+}
