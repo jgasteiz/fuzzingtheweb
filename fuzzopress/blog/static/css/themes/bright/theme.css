@@ -2,7 +2,7 @@ body {
     background-color: #F5F5F5;
     font-size: 16px;
     line-height: 1.8em;
-    max-width: 800px;
+    max-width: 900px;
     background-image: url('noise.png');
 }
 a {
@@ -34,6 +34,12 @@ header.main {
 }
 nav ul {
     padding: 0;
+}
+nav a.add-post {
+    background: transparent;
+}
+nav a.add-post:hover {
+    background: transparent;
 }
 .toggle-sidebar.close {
     background: #F5F5F5;
