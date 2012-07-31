@@ -28,9 +28,30 @@ button:hover {
     background: #E13E22;
 }
 header.main {
-    background-image: url('fuzzy.png');
-    background-position: center center;
+    background-image: url('fuzzy-bright.png');
+    background-position: -341px center;
     background-repeat: no-repeat;
+    height: 240px;
+    padding: 0;
+    position: relative;
+    width: 341px;
+    -webkit-transition: background-position 0.4s ease;
+    -moz-transition: background-position 0.4s ease;
+    -o-transition: background-position 0.4s ease;
+    transition: background-position 0.4s ease;
+}
+header.main:hover {
+    background-position: 0 center;
+}
+header.main h1 {
+    position: absolute;
+    top: 60px;
+    right: -440px;
+    font-family: Impact;
+    font-size: 4em;
+}
+header.main a {
+    text-decoration: none;
 }
 nav ul {
     padding: 0;
@@ -60,22 +81,14 @@ footer.main {
 body.night-mode {
     background-color: #222;
 }
+body.night-mode a {
+    color: #F5F5F5;
+}
+body.night-mode a:hover {
+    color: #33B8D6;
+}
 nav.night-mode .light-switch {
     background-position: right bottom;
-}
-nav.night-mode a,
-#content.night-mode a,
-footer.main.night-mode a {
-    color: #F5F5F5;
-    -webkit-transition: color 0.4s ease;
-    -moz-transition: color 0.4s ease;
-    -o-transition: color 0.4s ease;
-    transition: color 0.4s ease;
-}
-nav.night-mode a:hover,
-#content.night-mode a:hover,
-footer.main.night-mode a:hover {
-    color: #33B8D6;
 }
 aside.night-mode .toggle-sidebar span {
     background: #2E2E2E;
