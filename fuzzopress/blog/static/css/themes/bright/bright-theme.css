@@ -35,6 +35,12 @@ header.main {
 nav ul {
     padding: 0;
 }
+.toggle-sidebar.close {
+    background: #F5F5F5;
+}
+.toggle-sidebar.close:hover {
+    background: #E5E5E5;
+}
 #main {
     background-color: #F5F5F5;
     border: 1px solid #E6E8EC;
