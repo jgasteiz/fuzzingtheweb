@@ -47,8 +47,8 @@ header.main h1 {
     position: absolute;
     top: 60px;
     right: -440px;
-    font-family: Impact;
-    font-size: 4em;
+    font-family: "custom-impact", courier;
+    font-size: 3.8em;
 }
 header.main a {
     text-decoration: none;
