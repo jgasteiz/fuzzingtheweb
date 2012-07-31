@@ -90,6 +90,7 @@ aside.night-mode.close .toggle-sidebar span {
 }
 #main.night-mode {
     background: #2E2E2E;
+    border: 1px solid #222;
 }
 #content.night-mode {
     background: #2E2E2E;

@@ -127,4 +127,5 @@ FUZZOPRESS_SETTINGS = {
     'sidebar': {
         'show': True
     },
+    'theme': 'default'  # 'bright' or 'default'
 }
