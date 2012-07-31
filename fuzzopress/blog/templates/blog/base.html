@@ -12,7 +12,11 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
         <!-- Themes -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/{{ settings.theme }}/theme.css"/>
+        {% if settings.theme %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/{{ settings.theme }}/theme.css"/>
+        {% else %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/default/theme.css"/>
+        {% endif %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/user/user-theme.css"/>
         <!-- Responsive css -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
