@@ -1,45 +1,96 @@
 body {
-    background: #F5F5F5;
+    background-color: #F5F5F5;
     font-size: 16px;
     line-height: 1.8em;
     max-width: 800px;
+    background-image: url('noise.png');
 }
 a {
     color: black;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
 }
 a:hover {
-    color: #263347;
-    background: #E0F2F7;
+    color: #23A8C6;
+}
+nav a {
+    font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+    text-transform: uppercase;
 }
 button {
-    background: #44A;
-    border: 1px solid #2B2B99;
+    background: #F14E32;
+    border: 1px solid #C11E02;
     color: #F5F5F5;
 }
 button:hover {
-    background: #339;
+    background: #E13E22;
 }
 header.main {
     background-image: url('fuzzy.png');
-    background-position: center bottom;
+    background-position: center center;
     background-repeat: no-repeat;
 }
-nav a {
-    color: black;
-}
-nav a:hover {
-    background: transparent;
-    color: black;
-    text-decoration: underline;
+nav ul {
+    padding: 0;
 }
 #main {
-    background: #F5F5F5;
-    border-top: 1px solid #E6E8EC;
-    border-right: 1px solid #E6E8EC;
+    background-color: #F5F5F5;
+    border: 1px solid #E6E8EC;
 }
-#content {
-    background: #FFF;
+footer.main {
+    padding: 20px;
 }
-.articles {
-    border-left: 1px solid #E6E8EC;
+/*
+    Night mode
+*/
+body.night-mode {
+    background-color: #222;
+}
+nav.night-mode .light-switch {
+    background-position: right bottom;
+}
+nav.night-mode a,
+#content.night-mode a,
+footer.main.night-mode a {
+    color: #F5F5F5;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
+}
+nav.night-mode a:hover,
+#content.night-mode a:hover,
+footer.main.night-mode a:hover {
+    color: #33B8D6;
+}
+aside.night-mode .toggle-sidebar span {
+    background: #2E2E2E;
+    border-color: #222;
+    border-left-color: #2E2E2E;
+}
+aside.night-mode.close .toggle-sidebar span {
+    border-left-color: #222;
+}
+.toggle-sidebar.night-mode.close {
+    background: #222;
+}
+.toggle-sidebar.night-mode:hover {
+    background: #333;
+}
+#main.night-mode {
+    background: #2E2E2E;
+    border: 1px solid #222;
+}
+#content.night-mode {
+    background: #2E2E2E;
+    color: #F5F5F5;
+}
+#content.night-mode .articles {
+    border-right: 1px solid #222;
+}
+footer.main.night-mode {
+    text-shadow: none;
+    color: #F5F5F5;
 }
