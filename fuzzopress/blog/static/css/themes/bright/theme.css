@@ -34,10 +34,6 @@ header.main {
     height: 220px;
     margin: 20px 0;
     padding: 0;
-    -webkit-transition: background-position 0.4s ease;
-    -moz-transition: background-position 0.4s ease;
-    -o-transition: background-position 0.4s ease;
-    transition: background-position 0.4s ease;
 }
 header.main:hover {
     background-position: center bottom;
