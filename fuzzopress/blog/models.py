@@ -74,6 +74,8 @@ class Post(models.Model):
             specified date and time.'))
     draft = models.BooleanField(default=False, 
         help_text=__('If checked, will \not be displayed in the public site.'))
+    page = models.BooleanField(default=False, 
+        help_text=__('If checked, this will be a page, not a post blog'))
 
     objects = PostManager()
     mytags = models.ManyToManyField("Tag", blank=True, null=True)
