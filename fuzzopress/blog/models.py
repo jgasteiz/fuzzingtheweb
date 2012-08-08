@@ -8,7 +8,9 @@ from django.utils.translation import ugettext_lazy as __
 
 class PostManager(models.Manager):
     def published(self):
-        return self.filter(draft=False, 
+        return self.filter(
+            draft=False,
+            page=False,
             published__lte=datetime.utcnow().replace(tzinfo=utc))
 
 
@@ -66,16 +68,15 @@ class Post(models.Model):
     title = models.CharField(__('Title'), blank=False, max_length=120)
     slug = models.SlugField(__('Slug'), blank=True, max_length=120)
     body = models.TextField(__('Body'))
-    created = models.DateTimeField(__('Creation Date'), auto_now_add=True)
-    updated_at = models.DateTimeField(__('Last Updated'), auto_now=True)
     published = models.DateTimeField(__('Publish Date'), 
-        default=datetime.utcnow().replace(tzinfo=utc), 
+        default=datetime.now(), 
         help_text=__('Future-dated posts will only be published at the \
             specified date and time.'))
     draft = models.BooleanField(default=False, 
         help_text=__('If checked, will \not be displayed in the public site.'))
     page = models.BooleanField(default=False, 
-        help_text=__('If checked, this will be a page, not a post blog'))
+        help_text=__('If checked, this will be a page, not a blog post. It \
+            will be useful for "about" pages and so.'))
 
     objects = PostManager()
     mytags = models.ManyToManyField("Tag", blank=True, null=True)

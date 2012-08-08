@@ -1,8 +1,7 @@
 from django.contrib import admin
-from fuzzopress.blog.api import entries
 from django.conf.urls import patterns, include, url
-from fuzzopress.blog.views import (BlogView, BlogPostView, AboutView, ArchiveMonth,
-    ArchiveYear, LatestEntriesFeed, BlogTagView, BlogSearchView)
+from fuzzopress.blog.views import (BlogView, PostView, ArchiveMonth,
+    FeedView, TagView, SearchView)
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -12,33 +11,26 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^rssfeed/$', LatestEntriesFeed()),
+    url(r'^rssfeed/$', FeedView()),
 
-    url(r'^about-fuzzopress/$',
-        AboutView.as_view(
-            template_name="about/aboutfuzzopress.html"),
-        name='about_fuzzopress'),
-
-    url(r'^api/entries/', entries),
-
+    # List entries by tag
     url(r'^tag/(?P<tag>[-\w]+)/',
-        BlogTagView.as_view(),
+        TagView.as_view(),
         name='tag'),
 
+    # Search stuff
     url(r'^search/(?P<search>[-\w]+)',
-        BlogSearchView.as_view(),
+        SearchView.as_view(),
         name='search'),
 
+    # Archive
     url(r'^(?P<year>\d{4})/(?P<month>\d{1,2})/',
         ArchiveMonth.as_view(),
         name='archive_month'),
 
-    url(r'^(?P<year>\d{4})/',
-        ArchiveYear.as_view(),
-        name='archive_year'),
-
+    # A post or page
     url(r'^(?P<slug>[-\w]+)/',
-        BlogPostView.as_view(),
+        PostView.as_view(),
         name='post'),
 
 )

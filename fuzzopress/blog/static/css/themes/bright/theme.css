@@ -60,6 +60,14 @@ nav a.add-post:hover {
 footer.main {
     padding: 20px;
 }
+
+::selection {
+    background: #53D8F6;
+}
+::-moz-selection {
+    background: #53D8F6;
+}
+
 /*
     Night mode
 */

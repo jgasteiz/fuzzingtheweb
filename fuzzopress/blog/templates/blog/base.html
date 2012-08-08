@@ -1,6 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %}</title>
@@ -8,18 +7,20 @@
         <meta name="author" content="Javi Manzano">
         
         <!-- Fuzzopress styles -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
+        
         <!-- Themes -->
         {% if settings.theme %}
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/{{ settings.theme }}/theme.css"/>
         {% else %}
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/bright/theme.css"/>
         {% endif %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/user/user-theme.css"/>
+        
         <!-- Responsive css -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
+        
         <!-- Code block styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
@@ -32,14 +33,13 @@
             <select class="responsive-navbar" onchange="location.href=this.value">
                 <option selected value="/">Navigate</option>
                 <option value="/">Home</option>
-                {% if settings.aboutfuzzopress.show %}
-                    <option value="/about-fuzzopress/">About Fuzzopress</option>
-                {% endif %}
+                
                 {% for item in navItems %}
                     <option value="{{ item.url }}">
                         {{ item.name }}
                     </option>
                 {% endfor %}
+                
                 {% if user.is_superuser %}
                     <option value="/admin/blog/post/add/">
                         Post
@@ -53,27 +53,22 @@
                         Home
                     </a>
                 </li>
-                {% if settings.aboutfuzzopress.show %}
-                    <li>
-                        <a href="/about-fuzzopress/">
-                            About Fuzzopress
-                        </a>
-                    </li>
-                {% endif %}
-            {% for item in navItems %}
+                
+                {% for item in navItems %}
                 <li>
                     <a href="{{ item.url }}">
                         {{ item.name }}
                     </a>
                 </li>
-            {% endfor %}
-            {% if user.is_superuser %}
+                {% endfor %}
+                
+                {% if user.is_superuser %}
                 <li>
                     <a target="_blank" class="add-post" href="/admin/blog/post/add/">
                         <i class="icon-pencil icon-large"></i>
                     </a>
                 </li>
-            {% endif %}
+                {% endif %}
             </ul>
             <i class="light-switch"></i>
         </nav>
@@ -105,9 +100,7 @@
                                 </span>
                                 {% for year, month_list in archives %}
                                     <!-- year -->
-                                    <span class="block strong">
-                                        <a href="/{{ year }}/">{{ year }}</a>
-                                    </span>
+                                    <span class="block strong">{{ year }}</span>
                                     <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
                                         <option selected="selected">
                                             Choose month
@@ -184,10 +177,11 @@
             This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.
         </footer>
 
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
-        
         <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
-
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'fuzzingtheweb';

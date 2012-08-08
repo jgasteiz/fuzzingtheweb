@@ -7,7 +7,8 @@ from django.utils.encoding import smart_unicode
 
 
 def uuslug(s, instance=None):
-    """This method tries a little harder than django's django.template.defaultfilters.slugify.
+    """ This method tries a little harder than django's 
+        django.template.defaultfilters.slugify.
 
     Parameters
     ----------
@@ -21,16 +22,6 @@ def uuslug(s, instance=None):
     slug : string
         sluged string received as parameter
 
-    Examples
-    --------
-    Example usage in save method for model:
-
-    import uuslug as slugify
-    self.slug = slugify(self.title, instance=self)
-
-    Notes
-    -----
-    Taken from an old snippet, no longer available online
     """
 
     if type(s) != UnicodeType:
@@ -103,18 +94,6 @@ def restore_wp_entries(xml_path, instance):
             The absolute path of the wordpress backup xml
         instance : Post object
             Must
-
-        Examples
-        --------
-        Example usage in save method for model:
-
-        import restore_wp_entries
-        restore_wp_entries('/Users/jgasteiz/Downloads/entries.xml')
-
-        Notes
-        -----
-        Works with wordpress 3.3 and you'll need to adapt to your Post model
-    
     """
     dom1 = parse(xml_path)
     for i in dom1.getElementsByTagName('item'):

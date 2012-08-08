@@ -3,16 +3,14 @@ from datetime import date
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.contrib.syndication.views import Feed
+from django.views.generic import ListView, DetailView
 from fuzzopress.blog.models import Post, NavItem, Widget, Tag
 from fuzzopress.blog.utils import get_query as get_search_query
-from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.dates import YearArchiveView, MonthArchiveView
 
 
 class CustomContextMixin(object):
-    """
-    Same context data for every class view
-    """
+    """ Same context data for every class view """
     paginate_by = 5
     context_object_name = 'post_list'
     template_name = "blog/post_list.html"
@@ -39,25 +37,19 @@ class CustomContextMixin(object):
 
 
 class BlogView(CustomContextMixin, ListView):
-    """
-    Main blog view
-    """
+    """ Main blog view """
     def get_queryset(self):
         return Post.objects.published()
 
 
-class BlogTagView(CustomContextMixin, ListView):
-    """
-    A tag posts
-    """
+class TagView(CustomContextMixin, ListView):
+    """ A tag posts """
     def get_queryset(self):
         return Post.objects.published().filter(mytags__name=self.kwargs['tag'])
 
 
-class BlogSearchView(CustomContextMixin, ListView):
-    """
-    A search result posts
-    """
+class SearchView(CustomContextMixin, ListView):
+    """ A search result posts """
     def get_queryset(self):
         query_string = self.kwargs['search']
         if query_string:
@@ -66,17 +58,16 @@ class BlogSearchView(CustomContextMixin, ListView):
         return Post.objects.published()
 
 
-class BlogPostView(CustomContextMixin, DetailView):
-    """
-    A single post view
-    """
+class PostView(CustomContextMixin, DetailView):
+    """ A single post view """
     context_object_name = 'post'
     template_name = "blog/post_detail.html"
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 
 
-class LatestEntriesFeed(Feed):
+class FeedView(Feed):
+    """ A view for ress feed """
     title = "Fuzzopress"
     link = "/lastposts/"
     description = "Last posts at this Fuzzopress blog"
@@ -91,30 +82,14 @@ class LatestEntriesFeed(Feed):
         return item.body
 
 
-class AboutView(CustomContextMixin, TemplateView):
-    """
-    For static pages. template_name can be set here or in urls.py
-    """
-
-
 class CustomDateMixin(CustomContextMixin, object):
-    """
-    Same date_field and context_object_name for every Dated-class view
-    """
+    """ Same date_field and context_object_name for every Dated-class view """
     date_field = 'published'
     model = Post
     context_object_name = 'post_list'
 
 
 class ArchiveMonth(CustomDateMixin, MonthArchiveView):
-    """
-    For a month
-    """
+    """ For a month """
     month_format = '%m'
 
-
-class ArchiveYear(CustomDateMixin, YearArchiveView):
-    """
-    For a year
-    """
-    make_object_list = True

@@ -112,9 +112,6 @@ FUZZOPRESS_SETTINGS = {
     'archive': {  # Shows a <select> for each year of posts to select a month
         'show': True
     },
-    'aboutfuzzopress': {  # Shows an 'About fuzzopress' navbar item
-        'show': True
-    },
     'rss': {  # Shows a 'RSS Feed' sidebar widget
         'show': True
     },
