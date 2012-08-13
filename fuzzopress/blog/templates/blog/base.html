@@ -5,22 +5,16 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
         <meta name="author" content="Javi Manzano">
-        
+
         <!-- Fuzzopress styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
-        
-        <!-- Themes -->
-        {% if settings.theme %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/{{ settings.theme }}/theme.css"/>
-        {% else %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/bright/theme.css"/>
-        {% endif %}
-        
+
         <!-- Responsive css -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
-        
+
         <!-- Code block styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
@@ -47,16 +41,15 @@
                 {% endif %}
             </select>
             <ul>
-                <!-- You can delete this two items if you want -->
                 <li>
-                    <a href="/">
+                    <a class="uppercase no-decoration ptsans" href="/">
                         Home
                     </a>
                 </li>
                 
                 {% for item in navItems %}
                 <li>
-                    <a href="{{ item.url }}">
+                    <a class="uppercase no-decoration ptsans" href="{{ item.url }}">
                         {{ item.name }}
                     </a>
                 </li>
@@ -64,7 +57,7 @@
                 
                 {% if user.is_superuser %}
                 <li>
-                    <a target="_blank" class="add-post" href="/admin/blog/post/add/">
+                    <a target="_blank" class="add-post no-decoration" href="/admin/blog/post/add/">
                         <i class="icon-pencil icon-large"></i>
                     </a>
                 </li>
@@ -87,8 +80,8 @@
                         <!-- Search -->
                         {% if settings.searchbox.show %}
                             <section class="margin-bottom20">
-                                <input type="text" class="fuzz-finder width60per" placeholder="Find a post">
-                                <button class="fuzz-finder-go">Go</button>
+                                <input type="text" class="fuzz-finder small width60per" placeholder="Find a post">
+                                <button class="fuzz-finder-go uppercase">Go</button>
                             </section>
                         {% endif %}
 
@@ -163,9 +156,7 @@
                             </section>
                         {% endfor %}
                     </div>
-                    <div class="toggle-sidebar">
-                        <span>>></span>
-                    </div>
+                    
                 </aside>
                 {% endif %}
 
@@ -173,7 +164,7 @@
             </div>
         </div>
 
-        <footer class="main">
+        <footer class="padding20 small">
             This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.
         </footer>
 

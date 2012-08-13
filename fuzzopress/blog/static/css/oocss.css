@@ -1,3 +1,6 @@
+/*
+    Positioning
+*/
 .float-left {
     float: left;
     margin-right: 20px;
@@ -7,18 +10,6 @@
     float: right;
     margin-left: 20px;
     margin-bottom: 20px;
-}
-.align-center {
-    text-align: center;
-}
-.block {
-    display: block;
-}
-.strong {
-    font-weight: bold;
-}
-.small {
-    font-size: 0.8em;
 }
 .margin-top5 {
     margin-top: 5px;
@@ -47,6 +38,23 @@
 .margin-right10 {
     margin-right: 10px;
 }
+.padding20 {
+    padding: 20px;
+}
+.clear-both {
+    clear: both;
+}
+/* End positioning */
+
+/*
+    Fonts
+*/
+.strong {
+    font-weight: bold;
+}
+.small {
+    font-size: 0.8em;
+}
 .no-decoration {
     text-decoration: none;
 }
@@ -57,12 +65,36 @@
     font-size: 4em;
     line-height: 1;
 }
-.clear-both {
-    clear: both;
+.white {
+    color: #FFF;
 }
+.uppercase {
+    text-transform: uppercase;
+}
+.ptsans {
+    font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+}
+/* End fonts */
+
+
+/*
+    Displaying
+*/
+.block {
+    display: block;
+}
+.align-center {
+    text-align: center;
+}
+.inline-block {
+    display: inline-block;
+}
+/* End displaying */
+
+/*
+    Sizes
+*/
 .width60per {
     width: 60%;
 }
-.white {
-    color: white;
-}
+/* End sizes */

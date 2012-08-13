@@ -1,0 +1,41 @@
+body.night-mode {
+    background-color: #222;
+}
+body.night-mode a {
+    color: #F5F5F5;
+}
+body.night-mode a:hover {
+    color: #33B8D6;
+}
+nav.night-mode .light-switch {
+    background-position: right bottom;
+}
+aside.night-mode .toggle-sidebar span {
+    background: #2E2E2E;
+    border-color: #222;
+    border-left-color: #2E2E2E;
+}
+aside.night-mode.close .toggle-sidebar span {
+    border-left-color: #222;
+}
+.toggle-sidebar.night-mode.close {
+    background: #222;
+}
+.toggle-sidebar.night-mode:hover {
+    background: #333;
+}
+#main.night-mode {
+    background: #2E2E2E;
+    border: 1px solid #222;
+}
+#content.night-mode {
+    background: #2E2E2E;
+    color: #F5F5F5;
+}
+#content.night-mode .articles {
+    border-right: 1px solid #222;
+}
+footer.night-mode {
+    text-shadow: none;
+    color: #F5F5F5;
+}

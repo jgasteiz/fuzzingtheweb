@@ -12,6 +12,7 @@
     }
     .responsive-navbar {
         display: inline-block;
+        margin: 16px;
     }
     nav ul {
         display: none;

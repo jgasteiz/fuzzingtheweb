@@ -1,35 +1,24 @@
 /*global $, jQuery, document, location*/
 
-/*
- *  JavaScript code for the sidebar-hider
+/** 
+ * Fuzzopress javascript code
  *
+ * @author Javi Manzano Oller <javi.manzano.oller@gmail.com> || @jgasteiz
  */
 $(document).ready(function () {
     'use strict';
 
-    var SIDEBAR_SHOWN = true;
-
-    $('.toggle-sidebar').click(function () {
-        if (SIDEBAR_SHOWN === true) {
-            SIDEBAR_SHOWN = false;
-            $('#content').addClass('width-max');
-            $('.toggle-sidebar span').html('<<');
-            $('.sidebar, .toggle-sidebar').addClass('close');
-            $('.sidebar-content').hide();
-        } else {
-            SIDEBAR_SHOWN = true;
-            $('#content').removeClass('width-max');
-            $('.toggle-sidebar span').html('>>');
-            $('.sidebar, .toggle-sidebar').removeClass('close');
-            $('.sidebar-content').show();
-        }
-    });
-
+    /**
+     * When the light switcher is clicked, toggles between normal and night-mode
+     */
     $('.light-switch').click(function () {
-        $('body, nav, aside, .toggle-sidebar, #main, #content, footer.main.')
+        $('body, nav, aside, .toggle-sidebar, #main, #content, footer')
             .toggleClass('night-mode');
     });
 
+    /**
+     * When enter-key is pressed when writing some search, it searches it
+     */
     $('.fuzz-finder').keypress(function (e) {
         if (e.charCode === 13) {
             var inputText = $(this).val().replace(/ /g, '+');
@@ -37,6 +26,9 @@ $(document).ready(function () {
         }
     });
 
+    /**
+     * When the go-button is pressed when writing some search, it searches it
+     */
     $('.fuzz-finder-go').click(function () {
         var inputText = $('.fuzz-finder').val().replace(/ /g, '+');
         if (inputText !== '') {
