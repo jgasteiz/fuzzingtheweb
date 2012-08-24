@@ -217,6 +217,10 @@ article header .comments a {
     font-size: 2.6em;
     display: block;
 }
+.img {
+    padding: 4px;
+    border: 1px solid #EEE;
+}
 /* End Main Content */
 
 /*
