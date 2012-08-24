@@ -33,7 +33,7 @@ h1 {
 }
 img,
 iframe {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 a {
     color: #000;
