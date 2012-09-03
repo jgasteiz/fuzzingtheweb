@@ -81,7 +81,7 @@
                         <!-- Search -->
                         {% if settings.searchbox.show %}
                             <section class="margin-bottom20">
-                                <input type="text" class="fuzz-finder small width60per" placeholder="Find a post">
+                                <input type="text" class="fuzz-finder normal width60per" placeholder="Find a post">
                                 <button class="fuzz-finder-go uppercase">Go</button>
                             </section>
                         {% endif %}
@@ -89,12 +89,12 @@
                         <!-- Archive month -->
                         {% if settings.archive.show and archives %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans">
+                                <span class="block uppercase strong ptsans big">
                                     Archives
                                 </span>
                                 {% for year, month_list in archives %}
                                     <!-- year -->
-                                    <span class="block">{{ year }}</span>
+                                    <span class="block big">{{ year }}</span>
                                     <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
                                         <option selected="selected">
                                             Choose month
@@ -115,7 +115,7 @@
                         <!-- Tags -->
                         {% if settings.tags.show %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans">
+                                <span class="block uppercase strong ptsans big">
                                     Tags
                                 </span>
                                 {% for tag in tags %}
@@ -127,7 +127,7 @@
                         <!-- RSS feed url -->
                         {% if settings.rss.show %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans">
+                                <span class="block uppercase strong ptsans big">
                                     RSS Feed
                                 </span>
                                 <a target="_blank" class="no-decoration" href="/rssfeed/">
@@ -139,7 +139,7 @@
                         {% if settings.github.show %}
                             <!-- You can delete this widget if you want -->
                             <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans">
+                                <span class="block uppercase strong ptsans big">
                                     Follow me on github
                                 </span>
                                 <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
@@ -150,7 +150,7 @@
 
                         {% for item in widgets %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans">
+                                <span class="block uppercase strong ptsans big">
                                     {{ item.name }}
                                 </span>
                                 {{ item.body|safe }}

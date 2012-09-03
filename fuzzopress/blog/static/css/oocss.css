@@ -55,6 +55,12 @@
 .small {
     font-size: 0.8em;
 }
+.normal {
+    font-size: 1em;
+}
+.big {
+    font-size: 1.2em;
+}
 .no-decoration {
     text-decoration: none;
 }
