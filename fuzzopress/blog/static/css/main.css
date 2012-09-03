@@ -154,10 +154,14 @@ nav ul li {
 }
 aside {
     float: left;
+    font-size: 0.8em;
     padding: 50px 1% 40px 3%;
     clear: none;
     margin: 0 -100% 0 0;
     width: 28%;
+}
+aside a {
+    display: block;
 }
 article {
     position: relative;
@@ -204,11 +208,3 @@ article header .comments a {
     border: 1px solid #E6E8EC;
 }
 /* End Main Content */
-
-/*
-    Footer
-*/
-footer.main {
-    padding: 20px;
-}
-/* End Footer */

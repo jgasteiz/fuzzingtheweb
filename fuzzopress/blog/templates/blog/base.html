@@ -89,12 +89,12 @@
                         <!-- Archive month -->
                         {% if settings.archive.show and archives %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase small">
+                                <span class="block uppercase strong ptsans">
                                     Archives
                                 </span>
                                 {% for year, month_list in archives %}
                                     <!-- year -->
-                                    <span class="block strong">{{ year }}</span>
+                                    <span class="block">{{ year }}</span>
                                     <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
                                         <option selected="selected">
                                             Choose month
@@ -115,11 +115,11 @@
                         <!-- Tags -->
                         {% if settings.tags.show %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase small">
+                                <span class="block uppercase strong ptsans">
                                     Tags
                                 </span>
                                 {% for tag in tags %}
-                                    <a class="small" href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
+                                    <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
                                 {% endfor %}
                             </section>
                         {% endif %}
@@ -127,7 +127,7 @@
                         <!-- RSS feed url -->
                         {% if settings.rss.show %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase small">
+                                <span class="block uppercase strong ptsans">
                                     RSS Feed
                                 </span>
                                 <a target="_blank" class="no-decoration" href="/rssfeed/">
@@ -139,7 +139,7 @@
                         {% if settings.github.show %}
                             <!-- You can delete this widget if you want -->
                             <section class="margin-bottom20">
-                                <span class="block uppercase small">
+                                <span class="block uppercase strong ptsans">
                                     Follow me on github
                                 </span>
                                 <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
@@ -150,7 +150,7 @@
 
                         {% for item in widgets %}
                             <section class="margin-bottom20">
-                                <span class="block uppercase small">
+                                <span class="block uppercase strong ptsans">
                                     {{ item.name }}
                                 </span>
                                 {{ item.body|safe }}
@@ -165,7 +165,7 @@
             </div>
         </div>
 
-        <footer class="padding20 small">
+        <footer class="padding20">
             This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.
         </footer>
 
