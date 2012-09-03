@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Fuzzing the Web{% endblock %}
+
+{% block content %}
+
+    {% for post in post_list %}
+        <article>
+            <header>
+                <h1>
+                    <a href="{{ post.get_absolute_url }}" class="title">
+                        {{ post }}
+                    </a>
+                </h1>
+                <div class="comments">
+                    <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
+                </div>
+                <!-- Date -->
+                <div class="date uppercase ptsans">
+                    {{ post.published|date }}
+                </div>
+            </header>
+            <div class="body">
+                {{ post.body|safe|linebreaks }}
+            </div>
+            {% if user.is_superuser %}
+                <a target="_blank" class="btn float-right no-decoration" href="/admin/blog/post/{{ post.pk }}/">
+                    <i class="icon-edit margin-top5"></i>
+                </a>
+            {% endif %}
+        </article>
+    {% empty %}
+        <h2>Nothing to show</h2>
+    {% endfor %}
+    
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+        page {{ page_obj.number }} of {{ paginator.num_pages }}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,214 @@
+/*
+    General
+*/
+@font-face {
+    font-family: "404";
+    src: url('font/Starjedi.ttf');
+    src: url('font/Starjedi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "custom-impact";
+    src: url('font/impact.ttf');
+    src: url('font/impact.ttf') format('truetype');
+}
+body {
+    background-color: #F5F5F5;
+    font-family: "PT Serif",Georgia,Times,"Times New Roman",serif;
+    font-size: 16px;
+    line-height: 1.8em;
+    margin: 0 auto;
+    max-width: 1000px;
+    background-image: url('img/noise.png');
+}
+::selection,
+::-moz-selection {
+    background: #04B1D8;
+    color: #FFFFFF;
+}
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    line-height: 1.2;
+}
+img,
+iframe {
+    max-width: 100% !important;
+}
+a {
+    color: #333;
+    text-decoration: underline;
+    transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+}
+a:hover {
+    color: #04B1D8;
+    text-decoration: none;
+}
+input[type=text] {
+    padding: 6px;
+    border: 1px solid #E6E8EC;
+    color: #888;
+}
+button {
+    background: #F14E32;
+    border: 1px solid #C11E02;
+    border-radius: 2px;
+    color: #F5F5F5;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 7px;
+    text-decoration: none;
+}
+button:hover {
+    background: #EF391A;
+}
+pre code {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    border-radius: 4px;
+    padding: 10px;
+    overflow: auto;
+}
+/* End General */
+
+/*
+    Header
+*/
+header.main {
+    background-image: url('img/banner.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 220px;
+    margin: 20px 0;
+    padding: 0;
+}
+header.main:hover {
+    background-position: center bottom;
+}
+/* End Header */
+
+/*
+    NavBar
+*/
+nav {
+    position:relative;
+    width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+nav .light-switch {
+    background-image: url('img/switches.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    width: 30px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+    height: 100%;
+    padding: 10px 20px;
+}
+.responsive-navbar {
+    display: none;
+}
+/* End NavBar */
+
+/*
+    Main content
+*/
+#main {
+    background-color: #F5F5F5;
+    border: 1px solid #E6E8EC;
+}
+#content {
+    background: #FFF;
+    margin-right: 20%;
+    position: relative;
+    width: 100%;
+}
+#content.sidebar {
+    width: 76%;
+}
+.articles {
+    border-right: 1px solid #E6E8EC;
+    float: left;
+    padding: 20px 4%;
+    width: 92%;
+}
+aside {
+    float: left;
+    padding: 50px 1% 40px 3%;
+    clear: none;
+    margin: 0 -100% 0 0;
+    width: 28%;
+}
+article {
+    position: relative;
+    padding: 50px 0;
+    margin-bottom: 40px;
+    background: url('img/dotted-border.png') bottom left repeat-x;
+}
+article header .title {
+    font-weight: bold;
+    text-decoration: none;
+}
+article header .date {
+    color: #888;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+article header .comments {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+article header .comments a {
+    background-image: url("img/comments-bubble.png");
+    background-repeat: no-repeat;
+    color: #888;
+    display: inline-block;
+    font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+    font-size: 0.8em;
+    padding-bottom: 8px;
+    padding-top: 3px;
+    text-align: center;
+    text-decoration: none;
+    width: 54px;
+}
+.not-found {
+    font-family: "404", Arial;
+    line-height: 1;
+    font-size: 2.6em;
+    display: block;
+}
+.img {
+    padding: 4px;
+    border: 1px solid #E6E8EC;
+}
+/* End Main Content */
+
+/*
+    Footer
+*/
+footer.main {
+    padding: 20px;
+}
+/* End Footer */

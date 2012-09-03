@@ -1,0 +1,23 @@
+@media(max-width:800px) {
+    #content,
+    #content.sidebar,
+    #content.width-max {
+        width: 100%;
+    }
+    .articles {
+        border: 0;
+    }
+    aside.sidebar {
+        display: none;
+    }
+    .responsive-navbar {
+        display: inline-block;
+        margin: 16px;
+    }
+    nav ul {
+        display: none;
+    }
+    header.main {
+        display: none;
+    }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
+        <meta name="author" content="Javi Manzano">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Fuzzopress styles -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
+
+        <!-- Responsive css -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
+
+        <!-- Code block styles -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
+        <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+
+        <header class="main"></header>
+        <nav>
+            <select class="responsive-navbar" onchange="location.href=this.value">
+                <option selected value="/">Navigate</option>
+                <option value="/">Home</option>
+                
+                {% for item in navItems %}
+                    <option value="{{ item.url }}">
+                        {{ item.name }}
+                    </option>
+                {% endfor %}
+                
+                {% if user.is_superuser %}
+                    <option value="/admin/blog/post/add/">
+                        Post
+                    </option>
+                {% endif %}
+            </select>
+            <ul>
+                <li>
+                    <a class="uppercase no-decoration ptsans" href="/">
+                        Home
+                    </a>
+                </li>
+                
+                {% for item in navItems %}
+                <li>
+                    <a class="uppercase no-decoration ptsans" href="{{ item.url }}">
+                        {{ item.name }}
+                    </a>
+                </li>
+                {% endfor %}
+                
+                {% if user.is_superuser %}
+                <li>
+                    <a target="_blank" class="add-post no-decoration" href="/admin/blog/post/add/">
+                        <i class="icon-pencil icon-large"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            <i class="light-switch"></i>
+        </nav>
+        <div id="main">
+
+            <div id="content" {% if settings.sidebar.show %}class="sidebar"{% endif %}>
+
+                <div class="articles">
+                    {% block content %}{% endblock %}
+                </div>
+
+                {% if settings.sidebar.show %}
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+
+                        <!-- Search -->
+                        {% if settings.searchbox.show %}
+                            <section class="margin-bottom20">
+                                <input type="text" class="fuzz-finder small width60per" placeholder="Find a post">
+                                <button class="fuzz-finder-go uppercase">Go</button>
+                            </section>
+                        {% endif %}
+
+                        <!-- Archive month -->
+                        {% if settings.archive.show and archives %}
+                            <section class="margin-bottom20">
+                                <span class="block uppercase small">
+                                    Archives
+                                </span>
+                                {% for year, month_list in archives %}
+                                    <!-- year -->
+                                    <span class="block strong">{{ year }}</span>
+                                    <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
+                                        <option selected="selected">
+                                            Choose month
+                                        </option>
+                                        <!-- Months -->
+                                        {% for month, has_link in month_list %}
+                                            {% if has_link %}
+                                                <option value="/{{ month.year }}/{{ month.month }}/">
+                                                    {{ month|date:"M" }}
+                                                </option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                {% endfor %}
+                            </section>
+                        {% endif %}
+
+                        <!-- Tags -->
+                        {% if settings.tags.show %}
+                            <section class="margin-bottom20">
+                                <span class="block uppercase small">
+                                    Tags
+                                </span>
+                                {% for tag in tags %}
+                                    <a class="small" href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
+                                {% endfor %}
+                            </section>
+                        {% endif %}
+
+                        <!-- RSS feed url -->
+                        {% if settings.rss.show %}
+                            <section class="margin-bottom20">
+                                <span class="block uppercase small">
+                                    RSS Feed
+                                </span>
+                                <a target="_blank" class="no-decoration" href="/rssfeed/">
+                                    <i class="icon-rss icon-large huge-font-size margin20"></i>
+                                </a>
+                            </section>
+                        {% endif %}
+                        
+                        {% if settings.github.show %}
+                            <!-- You can delete this widget if you want -->
+                            <section class="margin-bottom20">
+                                <span class="block uppercase small">
+                                    Follow me on github
+                                </span>
+                                <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
+                                    <i class="icon-github icon-large huge-font-size margin20"></i>
+                                </a>
+                            </section>
+                        {% endif %}
+
+                        {% for item in widgets %}
+                            <section class="margin-bottom20">
+                                <span class="block uppercase small">
+                                    {{ item.name }}
+                                </span>
+                                {{ item.body|safe }}
+                            </section>
+                        {% endfor %}
+                    </div>
+                    
+                </aside>
+                {% endif %}
+
+                <div class="clear-both"></div>
+            </div>
+        </div>
+
+        <footer class="padding20 small">
+            This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.
+        </footer>
+
+        <!-- Le javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'fuzzingtheweb';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var s = document.createElement('script'); 
+                s.async = true;
+                s.type = 'text/javascript';
+                s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+            }());
+        </script>
+    </body>
+</html>

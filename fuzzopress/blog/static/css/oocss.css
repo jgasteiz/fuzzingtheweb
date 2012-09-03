@@ -1,0 +1,100 @@
+/*
+    Positioning
+*/
+.float-left {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.float-right {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.margin-top5 {
+    margin-top: 5px;
+}
+.margin20 {
+    margin: 20px;
+}
+.margin10 {
+    margin: 10px;
+}
+.margin0 {
+    margin: 0;
+}
+.margin-top10 {
+    margin-top: 10px;
+}
+.margin-bottom10 {
+    margin-bottom: 10px;
+}
+.margin-bottom20 {
+    margin-bottom: 20px;
+}
+.margin-left10 {
+    margin-left: 10px;
+}
+.margin-right10 {
+    margin-right: 10px;
+}
+.padding20 {
+    padding: 20px;
+}
+.clear-both {
+    clear: both;
+}
+/* End positioning */
+
+/*
+    Fonts
+*/
+.strong {
+    font-weight: bold;
+}
+.small {
+    font-size: 0.8em;
+}
+.no-decoration {
+    text-decoration: none;
+}
+.no-decoration:hover {
+    background: transparent;
+}
+.huge-font-size {
+    font-size: 4em;
+    line-height: 1;
+}
+.white {
+    color: #FFF;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.ptsans {
+    font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+}
+/* End fonts */
+
+
+/*
+    Displaying
+*/
+.block {
+    display: block;
+}
+.align-center {
+    text-align: center;
+}
+.inline-block {
+    display: inline-block;
+}
+/* End displaying */
+
+/*
+    Sizes
+*/
+.width60per {
+    width: 60%;
+}
+/* End sizes */
