@@ -9,12 +9,8 @@
 
         <!-- Fuzzopress styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/night-mode.css"/>
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/oocss.css"/>
-
-        <!-- Responsive css -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/responsive.css"/>
 
         <!-- Code block styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
@@ -23,7 +19,7 @@
     </head>
     <body>
 
-        <header class="main"></header>
+        <header class="main-header"></header>
         <nav>
             <select class="responsive-navbar" onchange="location.href=this.value">
                 <option selected value="/">Navigate</option>
@@ -43,14 +39,14 @@
             </select>
             <ul>
                 <li>
-                    <a class="uppercase no-decoration ptsans" href="/">
+                    <a href="/">
                         Home
                     </a>
                 </li>
                 
                 {% for item in navItems %}
                 <li>
-                    <a class="uppercase no-decoration ptsans" href="{{ item.url }}">
+                    <a href="{{ item.url }}">
                         {{ item.name }}
                     </a>
                 </li>
@@ -58,7 +54,7 @@
                 
                 {% if user.is_superuser %}
                 <li>
-                    <a target="_blank" class="add-post no-decoration" href="/admin/blog/post/add/">
+                    <a target="_blank" href="/admin/blog/post/add/">
                         <i class="icon-pencil icon-large"></i>
                     </a>
                 </li>
@@ -66,97 +62,91 @@
             </ul>
             <i class="light-switch"></i>
         </nav>
-        <div id="main">
+        <div class="main-container">
 
-            <div id="content" {% if settings.sidebar.show %}class="sidebar"{% endif %}>
+            <div class="main-content" {% if settings.sidebar.show %}class="sidebar"{% endif %}>
 
                 <div class="articles">
                     {% block content %}{% endblock %}
                 </div>
 
                 {% if settings.sidebar.show %}
-                <aside class="sidebar">
-                    <div class="sidebar-content">
+                <aside>
 
-                        <!-- Search -->
-                        {% if settings.searchbox.show %}
-                            <section class="margin-bottom20">
-                                <input type="text" class="fuzz-finder normal width60per" placeholder="Find a post">
-                                <button class="fuzz-finder-go uppercase">Go</button>
-                            </section>
-                        {% endif %}
+                    <!-- Search -->
+                    {% if settings.searchbox.show %}
+                        <section class="search">
+                            <input type="text" class="fuzz-finder" placeholder="Find a post">
+                            <button class="fuzz-finder-go">Go</button>
+                        </section>
+                    {% endif %}
 
-                        <!-- Archive month -->
-                        {% if settings.archive.show and archives %}
-                            <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans big">
-                                    Archives
-                                </span>
-                                {% for year, month_list in archives %}
-                                    <!-- year -->
-                                    <span class="block big">{{ year }}</span>
-                                    <select class="block margin-bottom10" onchange="if(this.value){location.href=this.value;}">
-                                        <option selected="selected">
-                                            Choose month
-                                        </option>
-                                        <!-- Months -->
-                                        {% for month, has_link in month_list %}
-                                            {% if has_link %}
-                                                <option value="/{{ month.year }}/{{ month.month }}/">
-                                                    {{ month|date:"M" }}
-                                                </option>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                {% endfor %}
-                            </section>
-                        {% endif %}
+                    <!-- Archive month -->
+                    {% if settings.archive.show and archives %}
+                        <section>
+                            <span class="title">Archives</span>
+                            {% for year, month_list in archives %}
+                                <!-- year -->
+                                <span>{{ year }}</span>
+                                <select onchange="if(this.value){location.href=this.value;}">
+                                    <option selected="selected">
+                                        Choose month
+                                    </option>
+                                    <!-- Months -->
+                                    {% for month, has_link in month_list %}
+                                        {% if has_link %}
+                                            <option value="/{{ month.year }}/{{ month.month }}/">
+                                                {{ month|date:"M" }}
+                                            </option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            {% endfor %}
+                        </section>
+                    {% endif %}
 
-                        <!-- Tags -->
-                        {% if settings.tags.show %}
-                            <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans big">
-                                    Tags
-                                </span>
-                                {% for tag in tags %}
-                                    <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
-                                {% endfor %}
-                            </section>
-                        {% endif %}
+                    <!-- Tags -->
+                    {% if settings.tags.show %}
+                        <section>
+                            <span class="title">Tags</span>
+                            {% for tag in tags %}
+                                <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
+                            {% endfor %}
+                        </section>
+                    {% endif %}
 
-                        <!-- RSS feed url -->
-                        {% if settings.rss.show %}
-                            <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans big">
-                                    RSS Feed
-                                </span>
-                                <a target="_blank" class="no-decoration" href="/rssfeed/">
-                                    <i class="icon-rss icon-large huge-font-size margin20"></i>
-                                </a>
-                            </section>
-                        {% endif %}
-                        
-                        {% if settings.github.show %}
-                            <!-- You can delete this widget if you want -->
-                            <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans big">
-                                    Follow me on github
-                                </span>
-                                <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                                    <i class="icon-github icon-large huge-font-size margin20"></i>
-                                </a>
-                            </section>
-                        {% endif %}
+                    <!-- RSS feed url -->
+                    {% if settings.rss.show %}
+                        <section>
+                            <span class="title">
+                                RSS Feed
+                            </span>
+                            <a target="_blank" class="no-decoration" href="/rssfeed/">
+                                <i class="big-icon icon-rss"></i>
+                            </a>
+                        </section>
+                    {% endif %}
+                    
+                    {% if settings.github.show %}
+                        <!-- You can delete this widget if you want -->
+                        <section>
+                            <span class="block uppercase strong ptsans big">
+                                Follow me on github
+                            </span>
+                            <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
+                                <i class="big-icon icon-github"></i>
+                            </a>
+                        </section>
+                    {% endif %}
 
-                        {% for item in widgets %}
-                            <section class="margin-bottom20">
-                                <span class="block uppercase strong ptsans big">
-                                    {{ item.name }}
-                                </span>
-                                {{ item.body|safe }}
-                            </section>
-                        {% endfor %}
-                    </div>
+                    {% for item in widgets %}
+                        <section>
+                            <span class="title">
+                                {{ item.name }}
+                            </span>
+                            {{ item.body|safe }}
+                        </section>
+                    {% endfor %}
                     
                 </aside>
                 {% endif %}
@@ -165,7 +155,7 @@
             </div>
         </div>
 
-        <footer class="padding20">
+        <footer>
             This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.
         </footer>
 

@@ -13,7 +13,7 @@
             {% for post in post_list %}
                 <li>
                     <a target="_blank" href="{{ post.get_absolute_url }}">{{ post }}</a>
-                    <span class="date uppercase ptsans">
+                    <span class="date">
                         -  {{ post.published|date }}
                     </span>
                 </li>

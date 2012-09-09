@@ -8,7 +8,7 @@
         <article>
             <header>
                 <h1>
-                    <a href="{{ post.get_absolute_url }}" class="title">
+                    <a href="{{ post.get_absolute_url }}">
                         {{ post }}
                     </a>
                 </h1>
@@ -16,7 +16,7 @@
                     <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
                 </div>
                 <!-- Date -->
-                <div class="date uppercase ptsans">
+                <div class="date">
                     {{ post.published|date }}
                 </div>
             </header>
@@ -24,9 +24,9 @@
                 {{ post.body|safe|linebreaks }}
             </div>
             {% if user.is_superuser %}
-                <a target="_blank" class="btn float-right no-decoration" href="/admin/blog/post/{{ post.pk }}/">
-                    <i class="icon-edit margin-top5"></i>
-                </a>
+            <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+                <i class="icon-edit"></i>
+            </a>
             {% endif %}
         </article>
     {% empty %}

@@ -1,0 +1,353 @@
+/* -- Colours -- */
+@black: #000;
+@dark-grey: #888;
+@white: #FFF;
+@primary-color: @black;
+@secondary-color: #04B1D8;
+@tertiary-color: #E6E8EC;
+@main-text-color: #333;
+@background-color: #F5F5F5;
+@primary-button-color: #F14E32;
+@secondary-button-color: #C11E02;
+@button-text-color: #F5F5F5;
+
+/* -- Fonts -- */
+@font-face {
+    font-family: "404";
+    src: url('font/Starjedi.ttf') format('truetype');
+}
+@font-face {
+    font-family: "custom-impact";
+    src: url('font/impact.ttf') format('truetype');
+}
+@404-fonts: "404", Arial;
+@pt-serif-fonts: "PT Serif", Georgia,Times, "Times New Roman", serif;
+@pt-sans-fonts: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+
+
+/* -- Global -- */
+body {
+    background-color: @background-color;
+    color: @primary-color;
+    font-family: @pt-serif-fonts;
+    font-size: 16px;
+    line-height: 1.8em;
+    margin: 0 auto;
+    max-width: 1000px;
+    background-image: url('img/noise.png');
+    &.night-mode {
+        background-color: #222;
+        a {
+            color: #F5F5F5;
+            &:hover {
+                color: #33B8D6;
+            }
+        }
+    }
+}
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    line-height: 1.2;
+}
+img,
+iframe {
+    max-width: 100% !important;
+}
+a {
+    color: @main-text-color;
+    text-decoration: underline;
+    transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    &:hover {
+        color: @secondary-color;
+        text-decoration: none;
+    }
+}
+input[type=text] {
+    padding: 6px;
+    border: 1px solid @tertiary-color;
+    color: @dark-grey;
+}
+button {
+    background: @primary-button-color;
+    border: 1px solid @primary-button-color;
+    border-radius: 2px;
+    color: @button-text-color;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 7px;
+    text-decoration: none;
+    transition: background 0.4s ease;
+    -o-transition: background 0.4s ease;
+    -moz-transition: background 0.4s ease;
+    -webkit-transition: background 0.4s ease;
+    &:hover {
+        background: @secondary-button-color;
+    }
+}
+pre {
+    code {
+        font-size: 0.9em;
+        line-height: 1.6em;
+        border-radius: 4px;
+        padding: 10px;
+        overflow: auto;
+    }
+}
+::selection, ::-moz-selection {
+    background: @secondary-color;
+    color: @white;
+}
+
+/* -- Header -- */
+.main-header {
+    background-image: url('img/banner.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 220px;
+    margin: 20px 0;
+    padding: 0;
+    &:hover {
+        background-position: center bottom;
+    }
+}
+
+/* -- Footer -- */
+footer {
+    font-size: 0.9em;
+    padding: 20px;
+    &.night-mode {
+        text-shadow: none;
+        color: #F5F5F5;
+    }
+}
+
+/* -- Navigation bar -- */
+nav {
+    position:relative;
+    width: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .light-switch {
+        background-image: url('img/switches.png');
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: 50px;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        width: 30px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            height: 100%;
+            padding: 10px 20px;
+
+            a {
+                font-family: @pt-sans-fonts;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .responsive-navbar {
+        display: none;
+    }
+    &.night-mode {
+        .light-switch {
+            background-position: right bottom;
+        }
+    }
+}
+
+/* -- Main container -- */
+.main-container {
+    background-color: @background-color;
+    border: 1px solid @tertiary-color;
+
+    aside {
+        float: left;
+        font-size: 0.8em;
+        padding: 50px 1% 40px 3%;
+        clear: none;
+        margin: 0 -100% 0 0;
+        width: 28%;
+        a {
+            display: block;
+        }
+        section {
+            margin-bottom: 20px;
+            span {
+                display: block;
+                font-size: 1.2em;
+            }
+            select {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .title {
+                font-family: @pt-sans-fonts;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            &.search {
+                input[type=text] {
+                    font-size: 1em;
+                }
+                button {
+                    text-transform: uppercase;
+                }
+            }
+            .big-icon {
+                font-size: 8em;
+                line-height: 1;
+                margin: 20px;
+            }
+        }
+    }
+    .main-content {
+        background: @white;
+        margin-right: 20%;
+        position: relative;
+        width: 76%;
+        
+        .articles {
+            border-right: 1px solid @tertiary-color;
+            float: left;
+            padding: 20px 4%;
+            width: 92%;
+
+            article {
+                position: relative;
+                padding: 50px 0;
+                margin-bottom: 40px;
+                background: url('img/dotted-border.png') bottom left repeat-x;
+                header {
+                    h1 {
+                        a {
+                            font-weight: bold;
+                            text-decoration: none;
+                        }
+                    }
+                    .date {
+                        color: @dark-grey;
+                        font-family: @pt-sans-fonts;
+                        left: 0;
+                        position: absolute;
+                        text-transform: uppercase;
+                        top: 0;
+                    }
+                    .comments {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    .comments a {
+                        background-image: url("img/comments-bubble.png");
+                        background-repeat: no-repeat;
+                        color: @dark-grey;
+                        display: inline-block;
+                        font-family: @pt-sans-fonts;
+                        font-size: 0.8em;
+                        padding-bottom: 8px;
+                        padding-top: 3px;
+                        text-align: center;
+                        text-decoration: none;
+                        width: 54px;
+                    }
+                }
+                .edit-post {
+                    float: right;
+                    text-decoration: none;
+                }
+                .img {
+                    padding: 4px;
+                    border: 1px solid @tertiary-color;
+                }
+            }
+            .go-back {
+                margin: 0;
+                a {
+                    text-decoration: none;
+                }
+            }
+            .not-found {
+                font-family: @404-fonts;
+                line-height: 1;
+                font-size: 2.6em;
+                display: block;
+            }
+        }
+        &.night-mode {
+            background: #2E2E2E;
+            color: #F5F5F5;
+            .articles {
+                border-right: 1px solid #222;
+            }
+        }
+    }
+    &.night-mode {
+        background: #2E2E2E;
+        border: 1px solid #222;
+    }
+}
+
+/* -- OOCSS -- */
+.block {
+    display: block;
+}
+.align-center {
+    text-align: center;
+}
+.inline-block {
+    display: inline-block;
+}
+.strong {
+    font-weight: bold;
+}
+.clear-both {
+    clear: both;
+}
+
+/* -- Responsive -- */
+@media(max-width:800px) {
+    .main-header {
+        display: none;
+    }
+    nav { 
+        .responsive-navbar {
+            display: inline-block;
+            margin: 16px;
+        }
+        ul {
+            display: none;
+        }
+    }
+    .main-container {
+        aside {
+            display: none;
+        }
+        .main-content {
+            width: 100%;
+
+            .articles {
+                border: 0;
+            }
+        }
+    }
+}
+

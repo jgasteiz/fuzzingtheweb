@@ -1,21 +1,19 @@
 {% extends "blog/base.html" %}
 
-{% block title %}{{ post|title }} - Fuzzing the Web{% endblock %}
+{% block title %}{{ post }} | Fuzzing the Web{% endblock %}
 
 {% block content %}
     
     {% if post %}
-        <h3 class="no-decoration margin0">
+        <h3 class="go-back">
             <a href="/">←Back</a>
         </h3>
         <article>
             <header>
-                <h1>
-                    {{ post }}
-                </h1>
+                <h1>{{ post }}</h1>
                 {% if not post.page %}
                     <!-- Date -->
-                    <div class="date uppercase ptsans">
+                    <div class="date">
                         {{ post.published|date }}
                     </div>
                 {% endif %}
@@ -24,9 +22,9 @@
                 {{ post.body|safe|linebreaks }}
             </div>
             {% if user.is_superuser %}
-                <a target="_blank" class="btn float-right no-decoration" href="/admin/blog/post/{{ post.pk }}/">
-                    <i class="icon-edit margin-top5"></i>
-                </a>
+            <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+                <i class="icon-edit"></i>
+            </a>
             {% endif %}
         </article>
 
