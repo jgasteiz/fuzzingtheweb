@@ -1,5 +1,7 @@
 /* -- Colours -- */
 @black: #000;
+@almost-black: #222;
+@almost-black-2: #2E2E2E;
 @dark-grey: #888;
 @white: #FFF;
 @primary-color: @black;
@@ -36,11 +38,11 @@ body {
     max-width: 1000px;
     background-image: url('img/noise.png');
     &.night-mode {
-        background-color: #222;
+        background-color: @almost-black;
         a {
-            color: #F5F5F5;
+            color: @background-color;
             &:hover {
-                color: #33B8D6;
+                color: @secondary-color;
             }
         }
     }
@@ -121,7 +123,7 @@ footer {
     padding: 20px;
     &.night-mode {
         text-shadow: none;
-        color: #F5F5F5;
+        color: @background-color;
     }
 }
 
@@ -293,16 +295,16 @@ nav {
             }
         }
         &.night-mode {
-            background: #2E2E2E;
-            color: #F5F5F5;
+            background: @almost-black-2;
+            color: @background-color;
             .articles {
-                border-right: 1px solid #222;
+                border-right: 1px solid @almost-black;
             }
         }
     }
     &.night-mode {
-        background: #2E2E2E;
-        border: 1px solid #222;
+        background: @almost-black-2;
+        border: 1px solid @almost-black;
     }
 }
 
