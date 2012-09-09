@@ -69,9 +69,10 @@ a {
     }
 }
 input[type=text] {
-    padding: 6px;
     border: 1px solid @tertiary-color;
     color: @dark-grey;
+    font-size: 1em;
+    padding: 6px;
 }
 button {
     background: @primary-button-color;
@@ -82,6 +83,7 @@ button {
     font-weight: bold;
     padding: 7px;
     text-decoration: none;
+    text-transform: uppercase;
     transition: background 0.4s ease;
     -o-transition: background 0.4s ease;
     -moz-transition: background 0.4s ease;
@@ -138,17 +140,6 @@ nav {
     -ms-user-select: none;
     user-select: none;
 
-    .light-switch {
-        background-image: url('img/switches.png');
-        background-position: left bottom;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        height: 50px;
-        position: absolute;
-        right: 20px;
-        top: 0;
-        width: 30px;
-    }
     ul {
         list-style-type: none;
         margin: 0;
@@ -165,6 +156,17 @@ nav {
                 text-transform: uppercase;
             }
         }
+    }
+    .light-switch {
+        background-image: url('img/switches.png');
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: 50px;
+        position: absolute;
+        right: 20px;
+        top: 0;
+        width: 30px;
     }
     .responsive-navbar {
         display: none;
@@ -205,14 +207,6 @@ nav {
                 font-family: @pt-sans-fonts;
                 font-weight: bold;
                 text-transform: uppercase;
-            }
-            &.search {
-                input[type=text] {
-                    font-size: 1em;
-                }
-                button {
-                    text-transform: uppercase;
-                }
             }
             .big-icon {
                 font-size: 8em;
@@ -257,19 +251,19 @@ nav {
                         position: absolute;
                         right: 0;
                         top: 0;
-                    }
-                    .comments a {
-                        background-image: url("img/comments-bubble.png");
-                        background-repeat: no-repeat;
-                        color: @dark-grey;
-                        display: inline-block;
-                        font-family: @pt-sans-fonts;
-                        font-size: 0.8em;
-                        padding-bottom: 8px;
-                        padding-top: 3px;
-                        text-align: center;
-                        text-decoration: none;
-                        width: 54px;
+                        a {
+                            background-image: url("img/comments-bubble.png");
+                            background-repeat: no-repeat;
+                            color: @dark-grey;
+                            display: inline-block;
+                            font-family: @pt-sans-fonts;
+                            font-size: 0.8em;
+                            padding-bottom: 8px;
+                            padding-top: 3px;
+                            text-align: center;
+                            text-decoration: none;
+                            width: 54px;
+                        }
                     }
                 }
                 .edit-post {
