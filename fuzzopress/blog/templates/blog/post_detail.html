@@ -2,6 +2,8 @@
 
 {% block title %}{{ post }} | Fuzzing the Web{% endblock %}
 
+{% load markup %}
+
 {% block content %}
     
     {% if post %}
@@ -19,7 +21,7 @@
                 {% endif %}
             </header>
             <div class="body">
-                {{ post.body|safe|linebreaks }}
+                {{ post.body|markdown }}
             </div>
             {% if user.is_superuser %}
             <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
