@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'fuzzopress.blog',
+    'django.contrib.markup',
     'markitup',
     'gunicorn',
     'south',
@@ -102,6 +103,8 @@ LOGGING = {
         },
     }
 }
+
+MARKITUP_SET = 'markitup/sets/markdown'
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
