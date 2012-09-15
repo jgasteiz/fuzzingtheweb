@@ -63,7 +63,7 @@
         </nav>
         <div class="main-container">
 
-            <div class="main-content" {% if settings.sidebar.show %}class="sidebar"{% endif %}>
+            <div class="main-content {% if settings.sidebar.show %}sidebar{% endif %}">
 
                 <div class="articles">
                     {% block content %}{% endblock %}
