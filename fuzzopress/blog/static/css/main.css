@@ -25,6 +25,9 @@ body.night-mode {
 body.night-mode a {
   color: #f5f5f5;
 }
+body.night-mode a:hover {
+  color: #04b1d8;
+}
 h1 {
   font-size: 2em;
   margin-top: 0;
