@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from datetime import date
+from datetime import date, datetime
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.contrib.syndication.views import Feed
@@ -32,7 +32,8 @@ class CustomContextMixin(object):
             'navItems': NavItem.objects.all(),
             'widgets': Widget.objects.all(),
             'tags': Tag.objects.all(),
-            'settings': settings.FUZZOPRESS_SETTINGS})
+            'settings': settings.FUZZOPRESS_SETTINGS,
+            'colour': settings.FUZZOPRESS_SETTINGS['colors'][datetime.today().weekday()]})
         return context
 
 

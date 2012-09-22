@@ -126,5 +126,12 @@ FUZZOPRESS_SETTINGS = {
     },
     'sidebar': {
         'show': True
-    }
+    },
+    'colors': [ '#D80404',
+                '#FFC000',
+                '#40C080',
+                '#048CD8',
+                '#A504D8',
+                '#04B1D8',
+                '#04B1D8']
 }

@@ -10,6 +10,15 @@
         <!-- Fuzzopress styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+        <style type="text/css">
+            a:hover {
+                color: {{ colour }};
+            }
+            ::selection,
+            ::-moz-selection {
+                background: {{ colour }};
+            }
+        </style>
 
         <!-- Code block styles -->
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
@@ -121,7 +130,7 @@
                                 RSS Feed
                             </span>
                             <a target="_blank" class="no-decoration" href="/rssfeed/">
-                                <i class="big-icon icon-rss"></i>
+                                <i class="icon big-icon icon-rss"></i>
                             </a>
                         </section>
                     {% endif %}
@@ -133,7 +142,7 @@
                                 Follow me on github
                             </span>
                             <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                                <i class="big-icon icon-github"></i>
+                                <i class="icon big-icon icon-github"></i>
                             </a>
                         </section>
                     {% endif %}
