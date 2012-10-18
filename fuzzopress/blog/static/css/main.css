@@ -191,19 +191,19 @@ nav.night-mode .light-switch {
   background: #ffffff;
   margin-right: 20%;
   position: relative;
-  width: 76%;
+  width: 75%;
 }
 .main-container .main-content .articles {
   border-right: 1px solid #e6e8ec;
   float: left;
-  padding: 20px 4%;
-  width: 92%;
+  padding: 20px 0;
 }
 .main-container .main-content .articles article {
   position: relative;
-  padding: 50px 0;
-  margin-bottom: 40px;
-  background: url('img/dotted-border.png') bottom left repeat-x;
+  padding: 50px 20px;
+}
+.main-container .main-content .articles article header {
+  position: relative;
 }
 .main-container .main-content .articles article header h1 a {
   font-weight: bold;
@@ -215,12 +215,12 @@ nav.night-mode .light-switch {
   left: 0;
   position: absolute;
   text-transform: uppercase;
-  top: 0;
+  top: -40px;
 }
 .main-container .main-content .articles article header .comments {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -40px;
 }
 .main-container .main-content .articles article header .comments a {
   background-image: url("img/comments-bubble.png");
@@ -245,6 +245,7 @@ nav.night-mode .light-switch {
 }
 .main-container .main-content .articles .go-back {
   margin: 0;
+  padding: 0 20px;
 }
 .main-container .main-content .articles .go-back a {
   text-decoration: none;
@@ -254,6 +255,17 @@ nav.night-mode .light-switch {
   line-height: 1;
   font-size: 2.6em;
   display: block;
+}
+.main-container .main-content .articles .pagination {
+  padding: 0 20px;
+}
+.main-container .main-content .articles .disqus_thread {
+  padding: 0 20px;
+}
+.main-container .main-content .articles .line {
+  background: url('img/dotted-border.png') center left repeat-x;
+  margin: 20px;
+  height: 1px;
 }
 .main-container .main-content.night-mode {
   background: #2e2e2e;

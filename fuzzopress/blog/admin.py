@@ -5,7 +5,8 @@ from fuzzopress.blog.models import Post, NavItem, Widget, Tag, File
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'slug', 'published', 'draft')
+    list_display = ('id', 'title', 'slug', 'published', 'live')
+
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name == 'body':
             kwargs['widget'] = AdminMarkItUpWidget()

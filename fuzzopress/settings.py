@@ -116,10 +116,10 @@ FUZZOPRESS_SETTINGS = {
         'show': True
     },
     'rss': {  # Shows a 'RSS Feed' sidebar widget
-        'show': True
+        'show': False
     },
     'tags': {
-        'show': True
+        'show': False
     },
     'searchbox': {
         'show': True

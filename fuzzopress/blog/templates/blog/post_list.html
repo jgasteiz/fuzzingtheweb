@@ -7,42 +7,45 @@
 {% block content %}
 
     {% for post in post_list %}
-        <article>
-            <header>
-                <h1>
-                    <a href="{{ post.get_absolute_url }}">
-                        {{ post }}
-                    </a>
-                </h1>
-                <div class="comments">
-                    <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
-                </div>
-                <!-- Date -->
-                <div class="date">
-                    {{ post.published|date }}
-                </div>
-            </header>
-            <div class="body">
-                {{ post.body|markdown }}
+    <article>
+        <header>
+            <h1>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post }}
+                </a>
+            </h1>
+            <div class="comments">
+                <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
             </div>
-            {% if user.is_superuser %}
-            <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
-                <i class="icon-edit"></i>
-            </a>
-            {% endif %}
-        </article>
+            <!-- Date -->
+            <div class="date">
+                {{ post.published|date }}
+            </div>
+        </header>
+        <div class="body">
+            {{ post.body|markdown }}
+        </div>
+        {% if user.is_superuser %}
+        <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+            <i class="icon-edit"></i>
+        </a>
+        {% endif %}
+    </article>
+    <div class="line"></div>
     {% empty %}
-        <h2>Nothing to show</h2>
+    <h2>Nothing to show</h2>
     {% endfor %}
     
     {% if is_paginated %}
+    <section class="pagination">
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
         page {{ page_obj.number }} of {{ paginator.num_pages }}
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
         {% endif %}
+    </section>
     {% endif %}
 
 {% endblock %}
