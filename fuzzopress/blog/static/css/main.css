@@ -197,6 +197,7 @@ nav.night-mode .light-switch {
   border-right: 1px solid #e6e8ec;
   float: left;
   padding: 20px 0;
+  width: 100%;
 }
 .main-container .main-content .articles article {
   position: relative;
