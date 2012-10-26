@@ -2,7 +2,6 @@
 from datetime import date, datetime
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from django.contrib.syndication.views import Feed
 from django.views.generic import ListView, DetailView
 from fuzzopress.blog.models import Post, NavItem, Widget, Tag
 from fuzzopress.blog.utils import get_query as get_search_query
@@ -65,22 +64,6 @@ class PostView(CustomContextMixin, DetailView):
     template_name = "blog/post_detail.html"
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
-
-
-class FeedView(Feed):
-    """ A view for ress feed """
-    title = "Fuzzopress"
-    link = "/lastposts/"
-    description = "Last posts at this Fuzzopress blog"
-
-    def items(self):
-        return Post.objects.published()[:13]
-
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return item.body
 
 
 class CustomDateMixin(CustomContextMixin, object):

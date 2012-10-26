@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.conf.urls import patterns, include, url
-from fuzzopress.blog.views import (BlogView, PostView, ArchiveMonth,
-    FeedView, TagView, SearchView)
+from fuzzopress.blog.views import (BlogView, PostView, ArchiveMonth, TagView, SearchView)
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,8 +9,6 @@ urlpatterns = patterns('',
         name='blog'),
 
     url(r'^admin/', include(admin.site.urls)),
-
-    url(r'^rssfeed/$', FeedView()),
 
     # List entries by tag
     url(r'^tag/(?P<tag>[-\w]+)/',

@@ -9,16 +9,16 @@
     <h2>{{ month|date:"F Y" }}</h2>
 
     {% if post_list %}
-        <ul>
-            {% for post in post_list %}
-                <li>
-                    <a target="_blank" href="{{ post.get_absolute_url }}">{{ post }}</a>
-                    <span class="date">
-                        -  {{ post.published|date }}
-                    </span>
-                </li>
-            {% endfor %}
-        </ul>
+    <ul>
+    {% for post in post_list %}
+        <li>
+            <a target="_blank" href="{{ post.get_absolute_url }}">{{ post }}</a>
+            <span class="date">
+                -  {{ post.published|date }}
+            </span>
+        </li>
+    {% endfor %}
+    </ul>
     {% endif %}
 
 {% endblock %}

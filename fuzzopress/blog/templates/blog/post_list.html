@@ -9,11 +9,7 @@
     {% for post in post_list %}
     <article>
         <header>
-            <h1>
-                <a href="{{ post.get_absolute_url }}">
-                    {{ post }}
-                </a>
-            </h1>
+            <h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>
             <div class="comments">
                 <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
             </div>
@@ -22,9 +18,7 @@
                 {{ post.published|date }}
             </div>
         </header>
-        <div class="body">
-            {{ post.body|markdown }}
-        </div>
+        <div class="body">{{ post.body|markdown }}</div>
         {% if user.is_superuser %}
         <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
             <i class="icon-edit"></i>
