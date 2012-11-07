@@ -30,10 +30,10 @@
 body {
     color: @primary-color;
     font-family: @pt-serif-fonts;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.8em;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 666px;
     &.night-mode {
         background-color: @almost-black;
         a {
@@ -64,6 +64,9 @@ a {
         color: @secondary-color;
         text-decoration: none;
     }
+}
+p {
+    margin: 22px 0;
 }
 input[type=text] {
     border: 1px solid @tertiary-color;
@@ -138,6 +141,7 @@ nav {
     user-select: none;
 
     ul {
+        border-bottom: 1px solid @tertiary-color;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -145,7 +149,7 @@ nav {
         li {
             display: inline-block;
             height: 100%;
-            padding: 10px 20px;
+            padding: 10px;
 
             a {
                 font-family: @pt-sans-fonts;
@@ -177,9 +181,6 @@ nav {
 
 /* -- Main container -- */
 .main-container {
-    // background-color: @background-color;
-    // border: 1px solid @tertiary-color;
-
     .articles {
         padding: 20px 0;
         width: 100%;
@@ -252,12 +253,10 @@ nav {
         .disqus_thread {
             padding: 0 20px;
         }
-        .line {
-            border-bottom: 1px solid @tertiary-color;
-            margin: 20px;
-        }
     }
-
+    &.night-mode {
+        color: @background-color;
+    }
 }
 .secondary-menu {
     font-size: 0.8em;
@@ -287,6 +286,9 @@ nav {
             text-decoration: none;
         }
     }
+    &.night-mode {
+        color: @background-color;
+    }
 }
 
 /* -- OOCSS -- */
@@ -302,8 +304,9 @@ nav {
 .strong {
     font-weight: bold;
 }
-.clear-both {
-    clear: both;
+.line {
+    border-bottom: 1px solid @tertiary-color;
+    margin: 20px;
 }
 
 /* -- Responsive -- */

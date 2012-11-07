@@ -12,10 +12,10 @@
 body {
   color: #000000;
   font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.8em;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 666px;
 }
 body.night-mode {
   background-color: #2e2e2e;
@@ -46,6 +46,9 @@ a {
 a:hover {
   color: #04b1d8;
   text-decoration: none;
+}
+p {
+  margin: 22px 0;
 }
 input[type=text] {
   border: 1px solid #e6e8ec;
@@ -116,6 +119,7 @@ nav {
   user-select: none;
 }
 nav ul {
+  border-bottom: 1px solid #e6e8ec;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -123,7 +127,7 @@ nav ul {
 nav ul li {
   display: inline-block;
   height: 100%;
-  padding: 10px 20px;
+  padding: 10px;
 }
 nav ul li a {
   font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
@@ -216,9 +220,8 @@ nav.night-mode .light-switch {
 .main-container .articles .disqus_thread {
   padding: 0 20px;
 }
-.main-container .articles .line {
-  border-bottom: 1px solid #e6e8ec;
-  margin: 20px;
+.main-container.night-mode {
+  color: #f5f5f5;
 }
 .secondary-menu {
   font-size: 0.8em;
@@ -249,6 +252,9 @@ nav.night-mode .light-switch {
   margin-top: 20px;
   text-decoration: none;
 }
+.secondary-menu.night-mode {
+  color: #f5f5f5;
+}
 /* -- OOCSS -- */
 .block {
   display: block;
@@ -262,8 +268,9 @@ nav.night-mode .light-switch {
 .strong {
   font-weight: bold;
 }
-.clear-both {
-  clear: both;
+.line {
+  border-bottom: 1px solid #e6e8ec;
+  margin: 20px;
 }
 /* -- Responsive -- */
 @media (max-width: 800px) {

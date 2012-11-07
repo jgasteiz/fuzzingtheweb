@@ -12,7 +12,7 @@ $(document).ready(function () {
      * When the light switcher is clicked, toggles between normal and night-mode
      */
     $('.light-switch').click(function () {
-        $('body, nav, aside, .main-container, .main-content, footer')
+        $('body, nav, .main-container, .secondary-menu, footer')
             .toggleClass('night-mode');
     });
 
