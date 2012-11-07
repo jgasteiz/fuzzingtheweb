@@ -101,7 +101,7 @@ pre code {
 /* -- Footer -- */
 footer {
   font-size: 0.9em;
-  padding: 20px 20px 60px;
+  padding: 20px 0 60px;
 }
 footer.night-mode {
   text-shadow: none;
@@ -158,7 +158,7 @@ nav.night-mode .light-switch {
 }
 .main-container .articles article {
   position: relative;
-  padding: 50px 20px;
+  padding: 60px 0 20px;
 }
 .main-container .articles article header {
   position: relative;
@@ -214,9 +214,6 @@ nav.night-mode .light-switch {
   font-size: 2.6em;
   display: block;
 }
-.main-container .articles .pagination {
-  padding: 0 20px;
-}
 .main-container .articles .disqus_thread {
   padding: 0 20px;
 }
@@ -225,7 +222,6 @@ nav.night-mode .light-switch {
 }
 .secondary-menu {
   font-size: 0.8em;
-  padding: 0 20px;
 }
 .secondary-menu a {
   display: block;
@@ -270,7 +266,7 @@ nav.night-mode .light-switch {
 }
 .line {
   border-bottom: 1px solid #e6e8ec;
-  margin: 20px;
+  margin: 40px 0;
 }
 /* -- Responsive -- */
 @media (max-width: 800px) {
@@ -284,10 +280,16 @@ nav.night-mode .light-switch {
   nav ul {
     display: none;
   }
-  .main-container aside {
-    display: none;
+  .main-container .articles article {
+    padding: 40px 20px;
   }
-  .main-container .main-content {
-    width: 100%;
+  .secondary-menu {
+    padding: 0 20px;
+  }
+  .pagination {
+    padding: 0 20px;
+  }
+  footer {
+    padding: 20px 20px 60px;
   }
 }
