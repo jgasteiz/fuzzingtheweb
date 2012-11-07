@@ -58,84 +58,81 @@
             </ul>
             <i class="light-switch"></i>
         </nav>
-        <div class="main-container">
-
-            <div class="main-content {% if settings.sidebar.show %}sidebar{% endif %}">
-
-                <div class="articles">
-                    {% block content %}{% endblock %}
-                </div>
-
-                {% if settings.sidebar.show %}
-                <aside>
-
-                    <!-- Search -->
-                    {% if settings.searchbox.show %}
-                    <section class="search">
-                        <input type="text" class="fuzz-finder" placeholder="Find a post">
-                        <button class="fuzz-finder-go">Go</button>
-                    </section>
-                    {% endif %}
-
-                    <!-- Archive month -->
-                    {% if settings.archive.show and archives %}
-                    <section>
-                        <span class="title">Archives</span>
-                        {% for year, month_list in archives %}
-                            <!-- year -->
-                            <span>{{ year }}</span>
-                            <select onchange="if(this.value){location.href=this.value;}">
-                                <option selected="selected">
-                                    Choose month
-                                </option>
-                                <!-- Months -->
-                                {% for month, has_link in month_list %}
-                                    {% if has_link %}
-                                        <option value="/{{ month.year }}/{{ month.month }}/">
-                                            {{ month|date:"M" }}
-                                        </option>
-                                    {% endif %}
-                                {% endfor %}
-                            </select>
-                        {% endfor %}
-                    </section>
-                    {% endif %}
-
-                    <!-- Tags -->
-                    {% if settings.tags.show %}
-                    <section>
-                        <span class="title">Tags</span>
-                        {% for tag in tags %}
-                            <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
-                        {% endfor %}
-                    </section>
-                    {% endif %}
-                    
-                    {% if settings.github.show %}
-                    <!-- You can delete this widget if you want -->
-                    <section>
-                        <span class="block uppercase strong ptsans big">
-                            Follow me on github
-                        </span>
-                        <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                            <i class="icon big-icon icon-github"></i>
-                        </a>
-                    </section>
-                    {% endif %}
-
-                    {% for item in widgets %}
-                    <section>
-                        <span class="title">{{ item.name }}</span>
-                        {{ item.body|safe }}
-                    </section>
-                    {% endfor %}
-                    
-                </aside>
-                {% endif %}
-
-                <div class="clear-both"></div>
+        
+        <section class="main-container">
+            <div class="articles">
+                {% block content %}{% endblock %}
             </div>
-        </div>
+        </section>
+
+        <section class="secondary-menu">
+            <!-- Search -->
+            {% if settings.searchbox.show %}
+            <section class="search">
+                <input type="text" class="fuzz-finder" placeholder="Find a post">
+                <button class="fuzz-finder-go">Go</button>
+            </section>
+            {% endif %}
+
+            <!-- Archive month -->
+            {% if settings.archive.show and archives %}
+            <section>
+                <span class="title">Archives</span>
+                {% for year, month_list in archives %}
+                    <!-- year -->
+                    <span>{{ year }}</span>
+                    <select onchange="if(this.value){location.href=this.value;}">
+                        <option selected="selected">
+                            Choose month
+                        </option>
+                        <!-- Months -->
+                        {% for month, has_link in month_list %}
+                            {% if has_link %}
+                                <option value="/{{ month.year }}/{{ month.month }}/">
+                                    {{ month|date:"M" }}
+                                </option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <!-- Tags -->
+            {% if settings.tags.show %}
+            <section>
+                <span class="title">Tags</span>
+                {% for tag in tags %}
+                    <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
+                {% endfor %}
+            </section>
+            {% endif %}
+            
+            {% if settings.github.show %}
+            <!-- You can delete this widget if you want -->
+            <section>
+                <span class="block uppercase strong ptsans big">
+                    Follow me on github
+                </span>
+                <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
+                    <i class="icon big-icon icon-github"></i>
+                </a>
+            </section>
+            {% endif %}
+
+            {% if settings.analytics.show %}
+            <script>
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '{{ settings.analytics.code }}']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+            {% endif %}
+        </section>
 
         <footer>
             This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>. Slightly inspired by <a target="_blank" href="http://octopress.org/">Octopress</a>.

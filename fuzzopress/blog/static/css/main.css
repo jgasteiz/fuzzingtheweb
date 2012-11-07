@@ -10,17 +10,15 @@
 }
 /* -- Global -- */
 body {
-  background-color: #f5f5f5;
   color: #000000;
   font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
   line-height: 1.8em;
   margin: 0 auto;
-  max-width: 1000px;
-  background-image: url('img/noise.png');
+  max-width: 800px;
 }
 body.night-mode {
-  background-color: #222222;
+  background-color: #2e2e2e;
 }
 body.night-mode a {
   color: #f5f5f5;
@@ -100,7 +98,7 @@ pre code {
 /* -- Footer -- */
 footer {
   font-size: 0.9em;
-  padding: 20px;
+  padding: 20px 20px 60px;
 }
 footer.night-mode {
   text-shadow: none;
@@ -121,6 +119,7 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 nav ul li {
   display: inline-block;
@@ -150,67 +149,22 @@ nav.night-mode .light-switch {
   background-position: right bottom;
 }
 /* -- Main container -- */
-.main-container {
-  background-color: #f5f5f5;
-  border: 1px solid #e6e8ec;
-}
-.main-container aside {
-  float: left;
-  font-size: 0.8em;
-  padding: 50px 1% 40px 3%;
-  clear: none;
-  margin: 0 -100% 0 0;
-  width: 28%;
-}
-.main-container aside a {
-  display: block;
-}
-.main-container aside section {
-  margin-bottom: 20px;
-}
-.main-container aside section span {
-  display: block;
-  font-size: 1.2em;
-}
-.main-container aside section select {
-  display: block;
-  margin-bottom: 10px;
-}
-.main-container aside section .title {
-  font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.main-container aside section .big-icon {
-  font-size: 8em;
-  line-height: 1;
-  margin: 20px;
-  text-decoration: none;
-}
-.main-container .main-content {
-  background: #ffffff;
-  margin-right: 20%;
-  position: relative;
-  width: 75%;
-}
-.main-container .main-content .articles {
-  border-right: 1px solid #e6e8ec;
-  float: left;
+.main-container .articles {
   padding: 20px 0;
   width: 100%;
 }
-.main-container .main-content .articles article {
+.main-container .articles article {
   position: relative;
   padding: 50px 20px;
 }
-.main-container .main-content .articles article header {
+.main-container .articles article header {
   position: relative;
 }
-.main-container .main-content .articles article header h1 a {
+.main-container .articles article header h1 a {
   font-weight: bold;
   text-decoration: none;
 }
-.main-container .main-content .articles article header .date {
+.main-container .articles article header .date {
   color: #888888;
   font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
   left: 0;
@@ -218,12 +172,12 @@ nav.night-mode .light-switch {
   text-transform: uppercase;
   top: -40px;
 }
-.main-container .main-content .articles article header .comments {
+.main-container .articles article header .comments {
   position: absolute;
   right: 0;
   top: -40px;
 }
-.main-container .main-content .articles article header .comments a {
+.main-container .articles article header .comments a {
   background-image: url("img/comments-bubble.png");
   background-repeat: no-repeat;
   color: #888888;
@@ -236,48 +190,65 @@ nav.night-mode .light-switch {
   text-decoration: none;
   width: 54px;
 }
-.main-container .main-content .articles article .edit-post {
+.main-container .articles article .edit-post {
   float: right;
   text-decoration: none;
 }
-.main-container .main-content .articles article .img {
+.main-container .articles article .img {
   padding: 4px;
   border: 1px solid #e6e8ec;
 }
-.main-container .main-content .articles .go-back {
+.main-container .articles .go-back {
   margin: 0;
   padding: 0 20px;
 }
-.main-container .main-content .articles .go-back a {
+.main-container .articles .go-back a {
   text-decoration: none;
 }
-.main-container .main-content .articles .not-found {
+.main-container .articles .not-found {
   font-family: "404", Arial;
   line-height: 1;
   font-size: 2.6em;
   display: block;
 }
-.main-container .main-content .articles .pagination {
+.main-container .articles .pagination {
   padding: 0 20px;
 }
-.main-container .main-content .articles .disqus_thread {
+.main-container .articles .disqus_thread {
   padding: 0 20px;
 }
-.main-container .main-content .articles .line {
-  background: url('img/dotted-border.png') center left repeat-x;
+.main-container .articles .line {
+  border-bottom: 1px solid #e6e8ec;
   margin: 20px;
-  height: 1px;
 }
-.main-container .main-content.night-mode {
-  background: #2e2e2e;
-  color: #f5f5f5;
+.secondary-menu {
+  font-size: 0.8em;
+  padding: 0 20px;
 }
-.main-container .main-content.night-mode .articles {
-  border-right: 1px solid #222222;
+.secondary-menu a {
+  display: block;
 }
-.main-container.night-mode {
-  background: #2e2e2e;
-  border: 1px solid #222222;
+.secondary-menu section {
+  margin-bottom: 20px;
+}
+.secondary-menu section span {
+  display: block;
+  font-size: 1.2em;
+}
+.secondary-menu section select {
+  display: block;
+  margin-bottom: 10px;
+}
+.secondary-menu section .title {
+  font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.secondary-menu section .big-icon {
+  font-size: 8em;
+  line-height: 1;
+  margin-top: 20px;
+  text-decoration: none;
 }
 /* -- OOCSS -- */
 .block {
@@ -312,8 +283,5 @@ nav.night-mode .light-switch {
   }
   .main-container .main-content {
     width: 100%;
-  }
-  .main-container .main-content .articles {
-    border: 0;
   }
 }

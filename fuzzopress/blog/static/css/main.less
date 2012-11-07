@@ -1,7 +1,6 @@
 /* -- Colours -- */
 @black: #000;
-@almost-black: #222;
-@almost-black-2: #2E2E2E;
+@almost-black: #2E2E2E;
 @dark-grey: #888;
 @white: #FFF;
 @primary-color: @black;
@@ -29,14 +28,12 @@
 
 /* -- Global -- */
 body {
-    background-color: @background-color;
     color: @primary-color;
     font-family: @pt-serif-fonts;
     font-size: 16px;
     line-height: 1.8em;
     margin: 0 auto;
-    max-width: 1000px;
-    background-image: url('img/noise.png');
+    max-width: 800px;
     &.night-mode {
         background-color: @almost-black;
         a {
@@ -122,7 +119,7 @@ pre {
 /* -- Footer -- */
 footer {
     font-size: 0.9em;
-    padding: 20px;
+    padding: 20px 20px 60px;
     &.night-mode {
         text-shadow: none;
         color: @background-color;
@@ -144,6 +141,7 @@ nav {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        text-align: center;
 
         li {
             display: inline-block;
@@ -180,139 +178,115 @@ nav {
 
 /* -- Main container -- */
 .main-container {
-    background-color: @background-color;
-    border: 1px solid @tertiary-color;
+    // background-color: @background-color;
+    // border: 1px solid @tertiary-color;
 
-    aside {
-        float: left;
-        font-size: 0.8em;
-        padding: 50px 1% 40px 3%;
-        clear: none;
-        margin: 0 -100% 0 0;
-        width: 28%;
-        a {
-            display: block;
+    .articles {
+        padding: 20px 0;
+        width: 100%;
+
+        article {
+            position: relative;
+            padding: 50px 20px;
+
+            header {
+                position: relative;
+
+                h1 {
+                    a {
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+                .date {
+                    color: @dark-grey;
+                    font-family: @pt-sans-fonts;
+                    left: 0;
+                    position: absolute;
+                    text-transform: uppercase;
+                    top: -40px;
+                }
+                .comments {
+                    position: absolute;
+                    right: 0;
+                    top: -40px;
+                    a {
+                        background-image: url("img/comments-bubble.png");
+                        background-repeat: no-repeat;
+                        color: @dark-grey;
+                        display: inline-block;
+                        font-family: @pt-sans-fonts;
+                        font-size: 0.8em;
+                        padding-bottom: 8px;
+                        padding-top: 3px;
+                        text-align: center;
+                        text-decoration: none;
+                        width: 54px;
+                    }
+                }
+            }
+            .edit-post {
+                float: right;
+                text-decoration: none;
+            }
+            .img {
+                padding: 4px;
+                border: 1px solid @tertiary-color;
+            }
         }
-        section {
-            margin-bottom: 20px;
-            span {
-                display: block;
-                font-size: 1.2em;
-            }
-            select {
-                display: block;
-                margin-bottom: 10px;
-            }
-            .title {
-                font-family: @pt-sans-fonts;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-            .big-icon {
-                font-size: 8em;
-                line-height: 1;
-                margin: 20px;
+        .go-back {
+            margin: 0;
+            padding: 0 20px;
+            a {
                 text-decoration: none;
             }
         }
-    }
-    .main-content {
-        background: @white;
-        margin-right: 20%;
-        position: relative;
-        width: 75%;
-        
-        .articles {
-            border-right: 1px solid @tertiary-color;
-            float: left;
-            padding: 20px 0;
-            width: 100%;
-
-            article {
-                position: relative;
-                padding: 50px 20px;
-
-                header {
-                    position: relative;
-
-                    h1 {
-                        a {
-                            font-weight: bold;
-                            text-decoration: none;
-                        }
-                    }
-                    .date {
-                        color: @dark-grey;
-                        font-family: @pt-sans-fonts;
-                        left: 0;
-                        position: absolute;
-                        text-transform: uppercase;
-                        top: -40px;
-                    }
-                    .comments {
-                        position: absolute;
-                        right: 0;
-                        top: -40px;
-                        a {
-                            background-image: url("img/comments-bubble.png");
-                            background-repeat: no-repeat;
-                            color: @dark-grey;
-                            display: inline-block;
-                            font-family: @pt-sans-fonts;
-                            font-size: 0.8em;
-                            padding-bottom: 8px;
-                            padding-top: 3px;
-                            text-align: center;
-                            text-decoration: none;
-                            width: 54px;
-                        }
-                    }
-                }
-                .edit-post {
-                    float: right;
-                    text-decoration: none;
-                }
-                .img {
-                    padding: 4px;
-                    border: 1px solid @tertiary-color;
-                }
-            }
-            .go-back {
-                margin: 0;
-                padding: 0 20px;
-                a {
-                    text-decoration: none;
-                }
-            }
-            .not-found {
-                font-family: @404-fonts;
-                line-height: 1;
-                font-size: 2.6em;
-                display: block;
-            }
-            .pagination {
-                padding: 0 20px;
-            }
-            .disqus_thread {
-                padding: 0 20px;
-            }
-            .line {
-                background: url('img/dotted-border.png') center left repeat-x;
-                margin: 20px;
-                height: 1px;
-            }
+        .not-found {
+            font-family: @404-fonts;
+            line-height: 1;
+            font-size: 2.6em;
+            display: block;
         }
-        &.night-mode {
-            background: @almost-black-2;
-            color: @background-color;
-            .articles {
-                border-right: 1px solid @almost-black;
-            }
+        .pagination {
+            padding: 0 20px;
+        }
+        .disqus_thread {
+            padding: 0 20px;
+        }
+        .line {
+            border-bottom: 1px solid @tertiary-color;
+            margin: 20px;
         }
     }
-    &.night-mode {
-        background: @almost-black-2;
-        border: 1px solid @almost-black;
+
+}
+.secondary-menu {
+    font-size: 0.8em;
+    padding: 0 20px;
+    a {
+        display: block;
+    }
+    section {
+        margin-bottom: 20px;
+        span {
+            display: block;
+            font-size: 1.2em;
+        }
+        select {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-family: @pt-sans-fonts;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .big-icon {
+            font-size: 8em;
+            line-height: 1;
+            margin-top: 20px;
+            text-decoration: none;
+        }
     }
 }
 
@@ -355,7 +329,7 @@ nav {
             width: 100%;
 
             .articles {
-                border: 0;
+                // border: 0;
             }
         }
     }

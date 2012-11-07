@@ -10,7 +10,7 @@ from django.views.generic.dates import YearArchiveView, MonthArchiveView
 
 class CustomContextMixin(object):
     """ Same context data for every class view """
-    paginate_by = 5
+    paginate_by = settings.FUZZOPRESS_SETTINGS['entries_per_page']
     context_object_name = 'post_list'
     template_name = "blog/post_list.html"
     def get_context_data(self, **kwargs):
