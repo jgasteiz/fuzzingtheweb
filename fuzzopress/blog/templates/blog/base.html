@@ -27,37 +27,44 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
         <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
-        <header class="main-header"></header>
-        <nav>
-            <select class="responsive-navbar" onchange="location.href=this.value">
-                <option selected value="/">Navigate</option>
-                <option value="/">Home</option>
-                {% for item in navItems %}
-                <option value="{{ item.url }}">{{ item.name }}</option>
-                {% endfor %}
-                {% if user.is_superuser %}
-                <option value="/admin/blog/post/add/">Post</option>
-                {% endif %}
-            </select>
-            <ul>
-                <li><a href="/">Home</a></li>
-                
-                {% for item in navItems %}
-                <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                {% endfor %}
-                
-                {% if user.is_superuser %}
-                <li>
-                    <a target="_blank" href="/admin/blog/post/add/">
-                        <i class="icon-pencil icon-large"></i>
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
-            <i class="light-switch"></i>
-        </nav>
+        <header>
+            <div class="fuzzy"></div>
+            <nav>
+                <select class="responsive-navbar" onchange="location.href=this.value">
+                    <option selected value="/">Navigate</option>
+                    <option value="/">Home</option>
+                    {% for item in navItems %}
+                    <option value="{{ item.url }}">{{ item.name }}</option>
+                    {% endfor %}
+                    {% if user.is_superuser %}
+                    <option value="/admin/blog/post/add/">Post</option>
+                    {% endif %}
+                </select>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    
+                    {% for item in navItems %}
+                    <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                    
+                    {% if user.is_superuser %}
+                    <li>
+                        <a target="_blank" href="/admin/blog/post/add/">
+                            <i class="icon-pencil icon-large"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <i class="light-switch"></i>
+            </nav>
+        </header>
         
         <section class="main-container">
             <div class="articles">

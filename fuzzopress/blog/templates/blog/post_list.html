@@ -18,7 +18,14 @@
                 {{ post.published|date }}
             </div>
         </header>
-        <div class="body">{{ post.body|markdown }}</div>
+        <div class="body">
+            {% if post.body|wordcount > 100 %}
+                {{ post.body|markdown|truncatewords_html:100 }}
+                <a class="read-more" href="{{ post.get_absolute_url }}">Continue reading</a>
+            {% else %}
+                {{ post.body|markdown }}
+            {% endif %}
+        </div>
         {% if user.is_superuser %}
         <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
             <i class="icon-edit"></i>

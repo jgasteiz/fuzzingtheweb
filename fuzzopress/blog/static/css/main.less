@@ -24,12 +24,14 @@
 @404-fonts: "404", Arial;
 @pt-serif-fonts: "PT Serif", Georgia,Times, "Times New Roman", serif;
 @pt-sans-fonts: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+@lato: 'Lato', sans-serif;
+@rokkitt: 'Rokkitt', serif;
 
 
 /* -- Global -- */
 body {
     color: @primary-color;
-    font-family: @pt-serif-fonts;
+    font-family: @lato;
     font-size: 17px;
     line-height: 1.8em;
     margin: 0 auto;
@@ -45,6 +47,7 @@ body {
     }
 }
 h1 {
+    font-family: @rokkitt;
     font-size: 2em;
     margin-top: 0;
     line-height: 1.2;
@@ -107,15 +110,66 @@ pre {
 }
 
 /* -- Header -- */
-.main-header {
-    background-image: url('img/banner.png');
-    background-position: center top;
-    background-repeat: no-repeat;
-    height: 220px;
-    margin: 20px 0;
-    padding: 0;
-    &:hover {
-        background-position: center bottom;
+header {
+    .fuzzy {
+        background-image: url('img/banner.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 220px;
+        margin: 20px 0;
+        padding: 0;
+        &:hover {
+            background-position: center bottom;
+        }
+    }
+    /* -- Navigation bar -- */
+    nav {
+        position:relative;
+        width: 100%;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        ul {
+            border-bottom: 1px solid @tertiary-color;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                height: 100%;
+                padding: 10px;
+
+                a {
+                    font-family: @rokkitt;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .light-switch {
+            background-image: url('img/switches.png');
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            height: 50px;
+            position: absolute;
+            right: 20px;
+            top: 0;
+            width: 30px;
+        }
+        .responsive-navbar {
+            display: none;
+        }
+        &.night-mode {
+            .light-switch {
+                background-position: right bottom;
+            }
+        }
     }
 }
 
@@ -126,56 +180,6 @@ footer {
     &.night-mode {
         text-shadow: none;
         color: @background-color;
-    }
-}
-
-/* -- Navigation bar -- */
-nav {
-    position:relative;
-    width: 100%;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    ul {
-        border-bottom: 1px solid @tertiary-color;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            display: inline-block;
-            height: 100%;
-            padding: 10px;
-
-            a {
-                font-family: @pt-sans-fonts;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-        }
-    }
-    .light-switch {
-        background-image: url('img/switches.png');
-        background-position: left bottom;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        height: 50px;
-        position: absolute;
-        right: 20px;
-        top: 0;
-        width: 30px;
-    }
-    .responsive-navbar {
-        display: none;
-    }
-    &.night-mode {
-        .light-switch {
-            background-position: right bottom;
-        }
     }
 }
 
@@ -200,7 +204,7 @@ nav {
                 }
                 .date {
                     color: @dark-grey;
-                    font-family: @pt-sans-fonts;
+                    font-family: @rokkitt;
                     left: 0;
                     position: absolute;
                     text-transform: uppercase;
@@ -215,7 +219,7 @@ nav {
                         background-repeat: no-repeat;
                         color: @dark-grey;
                         display: inline-block;
-                        font-family: @pt-sans-fonts;
+                        font-family: @rokkitt;
                         font-size: 0.8em;
                         padding-bottom: 8px;
                         padding-top: 3px;
@@ -271,7 +275,7 @@ nav {
             margin-bottom: 10px;
         }
         .title {
-            font-family: @pt-sans-fonts;
+            font-family: @rokkitt;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -304,19 +308,29 @@ nav {
     border-bottom: 1px solid @tertiary-color;
     margin: 40px 0;
 }
+.clearfix {
+    clear: both;
+}
+.read-more {
+    display: block;
+    font-size: 1.2em;
+    text-decoration: none;
+}
 
 /* -- Responsive -- */
 @media(max-width:800px) {
-    .main-header {
-        display: none;
-    }
-    nav { 
-        .responsive-navbar {
-            display: inline-block;
-            margin: 16px;
-        }
-        ul {
+    header {
+        .fuzzy {
             display: none;
+        }
+        nav { 
+            .responsive-navbar {
+                display: inline-block;
+                margin: 16px;
+            }
+            ul {
+                display: none;
+            }
         }
     }
     .main-container {
