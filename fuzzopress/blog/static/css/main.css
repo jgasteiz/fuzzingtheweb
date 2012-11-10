@@ -94,14 +94,14 @@ header {
 }
 header .fuzzy {
   background-image: url('img/banner.png');
-  background-position: center top;
+  background-position: left top;
   background-repeat: no-repeat;
   height: 220px;
   margin: 20px 0;
   padding: 0;
 }
 header .fuzzy:hover {
-  background-position: center bottom;
+  background-position: left bottom;
 }
 header nav {
   position: relative;
@@ -274,6 +274,14 @@ footer.night-mode {
 }
 .clearfix {
   clear: both;
+}
+.span6 {
+  float: left;
+  width: 46.66%;
+}
+.span6:first-child {
+  margin-right: 4%;
+  border-right: 1px solid #e6e8ec;
 }
 /* -- Responsive -- */
 @media (max-width: 800px) {

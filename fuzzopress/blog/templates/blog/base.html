@@ -81,29 +81,42 @@
             </section>
             {% endif %}
 
-            <!-- Archive month -->
-            {% if settings.archive.show and archives %}
-            <section>
-                <span class="title">Archives</span>
-                {% for year, month_list in archives %}
-                    <!-- year -->
-                    <span>{{ year }}</span>
-                    <select onchange="if(this.value){location.href=this.value;}">
-                        <option selected="selected">
-                            Choose month
-                        </option>
-                        <!-- Months -->
-                        {% for month, has_link in month_list %}
-                            {% if has_link %}
-                                <option value="/{{ month.year }}/{{ month.month }}/">
-                                    {{ month|date:"M" }}
-                                </option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                {% endfor %}
-            </section>
-            {% endif %}
+            <div class="row">
+                <!-- Archive month -->
+                {% if settings.archive.show and archives %}
+                <section class="span6">
+                    <span class="title">Archives</span>
+                    {% for year, month_list in archives %}
+                        <!-- year -->
+                        <span>{{ year }}</span>
+                        <select onchange="if(this.value){location.href=this.value;}">
+                            <option selected="selected">
+                                Choose month
+                            </option>
+                            <!-- Months -->
+                            {% for month, has_link in month_list %}
+                                {% if has_link %}
+                                    <option value="/{{ month.year }}/{{ month.month }}/">
+                                        {{ month|date:"M" }}
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    {% endfor %}
+                </section>
+                {% endif %}
+                
+                {% if settings.github.show %}
+                <!-- You can delete this widget if you want -->
+                <section class="span6">
+                    <span class="title">Follow me on github</span>
+                    <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
+                        <i class="icon big-icon icon-github"></i>
+                    </a>
+                </section>
+                {% endif %}
+                <div class="clearfix"></div>
+            </div>
 
             <!-- Tags -->
             {% if settings.tags.show %}
@@ -112,18 +125,6 @@
                 {% for tag in tags %}
                     <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
                 {% endfor %}
-            </section>
-            {% endif %}
-            
-            {% if settings.github.show %}
-            <!-- You can delete this widget if you want -->
-            <section>
-                <span class="block uppercase strong ptsans big">
-                    Follow me on github
-                </span>
-                <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                    <i class="icon big-icon icon-github"></i>
-                </a>
             </section>
             {% endif %}
 
