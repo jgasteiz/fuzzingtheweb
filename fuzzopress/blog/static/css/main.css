@@ -275,11 +275,6 @@ footer.night-mode {
 .clearfix {
   clear: both;
 }
-.read-more {
-  display: block;
-  font-size: 1.2em;
-  text-decoration: none;
-}
 /* -- Responsive -- */
 @media (max-width: 800px) {
   header .fuzzy {
