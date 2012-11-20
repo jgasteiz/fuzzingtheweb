@@ -33,9 +33,10 @@ body {
     color: @primary-color;
     font-family: @lato;
     font-size: 17px;
-    line-height: 1.8em;
-    margin: 0 auto;
-    max-width: 666px;
+    line-height: 1.5em;
+    margin: 20px auto 40px;
+    max-width: 600px;
+    padding: 0 33px;
     &.night-mode {
         background-color: @almost-black;
         a {
@@ -49,7 +50,7 @@ body {
 h1 {
     font-family: @rokkitt;
     font-size: 2em;
-    margin-top: 0;
+    margin: 0 0 20px;
     line-height: 1.2;
 }
 img,
@@ -69,7 +70,7 @@ a {
     }
 }
 p {
-    margin: 22px 0;
+    margin: 0 0 20px;
 }
 input[type=text] {
     border: 1px solid @tertiary-color;
@@ -116,7 +117,6 @@ header {
         background-position: left top;
         background-repeat: no-repeat;
         height: 220px;
-        margin: 20px 0;
         padding: 0;
         &:hover {
             background-position: left bottom;
@@ -124,6 +124,8 @@ header {
     }
     /* -- Navigation bar -- */
     nav {
+        border-bottom: 1px solid @tertiary-color;
+        margin: 20px 0;
         position:relative;
         width: 100%;
         -webkit-touch-callout: none;
@@ -134,20 +136,23 @@ header {
         user-select: none;
 
         ul {
-            border-bottom: 1px solid @tertiary-color;
             list-style-type: none;
             margin: 0;
             padding: 0;
 
             li {
                 display: inline-block;
-                height: 100%;
-                padding: 10px;
+                padding-left: 20px;
 
                 a {
+                    display: inline-block;
+                    line-height: 2.6em;
                     font-family: @rokkitt;
                     text-decoration: none;
                     text-transform: uppercase;
+                }
+                &:first-child {
+                    padding-left: 0;
                 }
             }
         }
@@ -164,6 +169,7 @@ header {
         }
         .responsive-navbar {
             display: none;
+            margin: 16px 0;
         }
         &.night-mode {
             .light-switch {
@@ -173,25 +179,14 @@ header {
     }
 }
 
-/* -- Footer -- */
-footer {
-    font-size: 0.9em;
-    padding: 20px 0 60px;
-    &.night-mode {
-        text-shadow: none;
-        color: @background-color;
-    }
-}
-
 /* -- Main container -- */
 .main-container {
     .articles {
-        padding: 20px 0;
         width: 100%;
 
         article {
             position: relative;
-            padding: 60px 0 20px;
+            padding-top: 60px;
 
             header {
                 position: relative;
@@ -230,7 +225,9 @@ footer {
                 }
             }
             .edit-post {
-                float: right;
+                bottom: 0;
+                position: absolute;
+                right: 0;
                 text-decoration: none;
             }
             .img {
@@ -240,7 +237,6 @@ footer {
         }
         .go-back {
             margin: 0;
-            padding: 0 20px;
             a {
                 text-decoration: none;
             }
@@ -251,16 +247,16 @@ footer {
             font-size: 2.6em;
             display: block;
         }
-        .disqus_thread {
-            padding: 0 20px;
-        }
     }
     &.night-mode {
         color: @background-color;
     }
 }
+/* Secondary Menu */
 .secondary-menu {
     font-size: 0.8em;
+    margin: 40px 0;
+
     a {
         display: block;
     }
@@ -290,6 +286,14 @@ footer {
         color: @background-color;
     }
 }
+/* -- Footer -- */
+footer {
+    font-size: 0.9em;
+    &.night-mode {
+        text-shadow: none;
+        color: @background-color;
+    }
+}
 
 /* -- OOCSS -- */
 .block {
@@ -298,9 +302,6 @@ footer {
 .align-center {
     text-align: center;
 }
-.inline-block {
-    display: inline-block;
-}
 .strong {
     font-weight: bold;
 }
@@ -308,7 +309,7 @@ footer {
     border-bottom: 1px solid @tertiary-color;
     margin: 40px 0;
 }
-.clearfix {
+.cf {
     clear: both;
 }
 .span6 {
@@ -321,39 +322,24 @@ footer {
 }
 
 /* -- Responsive -- */
-@media(max-width:800px) {
+@media(max-width:600px) {
+    body {
+        margin: 0 0 40px;
+        padding: 0 20px;
+    }
     header {
         .fuzzy {
             display: none;
         }
-        nav { 
+        nav {
+            margin: 0;
             .responsive-navbar {
                 display: inline-block;
-                margin: 16px;
             }
             ul {
                 display: none;
             }
         }
-    }
-    .main-container {
-        .articles {
-            article {
-                padding: 40px 20px;
-            }
-        }
-    }
-    .secondary-menu {
-        padding: 0 20px;
-    }
-    .line {
-        margin: 40px 20px;
-    }
-    .pagination {
-        padding: 0 20px;
-    }
-    footer {
-        padding: 20px 20px 60px;
     }
 }
 
