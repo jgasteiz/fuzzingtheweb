@@ -126,5 +126,5 @@ FUZZOPRESS_SETTINGS = {
         'show': True
     },
     'colors': ['#D65C3C', '#F1C94F', '#40C080', '#2E6EB0', '#934EA8', '#C1216C', '#04B1D8'],
-    'entries_per_page': 3
+    'entries_per_page': 5
 }
