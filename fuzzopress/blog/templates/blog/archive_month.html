@@ -8,9 +8,9 @@
 
     <h2>{{ month|date:"F Y" }}</h2>
 
-    {% if post_list %}
+    {% if posts %}
     <ul>
-    {% for post in post_list %}
+    {% for post in posts %}
         <li>
             <a target="_blank" href="{{ post.get_absolute_url }}">{{ post }}</a>
             <span class="date">

@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    {% for post in post_list %}
+    {% for post in posts %}
     <article>
         <header>
             <h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>

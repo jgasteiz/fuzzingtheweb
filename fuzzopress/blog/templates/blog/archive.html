@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Archive | Fuzzing the Web{% endblock %}
+
+{% block content %}
+
+    <h1>Archive</h1>
+
+    {% for archive in archives %}
+    {% for year, month_list in archive %}
+    
+    <!-- year -->
+    <h2>{{ year }}</h2>
+    
+        <!-- Months -->
+        <section class="months">
+        {% for month, has_link in month_list %}
+        {% if has_link %}
+            <a href="/{{ month.year }}/{{ month.month }}/" class="block">
+                {{ month|date:"F" }}
+            </a>
+        {% endif %}
+        {% endfor %}
+        </section>
+
+    {% endfor %}
+    {% endfor %}
+
+{% endblock %}
