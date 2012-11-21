@@ -81,19 +81,15 @@
             </section>
             {% endif %}
 
-            <div class="row">
-                
-                {% if settings.github.show %}
-                <!-- You can delete this widget if you want -->
-                <section class="span6">
-                    <span class="title">Follow me on github</span>
-                    <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                        <i class="icon big-icon icon-github"></i>
-                    </a>
-                </section>
-                {% endif %}
-                <div class="cf"></div>
-            </div>
+            <!-- Github -->
+            {% if settings.github.show %}
+            <section>
+                <span class="title">Follow me on github</span>
+                <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
+                    <i class="icon big-icon icon-github"></i>
+                </a>
+            </section>
+            {% endif %}
 
             <!-- Tags -->
             {% if settings.tags.show %}

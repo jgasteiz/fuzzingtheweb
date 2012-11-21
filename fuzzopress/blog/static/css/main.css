@@ -280,14 +280,6 @@ footer.night-mode {
 .cf {
   clear: both;
 }
-.span6 {
-  float: left;
-  width: 46.66%;
-}
-.span6:first-child {
-  margin-right: 4%;
-  border-right: 1px solid #e6e8ec;
-}
 /* -- Responsive -- */
 @media (max-width: 600px) {
   body {
