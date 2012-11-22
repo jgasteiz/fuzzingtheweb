@@ -351,6 +351,7 @@ footer {
         margin: 20px auto 40px;
     }
     .secondary-menu {
+        border: 0;
         position: relative;
         padding: 0;
         width: 100%;
@@ -364,7 +365,12 @@ footer {
     }
     header {
         .fuzzy {
-            display: none;
+            width: 250px;
+            background-position: bottom right;
+            margin: 0 auto;
+            &:hover {
+                background-position: bottom right;
+            }
         }
         nav {
             margin: 0;

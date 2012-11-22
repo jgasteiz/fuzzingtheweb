@@ -311,6 +311,7 @@ footer.night-mode {
     margin: 20px auto 40px;
   }
   .secondary-menu {
+    border: 0;
     position: relative;
     padding: 0;
     width: 100%;
@@ -323,7 +324,12 @@ footer.night-mode {
     padding: 0 20px;
   }
   header .fuzzy {
-    display: none;
+    width: 250px;
+    background-position: bottom right;
+    margin: 0 auto;
+  }
+  header .fuzzy:hover {
+    background-position: bottom right;
   }
   header nav {
     margin: 0;
