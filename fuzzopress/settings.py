@@ -108,19 +108,20 @@ MARKITUP_SET = 'markitup/sets/markdown'
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'github': {  # Shows a 'Follow me on github sidebar widget'
+    'github': {  # Shows a 'Follow me on github' sidebar widget.
         'show': True,
         'username': 'jgasteiz'
     },
-    'archive': {  # Shows a <select> for each year of posts to select a month
-        'show': True
+    'twitter': {  # Shows a 'Follow me on twitter' sidebar widget.
+        'show': True,
+        'username': 'jgasteiz'
     },
     'analytics': {
         'show': True,
         'code': 'UA-23612418-1'
     },
     'tags': {
-        'show': False
+        'show': True
     },
     'searchbox': {
         'show': True
