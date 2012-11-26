@@ -203,7 +203,7 @@ header nav.night-mode .light-switch {
 .main-container .articles article img {
   padding: 6px;
   background: #f5f5f5;
-  box-shadow: 0px 1px 2px #bbbbbb;
+  box-shadow: 0px 1px 2px #888888;
 }
 .main-container .articles .go-back {
   margin: 0;
