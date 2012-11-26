@@ -209,6 +209,7 @@ header nav.night-mode .light-switch {
   margin: 0;
 }
 .main-container .articles .go-back a {
+  font-family: 'Rokkitt', serif;
   text-decoration: none;
 }
 .main-container .articles .not-found {
