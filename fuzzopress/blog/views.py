@@ -4,9 +4,7 @@ from datetime import date, datetime
 from django.conf import settings
 from django.utils import simplejson
 from django.http import HttpResponse
-from django.core.serializers import serialize
 from django.shortcuts import get_object_or_404
-from django.views.generic.dates import MonthArchiveView
 from django.views.generic import ListView, DetailView, View
 from fuzzopress.blog.models import Post, NavItem, Widget, Tag
 from fuzzopress.blog.utils import get_query as get_search_query
@@ -75,18 +73,6 @@ class ArchiveView(CustomContextMixin, ListView):
                 archive[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
                 archive[year][month - 1][1] = True
         return [sorted(archive.items(), reverse=True)]
-
-
-class CustomDateMixin(CustomContextMixin, object):
-    """ Same date_field and context_object_name for every Dated-class view """
-    date_field = 'published'
-    model = Post
-    context_object_name = 'posts'
-
-
-class ArchiveMonth(CustomDateMixin, MonthArchiveView):
-    """ For a month """
-    month_format = '%m'
 
 
 class LoadEntries(View):
