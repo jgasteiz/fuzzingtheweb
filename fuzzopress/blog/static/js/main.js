@@ -35,4 +35,25 @@ $(document).ready(function () {
             location.href = '/search/' + inputText + '/';
         }
     });
+
+
+    $('.archive').find('.date').bind('click', function(e) {
+        e.preventDefault();
+        var url = $(this).attr('href'),
+            parent = $(this).parent();
+
+        $.get(url, {}, function(data) {
+            var posts = JSON.parse(data),
+                $ul = $('<ul>');
+            for (var i in posts) {
+                $($ul).append($('<li>').append(
+                    $('<a>').attr('href', posts[i].url)
+                            .attr('target', '_blank')
+                            .html(posts[i].title)
+                ));
+            }
+            $(parent).append($ul);
+        });
+    });
 });
+

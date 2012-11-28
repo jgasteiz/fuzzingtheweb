@@ -218,8 +218,16 @@ header nav.night-mode .light-switch {
   font-size: 2.6em;
   display: block;
 }
-.main-container .articles .months {
+.main-container .articles .archive {
   padding-left: 20px;
+}
+.main-container .articles .archive li ul li a {
+  text-decoration: none;
+}
+.main-container .articles .archive li ul li a .date {
+  font-family: 'Rokkitt', serif;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 .main-container.night-mode {
   color: #f5f5f5;

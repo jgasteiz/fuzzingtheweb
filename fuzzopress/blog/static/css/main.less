@@ -249,8 +249,23 @@ header {
             font-size: 2.6em;
             display: block;
         }
-        .months {
+        .archive {
             padding-left: 20px;
+
+            li {
+                ul {
+                    li {
+                        a {
+                            text-decoration: none;
+                            .date {
+                                font-family: @rokkitt;
+                                font-size: 0.9em;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     &.night-mode {

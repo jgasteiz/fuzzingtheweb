@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.conf.urls import patterns, include, url
 from fuzzopress.blog.views import (BlogView, PostView, ArchiveView, TagView,
-    SearchView, ArchiveMonth)
+    SearchView, ArchiveMonth, LoadEntries)
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,6 +10,11 @@ urlpatterns = patterns('',
         name='blog'),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    # Ajax requests
+    url(r'^_ajax/archive/(?P<year>\d+)/(?P<month>\d+)/$',
+        LoadEntries.as_view(),
+        name='load_entries'),
 
     # List entries by tag
     url(r'^tag/(?P<tag>[-\w]+)/',
@@ -34,6 +39,5 @@ urlpatterns = patterns('',
     # A post or page
     url(r'^(?P<slug>[-\w]+)/',
         PostView.as_view(),
-        name='post'),
-
+        name='post')
 )

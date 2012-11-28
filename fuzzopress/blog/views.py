@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+import calendar
 from datetime import date, datetime
 from django.conf import settings
+from django.utils import simplejson
+from django.http import HttpResponse
+from django.core.serializers import serialize
 from django.shortcuts import get_object_or_404
 from django.views.generic.dates import MonthArchiveView
 from django.views.generic import ListView, DetailView, View
@@ -83,4 +87,28 @@ class CustomDateMixin(CustomContextMixin, object):
 class ArchiveMonth(CustomDateMixin, MonthArchiveView):
     """ For a month """
     month_format = '%m'
+
+
+class LoadEntries(View):
+    def get(self, request, *args, **kwargs):
+        year = ''
+        month = ''
+        if self.kwargs['year'] and self.kwargs['month']:
+            year = self.kwargs['year']
+            month = self.kwargs['month']
+            posts_qs = Post.objects.published().filter(published__year=year,
+                published__month=month)
+            posts = []
+            for post in posts_qs:
+                posts.append({
+                    'title': '<span class="date">%s %s.</span> %s' %
+                        (post.published.day,
+                        calendar.month_abbr[post.published.month],
+                        post.title),
+                    'url': '/%s/' % (post.slug)
+                })
+            return HttpResponse(simplejson.dumps(posts))
+        return HttpResponse('Nothing found')
+
+
 
