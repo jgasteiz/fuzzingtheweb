@@ -238,7 +238,7 @@ header nav.night-mode .light-switch {
   font-size: 0.8em;
   left: 60px;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   text-align: center;
   top: 20px;
 }
@@ -358,5 +358,17 @@ footer.night-mode {
   }
   header nav ul {
     display: none;
+  }
+}
+@media (max-height: 580px) {
+  .secondary-menu section .big-icon {
+    font-size: 4em;
+    line-height: 1;
+    text-decoration: none;
+  }
+}
+@media (max-height: 520px) {
+  .secondary-menu {
+    position: absolute;
   }
 }
