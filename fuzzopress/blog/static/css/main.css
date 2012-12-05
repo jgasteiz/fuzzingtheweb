@@ -296,6 +296,11 @@ footer.night-mode {
   clear: both;
 }
 /* -- Responsive -- */
+@media (max-height: 520px) {
+  .secondary-menu {
+    position: absolute;
+  }
+}
 @media (max-width: 1210px) {
   .secondary-menu {
     left: 0;
@@ -365,10 +370,5 @@ footer.night-mode {
     font-size: 4em;
     line-height: 1;
     text-decoration: none;
-  }
-}
-@media (max-height: 520px) {
-  .secondary-menu {
-    position: absolute;
   }
 }
