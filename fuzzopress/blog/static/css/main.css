@@ -100,9 +100,25 @@ header .fuzzy {
   background-repeat: no-repeat;
   height: 220px;
   padding: 0;
+  position: relative;
 }
-header .fuzzy:hover {
-  background-position: left bottom;
+header .fuzzy .fuzzy-color {
+  background-image: url('img/banner.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+header .fuzzy .fuzzy-color:hover {
+  opacity: 1;
 }
 header nav {
   border-bottom: 1px solid #e6e8ec;
