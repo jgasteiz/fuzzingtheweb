@@ -10,13 +10,8 @@
     <article>
         <header>
             <h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>
-            <div class="comments">
-                <a href="{{ post.get_absolute_url }}#disqus_thread">0</a>
-            </div>
-            <!-- Date -->
-            <div class="date">
-                {{ post.published|date }}
-            </div>
+            <span class="date">{{ post.published|date }}</span>
+            <a class="comments" href="{{ post.get_absolute_url }}#disqus_thread">0</a>
         </header>
         <div class="body">
             {{ post.body|markdown }}
@@ -27,7 +22,6 @@
         </a>
         {% endif %}
     </article>
-    <div class="line"></div>
     {% empty %}
     <h2>Nothing to show</h2>
     {% endfor %}

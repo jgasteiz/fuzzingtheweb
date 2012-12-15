@@ -12,8 +12,7 @@
         <header>
             <h1>{{ post }}</h1>
             {% if not post.page %}
-                <!-- Date -->
-                <div class="date">{{ post.published|date }}</div>
+            <span class="date">{{ post.published|date }}</span>
             {% endif %}
         </header>
         <div class="body">{{ post.body|markdown }}</div>

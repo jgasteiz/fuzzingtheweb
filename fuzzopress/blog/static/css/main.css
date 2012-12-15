@@ -10,7 +10,7 @@
 }
 /* -- Global -- */
 body {
-  color: #000000;
+  color: #333333;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -65,7 +65,7 @@ button {
   border-radius: 2px;
   color: #f5f5f5;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   padding: 7px;
   text-decoration: none;
   text-transform: uppercase;
@@ -170,34 +170,34 @@ header nav.night-mode .light-switch {
   background-position: right bottom;
 }
 /* -- Main container -- */
-.main-container .articles {
+.main .articles {
   width: 100%;
 }
-.main-container .articles article {
+.main .articles article {
+  border-bottom: 1px solid #e6e8ec;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
   position: relative;
-  padding-top: 60px;
 }
-.main-container .articles article header {
+.main .articles article header {
   position: relative;
+  margin-bottom: 20px;
 }
-.main-container .articles article header h1 a {
-  font-weight: bold;
+.main .articles article header h1 {
+  margin: 0;
+  padding-right: 60px;
+}
+.main .articles article header h1 a {
+  font-weight: 700;
   text-decoration: none;
 }
-.main-container .articles article header .date {
+.main .articles article header .date {
   color: #888888;
+  display: block;
   font-family: 'Rokkitt', serif;
-  left: 0;
-  position: absolute;
   text-transform: uppercase;
-  top: -40px;
 }
-.main-container .articles article header .comments {
-  position: absolute;
-  right: 0;
-  top: -40px;
-}
-.main-container .articles article header .comments a {
+.main .articles article header .comments {
   background-image: url("img/comments-bubble.png");
   background-repeat: no-repeat;
   color: #888888;
@@ -206,50 +206,52 @@ header nav.night-mode .light-switch {
   font-size: 0.8em;
   padding-bottom: 8px;
   padding-top: 3px;
+  position: absolute;
+  right: 0;
   text-align: center;
   text-decoration: none;
+  top: 0;
   width: 54px;
 }
-.main-container .articles article .edit-post {
-  bottom: -30px;
+.main .articles article .edit-post {
+  bottom: 0;
   position: absolute;
   right: 0;
   text-decoration: none;
 }
-.main-container .articles article img {
+.main .articles article img {
   padding: 6px;
   background: #f5f5f5;
   box-shadow: 0px 1px 2px #888888;
 }
-.main-container .articles .go-back {
-  margin: 0;
+.main .articles .go-back {
+  margin: 20px 0;
 }
-.main-container .articles .go-back a {
+.main .articles .go-back a {
   font-family: 'Rokkitt', serif;
   text-decoration: none;
 }
-.main-container .articles .not-found {
+.main .articles .not-found {
   font-family: "404", Arial;
   line-height: 1;
   font-size: 2.6em;
   display: block;
 }
-.main-container .articles .archive {
+.main .articles .archive {
   padding-left: 20px;
 }
-.main-container .articles .archive li ul li a {
+.main .articles .archive li ul li a {
   text-decoration: none;
 }
-.main-container .articles .archive li ul li a .date {
+.main .articles .archive li ul li a .date {
   font-family: 'Rokkitt', serif;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 700;
 }
-.main-container.night-mode {
+.main .articles.night-mode {
   color: #f5f5f5;
 }
-/* Secondary Menu */
-.secondary-menu {
+.main .secondary-menu {
   border-right: 1px solid #e6e8ec;
   font-size: 0.8em;
   left: 60px;
@@ -259,34 +261,34 @@ header nav.night-mode .light-switch {
   top: 20px;
   width: 202px;
 }
-.secondary-menu a {
+.main .secondary-menu a {
   display: block;
 }
-.secondary-menu input[type=text] {
+.main .secondary-menu input[type=text] {
   width: 72%;
 }
-.secondary-menu section {
+.main .secondary-menu section {
   margin-bottom: 20px;
 }
-.secondary-menu section span {
+.main .secondary-menu section span {
   display: block;
   font-size: 1.2em;
 }
-.secondary-menu section select {
+.main .secondary-menu section select {
   display: block;
   margin-bottom: 10px;
 }
-.secondary-menu section .title {
+.main .secondary-menu section .title {
   font-family: 'Rokkitt', serif;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 }
-.secondary-menu section .big-icon {
+.main .secondary-menu section .big-icon {
   font-size: 6em;
   line-height: 1;
   text-decoration: none;
 }
-.secondary-menu.night-mode {
+.main .secondary-menu.night-mode {
   color: #f5f5f5;
 }
 /* -- Footer -- */
@@ -306,47 +308,52 @@ footer.night-mode {
   text-align: center;
 }
 .strong {
-  font-weight: bold;
+  font-weight: 700;
 }
-.line {
-  border-bottom: 1px solid #e6e8ec;
-  margin: 40px 0;
+.cf,
+.clearfix {
+  *zoom: 1;
 }
-.cf {
+.cf:before,
+.cf:after {
+  content: ' ';
+  display: table;
+}
+.cf:after {
   clear: both;
 }
 /* -- Responsive -- */
 @media (max-height: 520px) {
-  .secondary-menu {
+  .main .secondary-menu {
     position: absolute;
   }
 }
 @media (max-width: 1240px) {
-  .secondary-menu {
+  .main .secondary-menu {
     left: 0;
   }
 }
 @media (max-width: 1120px) {
-  .secondary-menu {
+  .main .secondary-menu {
     width: 160px;
     left: 0;
     padding: 10px;
   }
-  .secondary-menu input[type=text] {
+  .main .secondary-menu input[type=text] {
     display: block;
     padding: 4px 2%;
     width: 95%;
   }
-  .secondary-menu button {
+  .main .secondary-menu button {
     display: block;
     width: 100%;
   }
-  .secondary-menu section .title {
+  .main .secondary-menu section .title {
     text-transform: none;
   }
 }
 @media (max-width: 1000px) {
-  .secondary-menu {
+  .main .secondary-menu {
     width: 120px;
   }
 }
@@ -354,7 +361,7 @@ footer.night-mode {
   body {
     margin: 20px auto 40px;
   }
-  .secondary-menu {
+  .main .secondary-menu {
     border: 0;
     position: relative;
     padding: 0;
@@ -362,7 +369,7 @@ footer.night-mode {
     margin: 40px 0 60px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   body {
     margin: 0 0 40px;
     padding: 0 20px;
@@ -376,7 +383,7 @@ footer.night-mode {
     background-position: bottom right;
   }
   header nav {
-    margin: 0;
+    margin: 0 0 20px;
   }
   header nav .responsive-navbar {
     display: inline-block;
@@ -386,7 +393,7 @@ footer.night-mode {
   }
 }
 @media (max-height: 580px) {
-  .secondary-menu section .big-icon {
+  .main .secondary-menu section .big-icon {
     font-size: 4em;
     line-height: 1;
     text-decoration: none;
