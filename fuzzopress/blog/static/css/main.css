@@ -32,7 +32,7 @@ h1 {
   font-family: 'Rokkitt', serif;
   font-size: 2em;
   margin: 0 0 20px;
-  line-height: 1.2;
+  line-height: 1em;
 }
 img,
 iframe {
@@ -233,7 +233,7 @@ header nav.night-mode .light-switch {
 }
 .main .articles .not-found {
   font-family: "404", Arial;
-  line-height: 1;
+  line-height: 1em;
   font-size: 2.6em;
   display: block;
 }
@@ -285,7 +285,7 @@ header nav.night-mode .light-switch {
 }
 .main .secondary-menu section .big-icon {
   font-size: 6em;
-  line-height: 1;
+  line-height: 1em;
   text-decoration: none;
 }
 .main .secondary-menu.night-mode {
@@ -395,7 +395,7 @@ footer.night-mode {
 @media (max-height: 580px) {
   .main .secondary-menu section .big-icon {
     font-size: 4em;
-    line-height: 1;
+    line-height: 1em;
     text-decoration: none;
   }
 }
