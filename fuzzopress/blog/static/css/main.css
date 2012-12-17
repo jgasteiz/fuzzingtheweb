@@ -153,7 +153,7 @@ header nav ul li:first-child {
 }
 header nav .light-switch {
   background-image: url('img/new-switch.png');
-  background-position: top;
+  background-position: bottom;
   background-repeat: no-repeat;
   cursor: pointer;
   height: 36px;
@@ -167,7 +167,7 @@ header nav .responsive-navbar {
   margin: 16px 0;
 }
 header nav.night-mode .light-switch {
-  background-position: bottom;
+  background-position: top;
 }
 /* -- Main container -- */
 .main .articles {
