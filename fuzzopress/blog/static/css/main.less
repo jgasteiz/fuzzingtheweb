@@ -174,15 +174,15 @@ header {
             }
         }
         .light-switch {
-            background-image: url('img/switches.png');
-            background-position: left bottom;
+            background-image: url('img/new-switch2.png');
+            background-position: top;
             background-repeat: no-repeat;
             cursor: pointer;
-            height: 50px;
+            height: 36px;
             position: absolute;
             right: 20px;
             top: 0;
-            width: 30px;
+            width: 70px;
         }
         .responsive-navbar {
             display: none;
@@ -190,7 +190,7 @@ header {
         }
         &.night-mode {
             .light-switch {
-                background-position: right bottom;
+                background-position: bottom;
             }
         }
     }
@@ -199,6 +199,7 @@ header {
 /* -- Main container -- */
 .main {
     .articles {
+        margin-bottom: 80px;
         width: 100%;
 
         article {
@@ -290,20 +291,15 @@ header {
         }
     }
     .secondary-menu {
-        border-right: 1px solid @tertiary-color;
-        font-size: 0.8em;
-        left: 60px;
-        padding: 20px;
-        position: fixed;
-        text-align: center;
-        top: 20px;
-        width: 202px;
+        font-size: 0.9em;
 
         a {
             display: block;
+            margin: 10px 0;
+            padding-left: 10px;
         }
         input[type=text] {
-            width: 72%;
+            width: 60%;
         }
         section {
             margin-bottom: 20px;
@@ -363,51 +359,9 @@ footer {
 }
 
 /* -- Responsive -- */
-@media (max-height: 520px) {
-    .main .secondary-menu {
-        position: absolute;
-    }
-}
-@media(max-width: 1240px) {
-    .main .secondary-menu {
-        left: 0;
-    }
-}
-@media(max-width: 1120px) {
-    .main .secondary-menu {
-        width: 160px;
-        left: 0;
-        padding: 10px;
-
-        input[type=text] {
-            display: block;
-            padding: 4px 2%;
-            width: 95%;
-        }
-        button {
-            display: block;
-            width: 100%;
-        }
-        section .title {
-            text-transform: none;
-        }
-    }
-}
-@media(max-width: 1000px) {
-    .main .secondary-menu {
-        width: 120px;
-    }
-}
 @media(max-width: 920px) {
     body {
         margin: 20px auto 40px;
-    }
-    .main .secondary-menu {
-        border: 0;
-        position: relative;
-        padding: 0;
-        width: 100%;
-        margin: 40px 0 60px;
     }
 }
 @media(max-width: 640px) {
@@ -433,12 +387,5 @@ footer {
                 display: none;
             }
         }
-    }
-}
-@media (max-height: 580px) {
-    .main .secondary-menu section .big-icon {
-        font-size: 4em;
-        line-height: 1em;
-        text-decoration: none;
     }
 }
