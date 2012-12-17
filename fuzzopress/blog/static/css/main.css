@@ -152,7 +152,7 @@ header nav ul li:first-child {
   padding-left: 0;
 }
 header nav .light-switch {
-  background-image: url('img/new-switch2.png');
+  background-image: url('img/new-switch.png');
   background-position: top;
   background-repeat: no-repeat;
   cursor: pointer;
