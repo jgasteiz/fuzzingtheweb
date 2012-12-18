@@ -152,22 +152,22 @@ header nav ul li:first-child {
   padding-left: 0;
 }
 header nav .light-switch {
-  background-image: url('img/new-switch.png');
-  background-position: bottom;
+  background-image: url('img/switches.png');
+  background-position: left;
   background-repeat: no-repeat;
   cursor: pointer;
-  height: 36px;
+  height: 50px;
   position: absolute;
   right: 20px;
   top: 0;
-  width: 70px;
+  width: 30px;
 }
 header nav .responsive-navbar {
   display: none;
   margin: 16px 0;
 }
 header nav.night-mode .light-switch {
-  background-position: top;
+  background-position: right;
 }
 /* -- Main container -- */
 .main .articles {
