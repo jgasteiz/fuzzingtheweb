@@ -51,8 +51,44 @@
                     <li><a href="/">Home</a></li>
                     
                     {% for item in navItems %}
-                    <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                    <li>
+                        <a {% if item.url %}href="{{ item.url }}"{% endif %}>
+                            {{ item.name }}
+                        </a>
+                    </li>
                     {% endfor %}
+
+                    <!-- Tags -->
+                    {% if settings.tags.show %}
+                    <li class="parent">
+                        <a>Tags</a>
+                        <ul class="subnav">
+                            {% for tag in tags %}
+                            <li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+                            {% endfor %}
+                            <li class="arrow"></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+
+                    <li class="parent">
+                        <a>Follow me</a>
+                        <ul class="subnav">
+                            <!-- Github -->
+                            {% if settings.github.show %}
+                            <li>
+                                <a target="_blank" href="https://github.com/{{ settings.github.username }}">Github</a>
+                            </li>
+                            {% endif %}
+                            <!-- Twitter -->
+                            {% if settings.twitter.show %}
+                            <li>
+                                <a target="_blank" href="https://twitter.com/{{ settings.twitter.username }}">Twitter</a>
+                            </li>
+                            {% endif %}
+                            <li class="arrow"></li>
+                        </ul>
+                    </li>
                     
                     {% if user.is_superuser %}
                     <li>
@@ -77,36 +113,6 @@
                 <section class="search">
                     <input type="text" class="fuzz-finder" placeholder="Find a post">
                     <button class="fuzz-finder-go">Go</button>
-                </section>
-                {% endif %}
-
-                <!-- Github -->
-                {% if settings.github.show %}
-                <section>
-                    <span class="title">Follow me on github</span>
-                    <a target="_blank" class="no-decoration" href="https://github.com/{{ settings.github.username }}">
-                        <i class="icon big-icon icon-github"></i>
-                    </a>
-                </section>
-                {% endif %}
-
-                <!-- Twitter -->
-                {% if settings.twitter.show %}
-                <section>
-                    <span class="title">Follow me on twitter</span>
-                    <a target="_blank" class="no-decoration" href="https://twitter.com/{{ settings.twitter.username }}">
-                        <i class="icon big-icon icon-twitter"></i>
-                    </a>
-                </section>
-                {% endif %}
-
-                <!-- Tags -->
-                {% if settings.tags.show %}
-                <section>
-                    <span class="title">Tags</span>
-                    {% for tag in tags %}
-                        <a href="/tag/{{ tag.name }}/">{{ tag.name }}</a>
-                    {% endfor %}
                 </section>
                 {% endif %}
 
