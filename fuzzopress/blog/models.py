@@ -19,9 +19,9 @@ class NavItem(models.Model):
     name = models.CharField(__('Name'), blank=False, max_length=40)
     url = models.CharField(__('Url'), blank=True, null=True, default='', max_length=240)
     weight = models.IntegerField(default=0)
-    parent = models.ForeignKey('NavItem', default=None, blank=True, null=True,
-        help_text='If this navItem has a parent, it will not be displayed as \
-        a first level menu item')
+    # parent = models.ForeignKey('NavItem', default=None, blank=True, null=True,
+    #     help_text='If this navItem has a parent, it will not be displayed as \
+    #     a first level menu item')
 
     class Meta:
         ordering = ('weight',)
