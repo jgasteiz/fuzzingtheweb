@@ -4,3 +4,4 @@ db.sqlite
 migrations
 media
 django
+markitup
