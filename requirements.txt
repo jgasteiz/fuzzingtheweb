@@ -3,7 +3,3 @@ Markdown==2.2.1
 South==0.7.6
 django-markitup==1.0.0
 gunicorn==0.15.0
-psycopg2==2.4.5
-vboxapi==1.0
-virtualenv==1.8.2
-wsgiref==0.1.2

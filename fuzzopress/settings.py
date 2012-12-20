@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -9,14 +9,14 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'postgres': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fuzzopress',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
+    # 'postgres': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'fuzzopress',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db.sqlite',
@@ -115,19 +115,36 @@ MARKITUP_SET = 'markitup/sets/markdown'
 
 # Settings for main blog app
 FUZZOPRESS_SETTINGS = {
-    'github': {  # Shows a 'Follow me on github' sidebar widget.
-        'show': True,
-        'username': 'jgasteiz'
-    },
-    'twitter': {  # Shows a 'Follow me on twitter' sidebar widget.
-        'show': True,
-        'username': 'jgasteiz'
-    },
+    'contact': [
+        {
+            'name': 'github',
+            'url': 'https://github.com/jgasteiz',
+            'show': True,
+        },
+        {
+            'name': 'twitter',
+            'url': 'https://twitter.com/jgasteiz',
+            'show': True,
+        },
+        {
+            'name': 'google+',
+            'url': 'https://plus.google.com/u/0/104971241169939266087/posts',
+            'show': True,
+        },
+        {
+            'name': 'email',
+            'url': 'mailto:javi.manzano.oller@gmail.com',
+            'show': True,
+        }
+    ],
     'analytics': {
         'show': True,
         'code': 'UA-23612418-1'
     },
     'tags': {
+        'show': True
+    },
+    'archive': {
         'show': True
     },
     'searchbox': {
