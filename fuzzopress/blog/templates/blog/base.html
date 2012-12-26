@@ -58,19 +58,6 @@
                     </li>
                     {% endfor %}
 
-                    <!-- Tags -->
-                    {% if settings.tags.show %}
-                    <li class="parent">
-                        <a>Tags</a>
-                        <ul class="subnav">
-                            {% for tag in tags %}
-                            <li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
-                            {% endfor %}
-                            <li class="arrow"></li>
-                        </ul>
-                    </li>
-                    {% endif %}
-
                     <li class="parent">
                         <a>Contact</a>
                         <ul class="subnav">
@@ -87,24 +74,27 @@
                         </ul>
                     </li>
 
-                    {% if settings.finder.show %}
                     <li class="parent">
-                        <a>Find</a>
+                        <a>Entries</a>
                         <ul class="subnav">
-                            <li>
-                                <input type="text" class="fuzz-finder" placeholder="Find a post">
-                                <button class="fuzz-finder-go">Go</button>
-                            </li>
+                            {% if settings.archive.show %}
+                                <li><a href="/archive/">Archive</a></li>
+                            {% endif %}
+                            {% if settings.tags.show %}
+                                <li class="title">Tags</li>
+                                {% for tag in tags %}
+                                <li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+                                {% endfor %}
+                            {% endif %}
+                            {% if settings.finder.show %}
+                                <li>
+                                    <input type="text" class="fuzz-finder" placeholder="Find a post">
+                                    <button class="fuzz-finder-go">Go</button>
+                                </li>
+                            {% endif %}
                             <li class="arrow"></li>
                         </ul>
                     </li>
-                    {% endif %}
-
-                    {% if settings.archive.show %}
-                    <li class="parent">
-                        <a href="/archive/">Archive</a>
-                    </li>
-                    {% endif %}
                     
                     {% if user.is_superuser %}
                     <li>

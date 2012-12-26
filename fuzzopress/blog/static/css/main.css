@@ -170,6 +170,9 @@ header nav ul li .subnav li {
 header nav ul li .subnav li a {
   line-height: 1.2em;
 }
+header nav ul li .subnav li.title {
+  font-family: 'Rokkitt', serif;
+}
 header nav ul li .subnav .arrow {
   background-image: url('img/arrow.png');
   background-repeat: no-repeat;
@@ -199,7 +202,7 @@ header nav .light-switch {
 }
 header nav .fuzz-finder {
   font-size: 0.8em;
-  margin: 0 auto;
+  margin: 10px auto 0;
   width: auto;
 }
 header nav .fuzz-finder-go {
