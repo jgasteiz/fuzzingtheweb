@@ -15,6 +15,7 @@ class CustomContextMixin(object):
     paginate_by = settings.FUZZOPRESS_SETTINGS['entries_per_page']
     context_object_name = 'posts'
     template_name = 'blog/list.html'
+
     def get_context_data(self, **kwargs):
         context = super(CustomContextMixin, self).get_context_data(**kwargs)
         context.update({
@@ -22,6 +23,7 @@ class CustomContextMixin(object):
             'widgets': Widget.objects.all(),
             'tags': Tag.objects.all(),
             'settings': settings.FUZZOPRESS_SETTINGS,
+            'request': self.request,
             'colour': settings.FUZZOPRESS_SETTINGS['colors'][datetime.today().weekday()]})
         return context
 
@@ -43,7 +45,7 @@ class SearchView(CustomContextMixin, ListView):
     def get_queryset(self):
         query_string = self.kwargs['search']
         if query_string:
-            entry_query = get_search_query(query_string, ['title', 'body',])
+            entry_query = get_search_query(query_string, ['title', 'body'])
             return Post.objects.published().filter(entry_query)
         return Post.objects.published()
 
@@ -52,6 +54,7 @@ class PostView(CustomContextMixin, DetailView):
     """ A single post view """
     context_object_name = 'post'
     template_name = 'blog/detail.html'
+
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 
@@ -60,6 +63,7 @@ class ArchiveView(CustomContextMixin, ListView):
     """ For a month """
     context_object_name = 'archives'
     template_name = 'blog/archive.html'
+
     def get_queryset(self):
         archive = {}
         archive_qs = Post.objects.dates('published', 'month', order='DESC')
@@ -73,6 +77,12 @@ class ArchiveView(CustomContextMixin, ListView):
                 archive[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
                 archive[year][month - 1][1] = True
         return [sorted(archive.items(), reverse=True)]
+
+
+class NightMode(CustomContextMixin, View):
+    def get(self, request, *args, **kwargs):
+        request.session['layout'] = self.kwargs['layout']
+        return HttpResponse(request.session['layout'])
 
 
 class LoadEntries(View):
@@ -95,6 +105,3 @@ class LoadEntries(View):
                 })
             return HttpResponse(simplejson.dumps(posts))
         return HttpResponse('Nothing found')
-
-
-

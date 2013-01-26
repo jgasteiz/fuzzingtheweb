@@ -19,15 +19,6 @@ body {
   max-width: 600px;
   padding: 0 33px;
 }
-body.night-mode {
-  background-color: #222222;
-}
-body.night-mode a {
-  color: #f5f5f5;
-}
-body.night-mode a:hover {
-  color: #04b1d8;
-}
 h1 {
   font-family: 'Rokkitt', serif;
   font-size: 2em;
@@ -212,12 +203,6 @@ header nav .responsive-navbar {
   display: none;
   margin: 16px 0;
 }
-header nav.night-mode .light-switch {
-  background-position: right;
-}
-header nav.night-mode ul li .subnav li a {
-  color: #333333;
-}
 /* -- Main container -- */
 .main .articles {
   margin-bottom: 80px;
@@ -298,17 +283,10 @@ header nav.night-mode ul li .subnav li a {
   font-size: 0.9em;
   font-weight: 700;
 }
-.main .articles.night-mode {
-  color: #f5f5f5;
-}
 /* -- Footer -- */
 footer {
   font-size: 0.9em;
   margin: 40px 0;
-}
-footer.night-mode {
-  text-shadow: none;
-  color: #f5f5f5;
 }
 /* -- OOCSS -- */
 .block {
@@ -331,6 +309,29 @@ footer.night-mode {
 }
 .cf:after {
   clear: both;
+}
+/* -- Night Mode -- */
+body.night-mode {
+  background-color: #222222;
+}
+body.night-mode a {
+  color: #f5f5f5;
+}
+body.night-mode a:hover {
+  color: #04b1d8;
+}
+body.night-mode nav .light-switch {
+  background-position: right;
+}
+body.night-mode nav ul li .subnav li a {
+  color: #333333;
+}
+body.night-mode .main .articles {
+  color: #f5f5f5;
+}
+body.night-mode footer {
+  text-shadow: none;
+  color: #f5f5f5;
 }
 /* -- Responsive -- */
 @media (max-width: 920px) {

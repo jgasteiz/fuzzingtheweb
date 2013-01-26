@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.conf.urls import patterns, include, url
 from fuzzopress.blog.views import (BlogView, PostView, ArchiveView, TagView,
-    SearchView, LoadEntries)
+    SearchView, LoadEntries, NightMode)
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,6 +15,10 @@ urlpatterns = patterns('',
     url(r'^_ajax/archive/(?P<year>\d+)/(?P<month>\d+)/$',
         LoadEntries.as_view(),
         name='load_entries'),
+
+    url(r'^_ajax/night-mode/(?P<layout>[-\w]+)',
+        NightMode.as_view(),
+        name='night_mode'),
 
     # List entries by tag
     url(r'^tag/(?P<tag>[-\w]+)/',

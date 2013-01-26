@@ -1,4 +1,4 @@
-/*global $, jQuery, document, location*/
+/*global $, jQuery, document, console*/
 
 /*
  * Fuzzopress javascript code
@@ -11,9 +11,13 @@ $(document).ready(function () {
     /*
      * When the light switcher is clicked, toggles between normal and night-mode.
      */
-    $('.light-switch').click(function () {
-        $('body, nav, .articles, .secondary-menu, footer')
-            .toggleClass('night-mode');
+    $('.light-switch').click(function (e) {
+        e.preventDefault();
+        $('body').toggleClass('night-mode').toggleClass('normal');
+        var url = $(this).attr('data-href') + $('body').attr('class');
+        $.get(url, {}, function(data) {
+            return false;
+        });
     });
 
     /*
@@ -21,20 +25,24 @@ $(document).ready(function () {
      */
     $('.fuzz-finder').keypress(function (e) {
         if (e.charCode === 13) {
-            var inputText = $(this).val().replace(/ /g, '+');
-            location.href = '/search/' + inputText + '/';
+            findPosts();
         }
     });
 
     /*
      * When the go-button is pressed when writing some search, it searches it.
      */
-    $('.fuzz-finder-go').click(function () {
+    $('.fuzz-finder-go').click(function () { findPosts(); });
+
+    /*
+     * Retrieves the text from the input box and starts the search.
+     */
+    var findPosts = function() {
         var inputText = $('.fuzz-finder').val().replace(/ /g, '+');
         if (inputText !== '') {
-            location.href = '/search/' + inputText + '/';
+            window.location.href = '/search/' + inputText + '/';
         }
-    });
+    };
 
     /*
      * Ajax logic for archive viewing.

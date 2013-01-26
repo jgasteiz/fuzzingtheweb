@@ -33,7 +33,7 @@
         <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
 
     </head>
-    <body>
+    <body class="{{ request.session.layout }}">
         <header>
             <div class="fuzzy"><div class="fuzzy-color"></div></div>
             <nav>
@@ -104,7 +104,7 @@
                     </li>
                     {% endif %}
                 </ul>
-                <i class="light-switch"></i>
+                <i class="light-switch" data-href="/_ajax/night-mode/"></i>
             </nav>
         </header>
         

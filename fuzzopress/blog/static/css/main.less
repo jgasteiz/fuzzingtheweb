@@ -37,15 +37,6 @@ body {
     margin: 20px auto 40px;
     max-width: 600px;
     padding: 0 33px;
-    &.night-mode {
-        background-color: @almost-black;
-        a {
-            color: @background-color;
-            &:hover {
-                color: @secondary-color;
-            }
-        }
-    }
 }
 h1 {
     font-family: @rokkitt;
@@ -239,14 +230,6 @@ header {
             display: none;
             margin: 16px 0;
         }
-        &.night-mode {
-            .light-switch {
-                background-position: right;
-            }
-            ul li .subnav li a {
-                color: @main-text-color;
-            }
-        }
     }
 }
 
@@ -340,19 +323,12 @@ header {
                 }
             }
         }
-        &.night-mode {
-            color: @background-color;
-        }
     }
 }
 /* -- Footer -- */
 footer {
     font-size: 0.9em;
     margin: 40px 0;
-    &.night-mode {
-        text-shadow: none;
-        color: @background-color;
-    }
 }
 
 /* -- OOCSS -- */
@@ -374,6 +350,34 @@ footer {
 }
 .cf:after, {
     clear: both;
+}
+
+/* -- Night Mode -- */
+body.night-mode {
+    background-color: @almost-black;
+    a {
+        color: @background-color;
+        &:hover {
+            color: @secondary-color;
+        }
+    }
+    nav {
+        .light-switch {
+            background-position: right;
+        }
+        ul li .subnav li a {
+            color: @main-text-color;
+        }
+    }
+    .main {
+        .articles {
+            color: @background-color;
+        }
+    }
+    footer {
+        text-shadow: none;
+        color: @background-color;
+    }
 }
 
 /* -- Responsive -- */
