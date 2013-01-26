@@ -43,6 +43,8 @@
                     {% for item in navItems %}
                     <option value="{{ item.url }}">{{ item.name }}</option>
                     {% endfor %}
+                    <option value="/contact/">Contact</option>
+                    <option value="/entries/">Entries</option>
                     {% if user.is_superuser %}
                     <option value="/admin/blog/post/add/">Post</option>
                     {% endif %}
@@ -59,7 +61,7 @@
                     {% endfor %}
 
                     <li class="parent">
-                        <a>Contact</a>
+                        <a href="/contact/">Contact</a>
                         <ul class="subnav">
                             {% for account in settings.contact %}
                                 {% if account.show %}
@@ -75,7 +77,7 @@
                     </li>
 
                     <li class="parent">
-                        <a>Entries</a>
+                        <a href="/entries/">Entries</a>
                         <ul class="subnav">
                             {% if settings.archive.show %}
                                 <li><a href="/archive/">Archive</a></li>
