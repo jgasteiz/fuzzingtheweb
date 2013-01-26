@@ -1,155 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
-        <meta name="author" content="Javi Manzano">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
+		<meta name="author" content="Javi Manzano">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Fuzzopress styles -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
-        <style type="text/css">
-            body.night-mode a:hover {
-                color: {{ colour }};
-            }
-            a:hover {
-                color: {{ colour }};
-            }
-            ::selection,
-            ::-moz-selection {
-                background: {{ colour }};
-            }
-        </style>
+		<!-- Fuzzopress styles -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+		<style type="text/css">
+			body.night-mode a:hover {
+				color: {{ colour }};
+			}
+			a:hover {
+				color: {{ colour }};
+			}
+			::selection,
+			::-moz-selection {
+				background: {{ colour }};
+			}
+		</style>
 
-        <!-- Code block styles -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
-        <script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+		<!-- Code block styles -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
+		<script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 
-        <!-- Google fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body class="{{ request.session.layout }}">
-        <header>
-            <div class="fuzzy"><div class="fuzzy-color"></div></div>
-            <nav>
-                <select class="responsive-navbar" onchange="location.href=this.value">
-                    <option selected value="/">Navigate</option>
-                    <option value="/">Home</option>
-                    {% for item in navItems %}
-                    <option value="{{ item.url }}">{{ item.name }}</option>
-                    {% endfor %}
-                    <option value="/contact/">Contact</option>
-                    <option value="/entries/">Entries</option>
-                    {% if user.is_superuser %}
-                    <option value="/admin/blog/post/add/">Post</option>
-                    {% endif %}
-                </select>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    
-                    {% for item in navItems %}
-                    <li>
-                        <a {% if item.url %}href="{{ item.url }}"{% endif %}>
-                            {{ item.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
+	</head>
+	<body class="{{ request.session.layout }}">
+		<header>
+			<div class="fuzzy"><div class="fuzzy-color"></div></div>
+			<nav>
+				<select class="responsive-navbar" onchange="location.href=this.value">
+					<option selected value="/">Navigate</option>
+					<option value="/">Home</option>
+					{% for item in navItems %}
+					<option value="{{ item.url }}">{{ item.name }}</option>
+					{% endfor %}
+					<option value="/contact/">Contact</option>
+					<option value="/entries/">Entries</option>
+					{% if user.is_superuser %}
+					<option value="/admin/blog/post/add/">Post</option>
+					{% endif %}
+				</select>
+				<ul>
+					<li><a href="/">Home</a></li>
+					{% for item in navItems %}
+					<li>
+						<a {% if item.url %}href="{{ item.url }}"{% endif %}>
+							{{ item.name }}
+						</a>
+					</li>
+					{% endfor %}
+					<li class="parent">
+						<a href="/contact/">Contact</a>
+						<ul class="subnav">
+							{% for account in settings.contact %}
+								{% if account.show %}
+								<li>
+									<a target="_blank" href="{{ account.url }}">
+										{{ account.name }}
+									</a>
+								</li>
+								{% endif %}
+							{% endfor %}
+							<li class="arrow"></li>
+						</ul>
+					</li>
 
-                    <li class="parent">
-                        <a href="/contact/">Contact</a>
-                        <ul class="subnav">
-                            {% for account in settings.contact %}
-                                {% if account.show %}
-                                <li>
-                                    <a target="_blank" href="{{ account.url }}">
-                                        {{ account.name }}
-                                    </a>
-                                </li>
-                                {% endif %}
-                            {% endfor %}
-                            <li class="arrow"></li>
-                        </ul>
-                    </li>
+					<li class="parent">
+						<a href="/entries/">Entries</a>
+						<ul class="subnav">
+							{% if settings.archive.show %}
+								<li><a href="/archive/">Archive</a></li>
+							{% endif %}
+							{% if settings.tags.show %}
+								<li class="title">Tags</li>
+								{% for tag in tags %}
+								<li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+								{% endfor %}
+							{% endif %}
+							{% if settings.finder.show %}
+								<li>
+									<input type="text" class="fuzz-finder" placeholder="Find a post">
+									<button class="fuzz-finder-go">Go</button>
+								</li>
+							{% endif %}
+							<li class="arrow"></li>
+						</ul>
+					</li>
+					
+					{% if user.is_superuser %}
+					<li>
+						<a target="_blank" href="/admin/blog/post/add/">
+							<i class="icon-pencil icon-large"></i>
+						</a>
+					</li>
+					{% endif %}
+				</ul>
+				<i class="light-switch" data-href="/_ajax/night-mode/"></i>
+			</nav>
+		</header>
+		
+		<div class="main">
+			<div class="articles">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
 
-                    <li class="parent">
-                        <a href="/entries/">Entries</a>
-                        <ul class="subnav">
-                            {% if settings.archive.show %}
-                                <li><a href="/archive/">Archive</a></li>
-                            {% endif %}
-                            {% if settings.tags.show %}
-                                <li class="title">Tags</li>
-                                {% for tag in tags %}
-                                <li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
-                                {% endfor %}
-                            {% endif %}
-                            {% if settings.finder.show %}
-                                <li>
-                                    <input type="text" class="fuzz-finder" placeholder="Find a post">
-                                    <button class="fuzz-finder-go">Go</button>
-                                </li>
-                            {% endif %}
-                            <li class="arrow"></li>
-                        </ul>
-                    </li>
-                    
-                    {% if user.is_superuser %}
-                    <li>
-                        <a target="_blank" href="/admin/blog/post/add/">
-                            <i class="icon-pencil icon-large"></i>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-                <i class="light-switch" data-href="/_ajax/night-mode/"></i>
-            </nav>
-        </header>
-        
-        <div class="main">
-            <div class="articles">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
+		<footer>
+			This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>.
+		</footer>
 
-        <footer>
-            This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>.
-        </footer>
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/json2.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+		{% if settings.analytics.show %}
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '{{ settings.analytics.code }}']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		{% endif %}
+		<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'fuzzingtheweb';
 
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/json2.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
-        {% if settings.analytics.show %}
-        <script>
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '{{ settings.analytics.code }}']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-        {% endif %}
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'fuzzingtheweb';
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var s = document.createElement('script'); 
-                s.async = true;
-                s.type = 'text/javascript';
-                s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-            }());
-        </script>
-    </body>
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function () {
+				var s = document.createElement('script'); 
+				s.async = true;
+				s.type = 'text/javascript';
+				s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+		</script>
+	</body>
 </html>

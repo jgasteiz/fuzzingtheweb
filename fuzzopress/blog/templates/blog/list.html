@@ -5,37 +5,34 @@
 {% load markup %}
 
 {% block content %}
-
-    {% for post in posts %}
-    <article>
-        <header>
-            <h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>
-            <span class="date">{{ post.published|date }}</span>
-            <a class="comments" href="{{ post.get_absolute_url }}#disqus_thread">0</a>
-        </header>
-        <div class="body">
-            {{ post.body|markdown }}
-        </div>
-        {% if user.is_superuser %}
-        <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
-            <i class="icon-edit"></i>
-        </a>
-        {% endif %}
-    </article>
-    {% empty %}
-    <h2>Nothing to show</h2>
-    {% endfor %}
-    
-    {% if is_paginated %}
-    <section class="pagination">
-        {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-        {% endif %}
-        page {{ page_obj.number }} of {{ paginator.num_pages }}
-        {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">next</a>
-        {% endif %}
-    </section>
-    {% endif %}
-
+	{% for post in posts %}
+	<article>
+		<header>
+			<h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>
+			<span class="date">{{ post.published|date }}</span>
+			<a class="comments" href="{{ post.get_absolute_url }}#disqus_thread">0</a>
+		</header>
+		<div class="body">
+			{{ post.body|markdown }}
+		</div>
+		{% if user.is_superuser %}
+		<a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+			<i class="icon-edit"></i>
+		</a>
+		{% endif %}
+	</article>
+	{% empty %}
+	<h2>Nothing to show</h2>
+	{% endfor %}
+	{% if is_paginated %}
+	<section class="pagination">
+		{% if page_obj.has_previous %}
+		<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+		{% endif %}
+		page {{ page_obj.number }} of {{ paginator.num_pages }}
+		{% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}">next</a>
+		{% endif %}
+	</section>
+	{% endif %}
 {% endblock %}

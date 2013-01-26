@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -26,7 +26,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
 
 TIME_ZONE = 'Europe/Madrid'
 USE_TZ = True

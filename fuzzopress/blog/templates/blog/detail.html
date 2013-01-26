@@ -5,45 +5,44 @@
 {% load markup %}
 
 {% block content %}
-    
-    {% if post %}
-    <h3 class="go-back"><a href="/">← Back</a></h3>
-    <article>
-        <header>
-            <h1>{{ post }}</h1>
-            {% if not post.page %}
-            <span class="date">{{ post.published|date }}</span>
-            {% endif %}
-        </header>
-        <div class="body">{{ post.body|markdown }}</div>
-        {% if user.is_superuser %}
-        <a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
-            <i class="icon-edit"></i>
-        </a>
-        {% endif %}
-    </article>
-    <div class="line"></div>
 
-    {% if not post.page %}
-    <!-- Disqus -->
-    <div id="disqus_thread" class="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'fuzzingtheweb';
-        var disqus_developer = 1;
+	{% if post %}
+	<h3 class="go-back"><a href="/">← Back</a></h3>
+	<article>
+		<header>
+			<h1>{{ post }}</h1>
+			{% if not post.page %}
+			<span class="date">{{ post.published|date }}</span>
+			{% endif %}
+		</header>
+		<div class="body">{{ post.body|markdown }}</div>
+		{% if user.is_superuser %}
+		<a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+			<i class="icon-edit"></i>
+		</a>
+		{% endif %}
+	</article>
+	<div class="line"></div>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <!-- End Disqus -->
-    {% endif %}
+	{% if not post.page %}
+	<!-- Disqus -->
+	<div id="disqus_thread" class="disqus_thread"></div>
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		var disqus_shortname = 'fuzzingtheweb';
+		var disqus_developer = 1;
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	<!-- End Disqus -->
+	{% endif %}
 
-    {% endif %}
+	{% endif %}
 
 {% endblock %}
