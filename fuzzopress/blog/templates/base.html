@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{% block title %}{% endblock %}</title>
-		<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.png" type="image/x-icon">
+		<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.png" type="image/x-icon">
 		<meta name="author" content="Javi Manzano">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -41,7 +41,7 @@
 					{% endif %}
 				{% endfor %}
 			</div>
-			<div class="fuzzy"><div class="fuzzy-color"></div></div>
+			<div class="fuzzy"></div>
 			<nav>
 				<select class="responsive-navbar" onchange="location.href=this.value">
 					<option selected value="/">Navigate</option>
@@ -77,11 +77,11 @@
 			</nav>
 		</header>
 		
-		<div class="main">
+		<section role="main">
 			<div class="articles">
 				{% block content %}{% endblock %}
 			</div>
-		</div>
+		</section>
 
 		<footer>
 			This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>.

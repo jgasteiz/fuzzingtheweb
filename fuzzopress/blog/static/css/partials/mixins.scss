@@ -1,0 +1,26 @@
+@mixin grayscale() {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    transition: filter 0.8s ease;
+    -o-transition: -o-filter 0.4s ease;
+    -moz-transition: -moz-filter 0.4s ease;
+    -ms-transition: -ms-filter 0.4s ease;
+    -webkit-transition: -webkit-filter 0.4s ease;
+    &:hover {
+        filter: none;
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        -o-filter: none;
+    }
+    @media (max-width: $breakpoint-2) {
+        filter: none;
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        -o-filter: none;
+    }
+}

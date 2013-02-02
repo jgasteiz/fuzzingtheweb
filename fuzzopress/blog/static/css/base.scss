@@ -1,7 +1,6 @@
-@import 'font-awesome';
-@import 'vars';
-@import 'mixins';
-
+@import 'misc/font-awesome';
+@import 'partials/index';
+@import 'sections/index';
 
 /* -- Global -- */
 body {
@@ -10,7 +9,7 @@ body {
     font-weight: 300;
     font-size: 18px;
     line-height: 1.6em;
-    margin: 0 auto 40px;
+    margin: $body-margin;
     max-width: 600px;
     padding: 0 33px;
 }
@@ -77,247 +76,7 @@ pre {
     color: $white;
 }
 
-/* -- Header -- */
-header {
-    .contact {
-        margin: 10px 0;
-        text-align: right;
-        a {
-            display: inline-block;
-            margin-left: 10px;
-            text-decoration: none;
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-    }
-    .fuzzy {
-        background-image: url('img/banner.png');
-        background-position: left top;
-        background-repeat: no-repeat;
-        height: 220px;
-        padding: 0;
-        position: relative;
 
-        .fuzzy-color {
-            background-image: url('img/banner.png');
-            background-position: right bottom;
-            background-repeat: no-repeat;
-            position: absolute;
-            opacity: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            transition: opacity 0.6s ease;
-            -o-transition: opacity 0.6s ease;
-            -moz-transition: opacity 0.6s ease;
-            -webkit-transition: opacity 0.6s ease;
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-    /* -- Navigation bar -- */
-    nav {
-        border-bottom: 1px solid $tertiary-color;
-        margin: 20px 0;
-        position:relative;
-        width: 100%;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-
-            li {
-                display: inline-block;
-                padding-left: 15px;
-                position: relative;
-
-                a {
-                    cursor: pointer;
-                    display: inline-block;
-                    line-height: 2.6em;
-                    font-family: $rokkitt;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                }
-                .subnav {
-                    display: none;
-                    background-color: $white;
-                    border: 1px solid $tertiary-color;
-                    box-shadow: 0px 1px 2px $almost-black;
-                    border-radius: 6px;
-                    left: 0;
-                    min-width: 136px;
-                    padding: 10px 20px;
-                    position: absolute;
-                    top: 42px;
-                    z-index: 90;
-
-                    li {
-                        display: block;
-                        padding: 0;
-                        a {
-                            line-height: 1.2em;
-                        }
-                        &.title {
-                            font-family: $rokkitt;
-                        }
-                    }
-                    .arrow {
-                        background-image: url('img/arrow.png');
-                        background-repeat: no-repeat;
-                        display: inline-block;
-                        height: 16px;
-                        left: 15px;
-                        position: absolute;
-                        top: -12px;
-                        width: 32px;
-                    }
-                }
-                &.parent {
-                    &:hover {
-                        .subnav {
-                            display: block;
-                        }
-                    }
-                }
-                &:first-child {
-                    padding-left: 0;
-                }
-            }
-        }
-        .light-switch {
-            background-image: url('img/switches.png');
-            background-position: left;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            height: 50px;
-            position: absolute;
-            right: 20px;
-            top: 0;
-            width: 30px;
-        }
-        .fuzz-finder {
-            font-size: 0.8em;
-            margin: 10px auto 0;
-            width: auto;
-        }
-        .fuzz-finder-go {
-            width: 100%;
-        }
-        .responsive-navbar {
-            display: none;
-            margin: 16px 0;
-        }
-    }
-}
-
-/* -- Main container -- */
-.main {
-    .articles {
-        margin-bottom: 80px;
-        width: 100%;
-
-        article {
-            border-bottom: 1px solid $tertiary-color;
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            position: relative;
-
-            header {
-                position: relative;
-                margin-bottom: 20px;
-
-                h1 {
-                    margin: 0;
-                    padding-right: 60px;
-                    a {
-                        font-weight: 700;
-                        text-decoration: none;
-                    }
-                }
-                .date {
-                    color: $dark-grey;
-                    display: block;
-                    font-family: $rokkitt;
-                    text-transform: uppercase;
-                }
-                .comments {
-                    background-image: url("img/comments-bubble.png");
-                    background-repeat: no-repeat;
-                    color: $dark-grey;
-                    display: inline-block;
-                    font-family: $rokkitt;
-                    font-size: 0.8em;
-                    padding-bottom: 8px;
-                    padding-top: 3px;
-                    position: absolute;
-                    right: 0;
-                    text-align: center;
-                    text-decoration: none;
-                    top: 0;
-                    width: 54px;
-                }
-            }
-            .edit-post {
-                bottom: 0;
-                position: absolute;
-                right: 0;
-                text-decoration: none;
-            }
-            img {
-                padding: 6px;
-                background: $background-color;
-                box-shadow: 0px 1px 2px $cool-shadows-color;
-            }
-        }
-        .go-back {
-            margin: 20px 0;
-            a {
-                font-family: $rokkitt;
-                text-decoration: none;
-            }
-        }
-        .not-found {
-            font-family: $not-found;
-            line-height: 1em;
-            font-size: 2.6em;
-            display: block;
-        }
-        .archive {
-            padding-left: 20px;
-
-            li {
-                ul {
-                    li {
-                        a {
-                            text-decoration: none;
-                            .date {
-                                font-family: $rokkitt;
-                                font-size: 0.9em;
-                                font-weight: 700;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-/* -- Footer -- */
-footer {
-    font-size: 0.9em;
-    margin: 40px 0;
-}
 
 /* -- OOCSS -- */
 .block {
@@ -365,7 +124,7 @@ body.night-mode {
             color: $main-text-color;
         }
     }
-    .main {
+    section[role="main"] {
         .articles {
             color: $background-color;
         }
@@ -379,12 +138,12 @@ body.night-mode {
 /* -- Responsive -- */
 @media(max-width: $breakpoint-2) {
     body {
-        margin: 0 0 40px;
+        margin: $body-margin-responsive;
         padding: 0 20px;
     }
     header {
         .fuzzy {
-            width: 250px;
+            width: 230px;
             background-position: bottom right;
             margin: 0 auto;
             &:hover {
