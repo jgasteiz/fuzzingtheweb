@@ -377,11 +377,6 @@ body.night-mode {
 }
 
 /* -- Responsive -- */
-@media(max-width: $breakpoint-1) {
-    body {
-        margin: 0 auto 40px;
-    }
-}
 @media(max-width: $breakpoint-2) {
     body {
         margin: 0 0 40px;
