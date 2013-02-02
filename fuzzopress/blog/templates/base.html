@@ -8,8 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Fuzzopress styles -->
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/font/font-awesome.css">
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
 		<style type="text/css">
 			body.night-mode a:hover {
 				color: {{ colour }};
@@ -35,6 +34,13 @@
 	</head>
 	<body class="{{ request.session.layout }}">
 		<header>
+			<div class="contact">
+				{% for account in settings.contact %}
+					{% if account.show %}
+					<a href="{{ account.url }}" target="_blank"><i class="{{ account.icon }} icon-large"></i></a>
+					{% endif %}
+				{% endfor %}
+			</div>
 			<div class="fuzzy"><div class="fuzzy-color"></div></div>
 			<nav>
 				<select class="responsive-navbar" onchange="location.href=this.value">
@@ -43,8 +49,7 @@
 					{% for item in navItems %}
 					<option value="{{ item.url }}">{{ item.name }}</option>
 					{% endfor %}
-					<option value="/contact/">Contact</option>
-					<option value="/entries/">Entries</option>
+					<option value="/archive/">Archive</option>
 					{% if user.is_superuser %}
 					<option value="/admin/blog/post/add/">Post</option>
 					{% endif %}
@@ -58,43 +63,7 @@
 						</a>
 					</li>
 					{% endfor %}
-					<li class="parent">
-						<a href="/contact/">Contact</a>
-						<ul class="subnav">
-							{% for account in settings.contact %}
-								{% if account.show %}
-								<li>
-									<a target="_blank" href="{{ account.url }}">
-										{{ account.name }}
-									</a>
-								</li>
-								{% endif %}
-							{% endfor %}
-							<li class="arrow"></li>
-						</ul>
-					</li>
-
-					<li class="parent">
-						<a href="/entries/">Entries</a>
-						<ul class="subnav">
-							{% if settings.archive.show %}
-								<li><a href="/archive/">Archive</a></li>
-							{% endif %}
-							{% if settings.tags.show %}
-								<li class="title">Tags</li>
-								{% for tag in tags %}
-								<li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
-								{% endfor %}
-							{% endif %}
-							{% if settings.finder.show %}
-								<li>
-									<input type="text" class="fuzz-finder" placeholder="Find a post">
-									<button class="fuzz-finder-go">Go</button>
-								</li>
-							{% endif %}
-							<li class="arrow"></li>
-						</ul>
-					</li>
+					<li class="parent"><a href="/archive/">Archive</a></li>
 					
 					{% if user.is_superuser %}
 					<li>

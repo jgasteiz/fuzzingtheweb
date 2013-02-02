@@ -1,0 +1,31 @@
+/* -- Sizes -- */
+$breakpoint-1: 920px;
+$breakpoint-2: 640px;
+
+/* -- Colours -- */
+$black: #000;
+$almost-black: #222;
+$dark-grey: #888;
+$white: #FFF;
+$cool-shadows-color: #888;
+$primary-color: #333;
+$secondary-color: #04B1D8;
+$tertiary-color: #E6E8EC;
+$main-text-color: #333;
+$background-color: #F5F5F5;
+$primary-button-color: #F14E32;
+$secondary-button-color: #C11E02;
+$button-text-color: #F5F5F5;
+
+/* -- Fonts -- */
+@font-face {
+    font-family: "404";
+    src: url('font/Starjedi.ttf') format('truetype');
+}
+@font-face {
+    font-family: "custom-impact";
+    src: url('font/impact.ttf') format('truetype');
+}
+$not-found: "404", Arial;
+$sans: 'Source Sans Pro', sans-serif;
+$rokkitt: 'Rokkitt', serif;

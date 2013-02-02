@@ -1,25 +1,38 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Archive | Fuzzing the Web{% endblock %}
 
 {% block content %}
 	<h1>Archive</h1>
-	{% for archive in archives %}
-	{% for year, month_list in archive %}
-	<!-- year -->
-	<h2>{{ year }}</h2>
-	<ul class="archive">
-	<!-- Months -->
-	{% for month, has_link in month_list %}
-	{% if has_link %}
-		<li>
-			<a href="/_ajax/archive/{{ month.year }}/{{ month.month }}/" class="date">
-				{{ month|date:"F" }}
-			</a>
-		</li>
-	{% endif %}
-	{% endfor %}
-	</ul>
-	{% endfor %}
-	{% endfor %}
+	<div class="cf">
+		<div class="column-6">
+			{% for archive in archives %}
+			{% for year, month_list in archive %}
+			<!-- year -->
+			<h2>{{ year }}</h2>
+			<ul class="archive">
+			<!-- Months -->
+			{% for month, has_link in month_list %}
+			{% if has_link %}
+				<li>
+					<a href="/_ajax/archive/{{ month.year }}/{{ month.month }}/" class="date">
+						{{ month|date:"F" }}
+					</a>
+				</li>
+			{% endif %}
+			{% endfor %}
+			</ul>
+			{% endfor %}
+			{% endfor %}
+		</div>
+		<div class="column-6">
+			<h2>Tags</h2>
+			<ul>
+				{% for tag in tags %}
+				<li><a href="/tag/{{ tag.name }}/">{{ tag.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	
 {% endblock %}

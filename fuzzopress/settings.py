@@ -117,21 +117,25 @@ FUZZOPRESS_SETTINGS = {
     'contact': [
         {
             'name': 'github',
+            'icon': 'icon-github-alt',
             'url': 'https://github.com/jgasteiz',
             'show': True,
         },
         {
             'name': 'twitter',
+            'icon': 'icon-twitter',
             'url': 'https://twitter.com/jgasteiz',
             'show': True,
         },
         {
-            'name': 'google+',
+            'name': 'googleplus',
+            'icon': 'icon-google-plus-sign',
             'url': 'https://plus.google.com/u/0/104971241169939266087/posts',
             'show': True,
         },
         {
             'name': 'email',
+            'icon': 'icon-envelope-alt',
             'url': 'mailto:javi.manzano.oller@gmail.com',
             'show': True,
         }
