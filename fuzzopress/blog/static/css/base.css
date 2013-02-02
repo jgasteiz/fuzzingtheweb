@@ -1313,7 +1313,7 @@ body.night-mode {
 /* -- Responsive -- */
 @media (max-width: 920px) {
   body {
-    margin: 20px auto 40px; } }
+    margin: 0 auto 40px; } }
 @media (max-width: 640px) {
   body {
     margin: 0 0 40px;
