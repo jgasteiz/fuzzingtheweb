@@ -1009,10 +1009,6 @@ ul.icons {
   font-family: "404";
   src: url("font/Starjedi.ttf") format("truetype"); }
 
-@font-face {
-  font-family: "custom-impact";
-  src: url("font/impact.ttf") format("truetype"); }
-
 /* -- Header -- */
 header {
   position: relative;
@@ -1042,7 +1038,7 @@ header {
     -moz-transition: -moz-filter 0.4s ease;
     -ms-transition: -ms-filter 0.4s ease;
     -webkit-transition: -webkit-filter 0.4s ease;
-    background-image: url("../img/banner.png");
+    background-image: url("sprites/banner.png");
     background-position: left top;
     background-repeat: no-repeat;
     height: 200px;
@@ -1090,7 +1086,7 @@ header {
         header nav ul li:first-child {
           padding-left: 0; }
     header nav .light-switch {
-      background-image: url("../img/switches.png");
+      background-image: url("sprites/switches.png");
       background-position: left;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -1133,7 +1129,7 @@ section[role="main"] .articles {
         font-family: "Rokkitt", serif;
         text-transform: uppercase; }
       section[role="main"] .articles article header .comments {
-        background-image: url("../img/comments-bubble.png");
+        background-image: url("sprites/comments-bubble.png");
         background-repeat: no-repeat;
         color: #888888;
         display: inline-block;

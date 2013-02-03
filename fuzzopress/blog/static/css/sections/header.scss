@@ -20,7 +20,7 @@ header {
     }
     .fuzzy {
         @include grayscale();
-        background-image: url('../img/banner.png');
+        background-image: url('sprites/banner.png');
         background-position: left top;
         background-repeat: no-repeat;
         height: $header-height;
@@ -64,7 +64,7 @@ header {
             }
         }
         .light-switch {
-            background-image: url('../img/switches.png');
+            background-image: url('sprites/switches.png');
             background-position: left;
             background-repeat: no-repeat;
             cursor: pointer;
