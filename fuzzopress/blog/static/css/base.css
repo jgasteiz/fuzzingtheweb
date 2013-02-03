@@ -1023,7 +1023,7 @@ header {
     header .contact a {
       display: block;
       margin-top: 20px;
-      text-align: center;
+      text-align: right;
       text-decoration: none; }
       header .contact a:first-child {
         margin-top: 0; }
