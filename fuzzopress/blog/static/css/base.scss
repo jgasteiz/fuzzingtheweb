@@ -71,7 +71,11 @@ pre {
         overflow: auto;
     }
 }
-::selection, ::-moz-selection {
+::selection {
+    background: $secondary-color;
+    color: $white;
+}
+::-moz-selection {
     background: $secondary-color;
     color: $white;
 }

@@ -1241,7 +1241,11 @@ pre code {
   padding: 10px;
   overflow: auto; }
 
-::selection, ::-moz-selection {
+::selection {
+  background: #04b1d8;
+  color: white; }
+
+::-moz-selection {
   background: #04b1d8;
   color: white; }
 
