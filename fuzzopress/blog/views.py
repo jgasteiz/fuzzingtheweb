@@ -66,7 +66,7 @@ class ArchiveView(CustomContextMixin, ListView):
 
     def get_queryset(self):
         archive = {}
-        archive_qs = Post.objects.dates('published', 'month', order='DESC')
+        archive_qs = Post.objects.dates('published', 'month', order='ASC').reverse()
         for arch in archive_qs:
             year = arch.year
             month = arch.month
@@ -76,6 +76,8 @@ class ArchiveView(CustomContextMixin, ListView):
                 # catch the KeyError, and set up list for that year
                 archive[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
                 archive[year][month - 1][1] = True
+        for year in archive:
+            archive[year] = reversed(archive[year])
         return [sorted(archive.items(), reverse=True)]
 
 
@@ -92,13 +94,12 @@ class LoadEntries(View):
         if self.kwargs['year'] and self.kwargs['month']:
             year = self.kwargs['year']
             month = self.kwargs['month']
-            posts_qs = Post.objects.published().filter(published__year=year,
-                published__month=month)
+            posts_qs = Post.objects.published().filter(published__year=year, published__month=month)
             posts = []
             for post in posts_qs:
                 posts.append({
-                    'title': '<span class="date">%s %s.</span> %s' %
-                        (post.published.day,
+                    'title': '<span class="date">%s %s.</span> %s' % (
+                        post.published.day,
                         calendar.month_abbr[post.published.month],
                         post.title),
                     'url': '/%s/' % (post.slug)
