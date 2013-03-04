@@ -1080,7 +1080,7 @@ header {
           cursor: pointer;
           display: inline-block;
           line-height: 2.6em;
-          font-family: "Rokkitt", serif;
+          font-family: "Source Sans Pro", sans-serif;
           text-decoration: none;
           text-transform: uppercase; }
         header nav ul li:first-child {
@@ -1121,19 +1121,19 @@ section[role="main"] .articles {
         margin: 0;
         padding-right: 60px; }
         section[role="main"] .articles article header h1 a {
-          font-weight: 700;
+          font-weight: 600;
           text-decoration: none; }
       section[role="main"] .articles article header .date {
         color: #888888;
         display: block;
-        font-family: "Rokkitt", serif;
+        font-family: "Source Sans Pro", sans-serif;
         text-transform: uppercase; }
       section[role="main"] .articles article header .comments {
         background-image: url("sprites/comments-bubble.png");
         background-repeat: no-repeat;
         color: #888888;
         display: inline-block;
-        font-family: "Rokkitt", serif;
+        font-family: "Source Sans Pro", sans-serif;
         font-size: 0.8em;
         padding-bottom: 8px;
         padding-top: 3px;
@@ -1155,7 +1155,7 @@ section[role="main"] .articles {
   section[role="main"] .articles .go-back {
     margin: 20px 0; }
     section[role="main"] .articles .go-back a {
-      font-family: "Rokkitt", serif;
+      font-family: "Source Sans Pro", sans-serif;
       text-decoration: none; }
   section[role="main"] .articles .not-found {
     font-family: "404", Arial;
@@ -1167,9 +1167,9 @@ section[role="main"] .articles {
     section[role="main"] .articles .archive li ul li a {
       text-decoration: none; }
       section[role="main"] .articles .archive li ul li a .date {
-        font-family: "Rokkitt", serif;
+        color: black;
         font-size: 0.9em;
-        font-weight: 700; }
+        font-weight: 600; }
 
 /* -- Footer -- */
 footer {
@@ -1178,27 +1178,36 @@ footer {
 
 /* -- Global -- */
 body {
-  color: #333333;
+  color: #555555;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.6em;
   margin: 20px auto 40px;
   max-width: 600px;
   padding: 0 33px; }
 
 h1 {
-  font-family: "Rokkitt", serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 2em;
   margin: 0 0 20px;
   line-height: 1em; }
 
 img,
 iframe {
-  max-width: 98% !important; }
+  max-width: 96% !important; }
+
+blockquote {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 30px 40px; }
+
+b, strong {
+  color: black;
+  font-weight: 600; }
 
 a {
-  color: #333333;
+  color: #555555;
   text-decoration: underline;
   transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
@@ -1257,7 +1266,8 @@ pre code {
   text-align: center; }
 
 .strong {
-  font-weight: 700; }
+  color: black;
+  font-weight: 600; }
 
 .cf, .clearfix {
   *zoom: 1; }
@@ -1286,7 +1296,7 @@ body.night-mode {
   body.night-mode nav .light-switch {
     background-position: right; }
   body.night-mode nav ul li .subnav li a {
-    color: #333333; }
+    color: #555555; }
   body.night-mode section[role="main"] .articles {
     color: whitesmoke; }
   body.night-mode footer {

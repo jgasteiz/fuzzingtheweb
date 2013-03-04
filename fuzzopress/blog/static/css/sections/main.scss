@@ -18,14 +18,14 @@ section[role="main"] {
                     margin: 0;
                     padding-right: 60px;
                     a {
-                        font-weight: 700;
+                        font-weight: 600;
                         text-decoration: none;
                     }
                 }
                 .date {
                     color: $dark-grey;
                     display: block;
-                    font-family: $rokkitt;
+                    font-family: $header-font;
                     text-transform: uppercase;
                 }
                 .comments {
@@ -33,7 +33,7 @@ section[role="main"] {
                     background-repeat: no-repeat;
                     color: $dark-grey;
                     display: inline-block;
-                    font-family: $rokkitt;
+                    font-family: $header-font;
                     font-size: 0.8em;
                     padding-bottom: 8px;
                     padding-top: 3px;
@@ -60,7 +60,7 @@ section[role="main"] {
         .go-back {
             margin: 20px 0;
             a {
-                font-family: $rokkitt;
+                font-family: $header-font;
                 text-decoration: none;
             }
         }
@@ -79,9 +79,9 @@ section[role="main"] {
                         a {
                             text-decoration: none;
                             .date {
-                                font-family: $rokkitt;
+                                color: $black;
                                 font-size: 0.9em;
-                                font-weight: 700;
+                                font-weight: 600;
                             }
                         }
                     }

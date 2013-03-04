@@ -4,24 +4,33 @@
 
 /* -- Global -- */
 body {
-    color: $primary-color;
-    font-family: $sans;
-    font-weight: 300;
-    font-size: 18px;
+    color: $main-text-color;
+    font-family: $body-font;
+    font-weight: 400;
+    font-size: 16px;
     line-height: 1.6em;
     margin: $body-margin;
     max-width: 600px;
     padding: 0 33px;
 }
 h1 {
-    font-family: $rokkitt;
+    font-family: $header-font;
     font-size: 2em;
     margin: 0 0 20px;
     line-height: 1em;
 }
 img,
 iframe {
-    max-width: 98% !important;
+    max-width: 96% !important;
+}
+blockquote {
+    background: #f5f5f5;
+    margin: 0;
+    padding: 30px 40px;
+}
+b, strong {
+    color: $black;
+    font-weight: 600;
 }
 a {
     color: $main-text-color;
@@ -90,7 +99,8 @@ pre {
     text-align: center;
 }
 .strong {
-    font-weight: 700;
+    color: $black;
+    font-weight: 600;
 }
 .cf, .clearfix{ 
     *zoom: 1;

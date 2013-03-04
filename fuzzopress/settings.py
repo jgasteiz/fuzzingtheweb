@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -153,6 +153,6 @@ FUZZOPRESS_SETTINGS = {
     'finder': {
         'show': True
     },
-    'colors': ['#D65C3C', '#F1C94F', '#40C080', '#2E6EB0', '#934EA8', '#C1216C', '#04B1D8'],
+    'colors': ['#D65C3C', '#FFC000', '#40C080', '#2E6EB0', '#770999', '#E6006C', '#04B1D8'],
     'entries_per_page': 5
 }
