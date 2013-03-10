@@ -134,6 +134,12 @@ body.night-mode {
             color: $secondary-color;
         }
     }
+    b, strong {
+        color: #666;
+    }
+    blockquote {
+        background: #333;
+    }
     nav {
         .light-switch {
             background-position: right;

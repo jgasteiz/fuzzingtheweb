@@ -1293,6 +1293,10 @@ body.night-mode {
     color: whitesmoke; }
     body.night-mode a:hover {
       color: #04b1d8; }
+  body.night-mode b, body.night-mode strong {
+    color: #666; }
+  body.night-mode blockquote {
+    background: #333; }
   body.night-mode nav .light-switch {
     background-position: right; }
   body.night-mode nav ul li .subnav li a {
