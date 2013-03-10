@@ -1106,29 +1106,29 @@ header {
       margin: 16px 0; }
 
 /* -- Main container -- */
-section[role="main"] .articles {
+div[role="main"] .articles {
   margin-bottom: 80px;
   width: 100%; }
-  section[role="main"] .articles article {
+  div[role="main"] .articles article {
     border-bottom: 1px solid #e6e8ec;
     margin-bottom: 40px;
     padding-bottom: 40px;
     position: relative; }
-    section[role="main"] .articles article header {
+    div[role="main"] .articles article header {
       position: relative;
       margin-bottom: 20px; }
-      section[role="main"] .articles article header h1 {
+      div[role="main"] .articles article header h1 {
         margin: 0;
         padding-right: 60px; }
-        section[role="main"] .articles article header h1 a {
+        div[role="main"] .articles article header h1 a {
           font-weight: 600;
           text-decoration: none; }
-      section[role="main"] .articles article header .date {
+      div[role="main"] .articles article header .date {
         color: #888888;
         display: block;
         font-family: "Source Sans Pro", sans-serif;
         text-transform: uppercase; }
-      section[role="main"] .articles article header .comments {
+      div[role="main"] .articles article header .comments {
         background-image: url("sprites/comments-bubble.png");
         background-repeat: no-repeat;
         color: #888888;
@@ -1143,30 +1143,30 @@ section[role="main"] .articles {
         text-decoration: none;
         top: 0;
         width: 54px; }
-    section[role="main"] .articles article .edit-post {
+    div[role="main"] .articles article .edit-post {
       bottom: 0;
       position: absolute;
       right: 0;
       text-decoration: none; }
-    section[role="main"] .articles article img {
+    div[role="main"] .articles article img {
       padding: 6px;
       background: whitesmoke;
       box-shadow: 0px 1px 2px #888888; }
-  section[role="main"] .articles .go-back {
+  div[role="main"] .articles .go-back {
     margin: 20px 0; }
-    section[role="main"] .articles .go-back a {
+    div[role="main"] .articles .go-back a {
       font-family: "Source Sans Pro", sans-serif;
       text-decoration: none; }
-  section[role="main"] .articles .not-found {
+  div[role="main"] .articles .not-found {
     font-family: "404", Arial;
     line-height: 1em;
     font-size: 2.6em;
     display: block; }
-  section[role="main"] .articles .archive {
+  div[role="main"] .articles .archive {
     padding-left: 20px; }
-    section[role="main"] .articles .archive li ul li a {
+    div[role="main"] .articles .archive li ul li a {
       text-decoration: none; }
-      section[role="main"] .articles .archive li ul li a .date {
+      div[role="main"] .articles .archive li ul li a .date {
         color: black;
         font-size: 0.9em;
         font-weight: 600; }
@@ -1218,7 +1218,7 @@ a {
     text-decoration: none; }
 
 p {
-  margin: 0 0 20px; }
+  margin: 20px 0; }
 
 input[type=text] {
   border: 1px solid #e6e8ec;
@@ -1297,7 +1297,7 @@ body.night-mode {
     background-position: right; }
   body.night-mode nav ul li .subnav li a {
     color: #555555; }
-  body.night-mode section[role="main"] .articles {
+  body.night-mode div[role="main"] .articles {
     color: whitesmoke; }
   body.night-mode footer {
     text-shadow: none;

@@ -1,6 +1,10 @@
 @import 'misc/font-awesome';
-@import 'partials/index';
-@import 'sections/index';
+// Partials
+@import 'partials/_vars';
+@import 'partials/_mixins';
+@import 'sections/_header';
+@import 'sections/_main';
+@import 'sections/_footer';
 
 /* -- Global -- */
 body {
@@ -17,7 +21,7 @@ h1 {
     font-family: $header-font;
     font-size: 2em;
     margin: 0 0 20px;
-    line-height: 1em;
+    line-height: 1em;    
 }
 img,
 iframe {
@@ -45,7 +49,7 @@ a {
     }
 }
 p {
-    margin: 0 0 20px;
+    margin: 20px 0;
 }
 input[type=text] {
     border: 1px solid $tertiary-color;
@@ -138,7 +142,7 @@ body.night-mode {
             color: $main-text-color;
         }
     }
-    section[role="main"] {
+    div[role="main"] {
         .articles {
             color: $background-color;
         }

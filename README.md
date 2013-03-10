@@ -1,4 +1,4 @@
-#Fuzzopress
+# Fuzzopress
 
 Fuzzopress is a simple blogging app developed with Django.
 
