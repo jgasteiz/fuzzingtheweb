@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from markitup.widgets import AdminMarkItUpWidget
-from fuzzopress.blog.models import Post, NavItem, Widget, Tag, File
+from blog.models import Post, NavItem, Widget, Tag, File
 
 
 class PostAdmin(admin.ModelAdmin):

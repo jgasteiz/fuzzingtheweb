@@ -2,7 +2,7 @@
 from django.db import models
 from datetime import datetime
 from django.utils.timezone import utc
-from fuzzopress.blog.utils import uuslug as slugify
+from blog.utils import uuslug as slugify
 from django.utils.translation import ugettext_lazy as __
 
 

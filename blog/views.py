@@ -6,15 +6,16 @@ from django.utils import simplejson
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, View
-from fuzzopress.blog.models import Post, NavItem, Widget, Tag
-from fuzzopress.blog.utils import get_query as get_search_query
+from blog.models import Post, NavItem, Widget, Tag
+from blog.utils import get_query as get_search_query
 
 
+# Base views
 class CustomContextMixin(object):
     """ Same context data for every class view """
     paginate_by = settings.FUZZOPRESS_SETTINGS['entries_per_page']
     context_object_name = 'posts'
-    template_name = 'blog/list.html'
+    template_name = 'list.html'
 
     def get_context_data(self, **kwargs):
         context = super(CustomContextMixin, self).get_context_data(**kwargs)
@@ -28,19 +29,24 @@ class CustomContextMixin(object):
         return context
 
 
-class BlogView(CustomContextMixin, ListView):
+# Page views
+class HomePage(CustomContextMixin, ListView):
     """ Main blog view """
     def get_queryset(self):
         return Post.objects.published()
 
+home_page = HomePage.as_view()
 
-class TagView(CustomContextMixin, ListView):
+
+class TagPage(CustomContextMixin, ListView):
     """ A tag posts """
     def get_queryset(self):
         return Post.objects.published().filter(mytags__name=self.kwargs['tag'])
 
+tag_page = TagPage.as_view()
 
-class SearchView(CustomContextMixin, ListView):
+
+class SearchPage(CustomContextMixin, ListView):
     """ A search result posts """
     def get_queryset(self):
         query_string = self.kwargs['search']
@@ -49,20 +55,24 @@ class SearchView(CustomContextMixin, ListView):
             return Post.objects.published().filter(entry_query)
         return Post.objects.published()
 
+search_page = SearchPage.as_view()
 
-class PostView(CustomContextMixin, DetailView):
+
+class EntryPage(CustomContextMixin, DetailView):
     """ A single post view """
     context_object_name = 'post'
-    template_name = 'blog/detail.html'
+    template_name = 'detail.html'
 
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 
+entry_page = EntryPage.as_view()
 
-class ArchiveView(CustomContextMixin, ListView):
+
+class ArchivePage(CustomContextMixin, ListView):
     """ For a month """
     context_object_name = 'archives'
-    template_name = 'blog/archive.html'
+    template_name = 'archive.html'
 
     def get_queryset(self):
         archive = {}
@@ -80,11 +90,16 @@ class ArchiveView(CustomContextMixin, ListView):
             archive[year] = reversed(archive[year])
         return [sorted(archive.items(), reverse=True)]
 
+archive_page = ArchivePage.as_view()
 
+
+# Ajax views
 class NightMode(CustomContextMixin, View):
     def get(self, request, *args, **kwargs):
         request.session['layout'] = self.kwargs['layout']
         return HttpResponse(request.session['layout'])
+
+night_mode = NightMode.as_view()
 
 
 class LoadEntries(View):
@@ -106,3 +121,5 @@ class LoadEntries(View):
                 })
             return HttpResponse(simplejson.dumps(posts))
         return HttpResponse('Nothing found')
+
+load_entries = LoadEntries.as_view()
