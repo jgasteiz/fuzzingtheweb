@@ -8,9 +8,9 @@
 	{% for post in posts %}
 	<article>
 		<header>
-			<h1><a href="{{ post.get_absolute_url }}">{{ post }}</a></h1>
+			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
 			<span class="date">{{ post.published|date }}</span>
-			<a class="comments" href="{{ post.get_absolute_url }}#disqus_thread">0</a>
+			<a class="comments" href="/{{ post.slug }}#disqus_thread">0</a>
 		</header>
 		<div class="body">
 			{{ post.body|markdown }}
@@ -20,6 +20,9 @@
 			<i class="icon-edit"></i>
 		</a>
 		{% endif %}
+		<footer>
+			{% include "partials/sharebuttons.html" %}
+		</footer>
 	</article>
 	{% empty %}
 	<h2>Nothing to show</h2>

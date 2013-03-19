@@ -99,10 +99,6 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('post', None, {'slug': self.slug})
-
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title, instance=self)

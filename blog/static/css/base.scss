@@ -124,6 +124,24 @@ pre {
         margin-left: 0;
     }
 }
+.sharebuttons {
+    margin: 0;
+    padding: 0;
+    li {
+        float: left;
+        list-style: none;
+        margin-left: 10px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &.gplus {
+            > div {
+                width: 34px !important;
+            }
+        }
+    }
+}
+
 
 /* -- Night Mode -- */
 body.night-mode {

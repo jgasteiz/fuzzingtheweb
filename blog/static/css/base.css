@@ -118,7 +118,7 @@ li [class*=" icon-"], .nav li [class^="icon-"],
 
 ul.icons {
   list-style-type: none;
-  text-indent: -0.75em; }
+  text-indent: -.75em; }
   ul.icons li [class^="icon-"],
   ul.icons li [class*=" icon-"] {
     width: .75em; }
@@ -1143,6 +1143,8 @@ div[role="main"] .articles {
         text-decoration: none;
         top: 0;
         width: 54px; }
+    div[role="main"] .articles article footer {
+      margin: 20px 0; }
     div[role="main"] .articles article .edit-post {
       bottom: 0;
       position: absolute;
@@ -1285,6 +1287,18 @@ pre code {
   width: 48.717948717948715%; }
   .column-6:first-child {
     margin-left: 0; }
+
+.sharebuttons {
+  margin: 0;
+  padding: 0; }
+  .sharebuttons li {
+    float: left;
+    list-style: none;
+    margin-left: 10px; }
+    .sharebuttons li:first-child {
+      margin-left: 0; }
+    .sharebuttons li.gplus > div {
+      width: 34px !important; }
 
 /* -- Night Mode -- */
 body.night-mode {
