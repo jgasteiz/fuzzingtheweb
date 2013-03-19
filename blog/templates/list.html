@@ -10,7 +10,7 @@
 		<header>
 			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
 			<span class="date">{{ post.published|date }}</span>
-			<a class="comments" href="/{{ post.slug }}#disqus_thread">0</a>
+			<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}#disqus_thread">0</a>
 		</header>
 		<div class="body">
 			{{ post.body|markdown }}
