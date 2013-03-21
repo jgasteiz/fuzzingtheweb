@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -85,11 +85,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'blog',
     'django.contrib.markup',
+    'requests',
     'markitup',
     'gunicorn',
     'south',
+    'blog',
 )
 
 LOGGING = {

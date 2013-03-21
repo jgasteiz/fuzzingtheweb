@@ -118,7 +118,7 @@ li [class*=" icon-"], .nav li [class^="icon-"],
 
 ul.icons {
   list-style-type: none;
-  text-indent: -.75em; }
+  text-indent: -0.75em; }
   ul.icons li [class^="icon-"],
   ul.icons li [class*=" icon-"] {
     width: .75em; }
@@ -1177,6 +1177,28 @@ div[role="main"] .articles {
 footer {
   font-size: 0.9em;
   margin: 40px 0; }
+
+#news {
+  padding-left: 30px; }
+  #news li {
+    margin: 10px 0; }
+    #news li a {
+      display: block; }
+      #news li a:hover {
+        color: #ff6600; }
+    #news li .info {
+      font-size: 0.8em;
+      line-height: 1;
+      margin: 0;
+      position: relative; }
+      #news li .info .points:after {
+        content: " points"; }
+      #news li .info .posted-ago,
+      #news li .info .num-comments {
+        display: inline-block;
+        margin-left: 20px; }
+      #news li .info .num-comments:after {
+        content: " comments"; }
 
 /* -- Global -- */
 body {

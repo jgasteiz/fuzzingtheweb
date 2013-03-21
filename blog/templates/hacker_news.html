@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Hacker News | Fuzzing the Web{% endblock %}
+
+{% block content %}
+    <h1>News</h1>
+    <ol id="news"></ol>
+    
+{% endblock %}
+
+{% block extra_js %}
+    {# Will use backbone soon. #}
+    <!--<script type="text/javascript" src="{{ STATIC_URL }}js/libs/underscore-min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/libs/backbone-min.js"></script>-->
+    <script>
+        $(document).ready(function() {
+            // $.get('/news/', {}, function(data) {
+            //     var jsonResponse = JSON.parse(data);
+            //     populatePage(json_response);
+            // });
+            var jsonResponse = {{ news|safe }};
+            populatePage(jsonResponse);
+        });
+
+        var populatePage = function(allNews) {
+            var i,
+                newsElement,
+                $newsList = $('#news')
+
+            for (i in allNews.items) {
+                newsElement = allNews.items[i];
+                var li = $('<li />'),
+                    title = $('<a />', {
+                                'href': newsElement.url,
+                                'target': '_blank'
+                            }).text(newsElement.title),
+                    info = $('<p />', {'class': 'info'}),
+                    points = $('<span />', {'class': 'points'}).text(newsElement.points),
+                    postedAgo = $('<span />', {'class': 'posted-ago'}).text(newsElement.postedAgo);
+                    commentCount = $('<span />', {'class': 'num-comments'}).text(newsElement.commentCount);
+
+                info.append(points).append(postedAgo).append(commentCount);
+                li.append(title).append(info);
+                $newsList.append(li);
+            }
+        }
+
+    </script>
+{% endblock extra_js %}
