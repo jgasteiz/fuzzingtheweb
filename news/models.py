@@ -17,7 +17,7 @@ class NewsFeed(models.Model):
         ordering = ('-created',)
 
     def __unicode__(self):
-        return self.created
+        return str(self.created)
 
     def save(self, *args, **kwargs):
         if not self.created:
