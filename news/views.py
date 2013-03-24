@@ -22,15 +22,16 @@ def update_feed(request):
 
 
 # Will document this soon.
-def get_feed(feed):
+def get_feed(feed, num_tries=10):
     r = requests.get(HACKER_NEWS_API_URL)
     if r.status_code == 200:
         feed.json = r.text
         feed.save()
-    else:
+    elif num_tries > 0:
+        num_tries = num_tries - 1
         print "Trying again..."
         sleep(10)
-        get_feed(feed)
+        get_feed(feed, num_tries)
     return feed
 
 
