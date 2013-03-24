@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -158,3 +158,9 @@ FUZZOPRESS_SETTINGS = {
     'colors': ['#D65C3C', '#FFC000', '#40C080', '#2E6EB0', '#770999', '#E6006C', '#04B1D8'],
     'entries_per_page': 5
 }
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

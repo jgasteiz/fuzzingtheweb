@@ -4,3 +4,4 @@ db.sqlite
 media
 django
 markitup
+local_settings.py
