@@ -13,12 +13,9 @@
     <!--<script type="text/javascript" src="{{ STATIC_URL }}js/libs/underscore-min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/libs/backbone-min.js"></script>-->
     <script>
+        
         $(document).ready(function() {
-            // $.get('/news/', {}, function(data) {
-            //     var jsonResponse = JSON.parse(data);
-            //     populatePage(json_response);
-            // });
-            var jsonResponse = {{ news|safe }};
+            var jsonResponse = JSON.parse({{ news|safe }});
             populatePage(jsonResponse);
         });
 

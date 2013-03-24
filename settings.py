@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'markitup',
     'gunicorn',
     'south',
+    'news',
     'blog',
 )
 
