@@ -1,6 +1,7 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns(
     'news.views',
-    url(r'^$', 'hacker_news', name='hacker_news'),
+    url(r'^get_news/', 'get_news', name='get_news'),
+    url(r'^update_feed/', 'update_feed', name='update_feed'),
 )
