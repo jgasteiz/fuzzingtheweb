@@ -6,6 +6,7 @@ html {
     background-color: #000;
 }
 body {
+    color: #F0DD00;
     margin: 0 auto;
     max-width: 600px;
     padding: 20px;
@@ -14,15 +15,16 @@ body {
 img {
     max-width: 100%;
 }
-.not-found {
-    color: #F0DD00;
+h1 {
     font-family: "404", Arial;
     line-height: 1em;
     font-size: 2.6em;
     display: block;
 }
-a.not-found {
+a {
+    color: #F0DD00;
     display: inline-block;
+    font-family: "404", Arial;
     font-size: 1.4em;
     margin-top: 20px;
     text-decoration: none;
@@ -32,8 +34,13 @@ a.not-found {
     padding: 10px 12px;
     border-radius: 10px;
 }
-@media(max-width: 600px) {
-    .not-found {
+@media(max-width: 600px) and (min-width: 321px) {
+    h1 {
         font-size: 1.6em;
+    }
+}
+@media(max-width: 320px) {
+    h1, a {
+        font-size: 1em;
     }
 }
