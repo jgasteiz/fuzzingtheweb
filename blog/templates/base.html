@@ -34,15 +34,8 @@
 
 
 	</head>
-	<body class="{{ request.session.layout }}{% block body_class %}{% endblock body_class %}">
+	<body class="{{ request.session.layout }}">
 		<header>
-			<div class="contact">
-				{% for account in settings.contact %}
-					{% if account.show %}
-					<a href="{{ account.url }}" target="_blank"><i class="{{ account.icon }} icon-large"></i></a>
-					{% endif %}
-				{% endfor %}
-			</div>
 			<div class="fuzzy"></div>
 			<nav>
 				<select class="responsive-navbar" onchange="location.href=this.value">

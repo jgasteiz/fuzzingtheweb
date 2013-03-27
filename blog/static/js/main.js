@@ -13,7 +13,7 @@ $(document).ready(function () {
      */
     $('.light-switch').click(function (e) {
         e.preventDefault();
-        $('body').toggleClass('night-mode');
+        $('body').toggleClass('night-mode').toggleClass('normal');
         var url = $(this).attr('data-href') + $('body').attr('class');
         $.get(url, {}, function(data) {
             return false;
