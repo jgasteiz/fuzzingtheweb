@@ -34,7 +34,7 @@
 
 
 	</head>
-	<body class="{{ request.session.layout }}">
+	<body class="{{ request.session.layout }}{% block body_class %}{% endblock body_class %}">
 		<header>
 			<div class="contact">
 				{% for account in settings.contact %}

@@ -136,3 +136,10 @@ class LoadEntries(View):
         return HttpResponse('Nothing found')
 
 load_entries = LoadEntries.as_view()
+
+
+class Error(CustomContextMixin, TemplateView):
+    pass
+
+four_o_four = Error.as_view(template_name='404.html')
+five_hundred = Error.as_view(template_name='500.html')

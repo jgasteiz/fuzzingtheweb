@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 from .views import SimplePage
 
 urlpatterns = patterns(
@@ -8,6 +8,9 @@ urlpatterns = patterns(
     url(r'^hacker_news/',
         SimplePage.as_view(template_name='hacker_news.html'),
         name='hacker_news'),
+
+    url(r'^404/', 'four_o_four', name='404'),
+    url(r'^500/', 'five_hundred', name='500'),
 
     # Ajax requests
     url(r'^_ajax/archive/(?P<year>\d+)/(?P<month>\d+)/$', 'load_entries', name='load_entries'),

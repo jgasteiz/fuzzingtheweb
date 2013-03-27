@@ -22,10 +22,5 @@ $button-text-color: #F5F5F5;
 $orange: #ff6600;
 
 /* -- Fonts -- */
-@font-face {
-    font-family: "404";
-    src: url('font/Starjedi.ttf') format('truetype');
-}
-$not-found: "404", Arial;
 $body-font: "Source Sans Pro", sans-serif;
 $header-font: "Source Sans Pro", sans-serif;

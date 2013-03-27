@@ -1,4 +1,4 @@
-Django==1.4.2
+Django==1.5
 Markdown==2.2.1
 South==0.7.6
 django-markitup==1.0.0
