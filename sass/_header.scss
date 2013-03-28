@@ -41,6 +41,13 @@ header {
         user-select: none;
         h1 {
             display: none;
+            background-image: url(img/open-responsive.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            cursor: pointer;
+            height: 45px;
+            margin: 0;
+            width: 80px;
         }
         ul {
             list-style-type: none;
