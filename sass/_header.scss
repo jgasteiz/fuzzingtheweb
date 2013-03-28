@@ -19,9 +19,9 @@ header {
         }
     }
     .fuzzy {
-        @include grayscale();
+        // @include grayscale();
         background-image: url('img/banner.png');
-        background-position: left top;
+        background-position: left bottom;
         background-repeat: no-repeat;
         height: $header-height;
         padding: 0;
