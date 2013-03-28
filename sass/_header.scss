@@ -39,7 +39,9 @@ header {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-
+        h1 {
+            display: none;
+        }
         ul {
             list-style-type: none;
             margin: 0;
@@ -73,18 +75,6 @@ header {
             right: 20px;
             top: 0;
             width: 30px;
-        }
-        .fuzz-finder {
-            font-size: 0.8em;
-            margin: 10px auto 0;
-            width: auto;
-        }
-        .fuzz-finder-go {
-            width: 100%;
-        }
-        .responsive-navbar {
-            display: none;
-            margin: 16px 0;
         }
     }
 }

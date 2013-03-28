@@ -38,18 +38,8 @@
 		<header>
 			<div class="fuzzy"></div>
 			<nav>
-				<select class="responsive-navbar" onchange="location.href=this.value">
-					<option selected value="/">Navigate</option>
-					<option value="/">Home</option>
-					{% for item in navItems %}
-					<option value="{{ item.url }}">{{ item.name }}</option>
-					{% endfor %}
-					<option value="/archive/">Archive</option>
-					{% if user.is_superuser %}
-					<option value="/admin/blog/post/add/">Post</option>
-					{% endif %}
-				</select>
-				<ul>
+				<h1 id="menu_opener"></h1>
+				<ul id="menu">
 					<li><a href="/">Home</a></li>
 					{% for item in navItems %}
 					<li>
@@ -68,7 +58,7 @@
 					</li>
 					{% endif %}
 				</ul>
-				<i class="light-switch" data-href="/_ajax/night-mode/"></i>
+				<i id="light_switch" class="light-switch" data-href="/_ajax/night-mode/"></i>
 			</nav>
 		</header>
 		

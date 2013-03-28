@@ -179,6 +179,15 @@ body.night-mode {
 }
 
 /* -- Responsive -- */
+@media(min-width: $breakpoint-2-edge) {
+    header {
+        nav {
+            ul {
+                display: block !important;
+            }
+        }
+    }
+}
 @media(max-width: $breakpoint-2) {
     body {
         margin: $body-margin-responsive;
@@ -194,12 +203,27 @@ body.night-mode {
             }
         }
         nav {
+            min-height: 45px;
             margin: 0 0 20px;
-            .responsive-navbar {
-                display: inline-block;
+            h1 {
+                background-image: url(img/open-responsive.png);
+                background-repeat: no-repeat;
+                background-position: left center;
+                display: block;
+                height: 45px;
+                margin: 0;
+                width: 80px;
             }
             ul {
                 display: none;
+                li {
+                    border-top: 1px solid $tertiary-color;
+                    display: block;
+                    padding: 0;
+                    a {
+                        display: block;
+                    }
+                }
             }
         }
     }

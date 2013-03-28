@@ -11,7 +11,7 @@ $(document).ready(function () {
     /*
      * When the light switcher is clicked, toggles between normal and night-mode.
      */
-    $('.light-switch').click(function (e) {
+    $('#light_switch').click(function (e) {
         e.preventDefault();
         $('body').toggleClass('night-mode').toggleClass('normal');
         var url = $(this).attr('data-href') + $('body').attr('class');
@@ -21,28 +21,11 @@ $(document).ready(function () {
     });
 
     /*
-     * When enter-key is pressed when writing some search, it searches it.
-     */
-    $('.fuzz-finder').keypress(function (e) {
-        if (e.charCode === 13) {
-            findPosts();
-        }
-    });
-
-    /*
      * When the go-button is pressed when writing some search, it searches it.
      */
-    $('.fuzz-finder-go').click(function () { findPosts(); });
-
-    /*
-     * Retrieves the text from the input box and starts the search.
-     */
-    var findPosts = function() {
-        var inputText = $('.fuzz-finder').val().replace(/ /g, '+');
-        if (inputText !== '') {
-            window.location.href = '/search/' + inputText + '/';
-        }
-    };
+    $('#menu_opener').click(function () {
+        $('#menu').slideToggle();
+    });
 
     /*
      * Ajax logic for archive viewing.
