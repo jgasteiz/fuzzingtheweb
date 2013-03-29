@@ -1,4 +1,5 @@
 *.pyc
+.sass-cache
 db.sqlite
 .DS_Store
 media
