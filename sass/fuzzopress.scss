@@ -8,6 +8,9 @@
 @import '_news';
 
 /* -- Global -- */
+html {
+    padding: 0 15px;
+}
 body {
     color: $main-text-color;
     font-family: $body-font;
@@ -16,7 +19,6 @@ body {
     line-height: 1.6em;
     margin: $body-margin;
     max-width: 600px;
-    padding: 0 33px;
 }
 h1 {
     font-family: $header-font;
@@ -191,7 +193,6 @@ body.night-mode {
 @media(max-width: $breakpoint-2) {
     body {
         margin: $body-margin-responsive;
-        padding: 0 20px;
     }
     header {
         .fuzzy {
