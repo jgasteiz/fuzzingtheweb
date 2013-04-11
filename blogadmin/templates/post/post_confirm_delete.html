@@ -1,0 +1,17 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}{{ model_name }}{% endblock %}
+
+{% block content %}
+
+{% include 'post/post_header.html' %}
+
+<form action="" method="post">{% csrf_token %}
+    <div class="alert alert-block alert-error">
+        <h4>Warning!</h4>Are you sure you want to delete?
+    </div>
+    <a href="{% url "list_post" %}" class="btn btn-danger" type="submit"><i class="icon-arrow-left icon-white"></i> Cancel</a>
+    <button class="btn btn-primary" type="submit">Yes, delete</button>
+</form>
+
+{% endblock %}

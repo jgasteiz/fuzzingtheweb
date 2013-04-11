@@ -96,7 +96,6 @@ class ArchivePage(CustomContextMixin, ListView):
             try:
                 archive[year][month - 1][1] = True
             except KeyError:
-                # catch the KeyError, and set up list for that year
                 archive[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
                 archive[year][month - 1][1] = True
         for year in archive:
