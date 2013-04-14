@@ -10,8 +10,10 @@
     <div class="alert alert-block alert-error">
         <h4>Warning!</h4>Are you sure you want to delete?
     </div>
-    <a href="{% url "list_post" %}" class="btn btn-danger" type="submit"><i class="icon-arrow-left icon-white"></i> Cancel</a>
-    <button class="btn btn-primary" type="submit">Yes, delete</button>
+    <div class="buttonset">
+        <a href="{% url "list_post" %}" class="btn btn-danger" type="submit"><i class="icon-arrow-left icon-white"></i> Cancel</a>
+        <button class="btn btn-primary" type="submit">Yes, delete</button>
+    </div>
 </form>
 
 {% endblock %}

@@ -1,3 +1,6 @@
+@import '_vars';
+@import '_mixins';
+
 body {
     padding-top: 60px;
 }
@@ -9,19 +12,26 @@ form {
     textarea,
     input[type=text],
     input[type=file] {
+        @include box-sizing();
         display: block;
-        min-width: 400px;
+        width: 600px;
         max-width: 100%;
         resize: none;
     }
-    select,
-    input[type=text],
-    input[type=file],
-    input[type=checkbox] {
-        margin-bottom: 10px;
+    input[type=text] {
+        height: 30px;
     }
     label {
         margin-bottom: 0;
+    }
+    .helptext {
+        color: $dark-grey;
+        display: block;
+        margin-bottom: 20px;
+        
+    }
+    .buttonset {
+        margin: 20px 0;
     }
 }
 
@@ -36,5 +46,5 @@ table {
 @media (max-width: 979px) {
     body {
         padding-top: 0;
-    }    
+    }
 }
