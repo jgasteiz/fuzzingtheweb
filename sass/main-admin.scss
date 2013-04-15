@@ -7,22 +7,25 @@ body {
 
 form {
     max-width: 100%;
-    label,
-    select,
     textarea,
     input[type=text],
     input[type=file] {
         @include box-sizing();
         display: block;
-        width: 600px;
+        width: 800px;
         max-width: 100%;
         resize: none;
     }
     input[type=text] {
         height: 30px;
     }
+    input[type=checkbox] {
+        margin: 0;
+    }
     label {
+        display: inline-block;
         margin-bottom: 0;
+        margin-right: 10px;
     }
     .helptext {
         color: $dark-grey;

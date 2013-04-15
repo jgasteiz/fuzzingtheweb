@@ -8,6 +8,18 @@
 @import '_news';
 
 /* -- Global -- */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
 html {
     padding: 0 15px;
 }
