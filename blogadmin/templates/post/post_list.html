@@ -20,7 +20,7 @@
     {% for post in posts %}
         <tr>
             <td>{{ post.id }}</td>
-            <td>{{ post.title }}</td>
+            <td><a href="/{{ post.slug }}/">{{ post.title }}</a></td>
             <td>{{ post.slug }}</td>
             <td>{{ post.live }}</td>
             <td>{{ post.page }}</td>
