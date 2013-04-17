@@ -51,7 +51,7 @@ img,
 iframe {
     max-width: 96% !important;
 }
-iframe {
+iframe[src*="youtube"] {
     height: 300px !important;
 }
 blockquote {

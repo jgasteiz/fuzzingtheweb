@@ -3,7 +3,7 @@
     body {
         max-width: 800px;
     }
-    iframe {
+    iframe[src*="youtube"] {
         height: 420px !important;
     }
 }
