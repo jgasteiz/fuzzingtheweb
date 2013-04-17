@@ -44,6 +44,12 @@ table {
             margin-left: 5px;
         }
     }
+    tr[data-live=False] > td {
+        background-color: #fdd;
+    }
+    tr[data-live=False]:hover > td {
+        background-color: #fcc;
+    }
 }
 
 @media (max-width: 979px) {

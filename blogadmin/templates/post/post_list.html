@@ -10,21 +10,15 @@
             <th>id</th>
             <th>title</th>
             <th>slug</th>
-            <th>live</th>
-            <th>page</th>
-            <th>mytags</th>
             <th></th> 
         </tr>
     </thead>
     <tbody>
     {% for post in posts %}
-        <tr>
+        <tr data-live="{{ post.live }}">
             <td>{{ post.id }}</td>
             <td><a target="_blank" href="/{{ post.slug }}/">{{ post.title }}</a></td>
             <td>{{ post.slug }}</td>
-            <td>{{ post.live }}</td>
-            <td>{{ post.page }}</td>
-            <td>{{ post.mytags }}</td>
             <td class="buttons">
                 <a class="btn btn-danger pull-right" href="{% url "delete_post" post.id %}"><i class="icon-trash icon-white"></i> Delete</a>
                 <a href="{% url "edit_post" post.id %}" class="btn btn-primary pull-right"><i class="icon-edit icon-white"></i> Edit</a>
