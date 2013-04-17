@@ -51,6 +51,9 @@ img,
 iframe {
     max-width: 96% !important;
 }
+iframe {
+    height: 300px !important;
+}
 blockquote {
     background: #f5f5f5;
     margin: 0;
@@ -164,7 +167,7 @@ header {
     }
     .fuzzy {
         background-image: url('img/banner.png');
-        background-position: left bottom;
+        background-position: center bottom;
         background-repeat: no-repeat;
         height: $header-height;
         padding: 0;

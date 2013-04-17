@@ -1,5 +1,13 @@
 /* -- Media queries -- */
-@media(min-width: $breakpoint-2-edge) {
+@media(min-width: $bk1000) {
+    body {
+        max-width: 800px;
+    }
+    iframe {
+        height: 420px !important;
+    }
+}
+@media(min-width: $bk600-over) {
     header {
         nav {
             ul {
@@ -8,18 +16,16 @@
         }
     }
 }
-@media(max-width: $breakpoint-2) {
+@media(max-width: $bk600-below) {
     body {
         margin: $body-margin-responsive;
+        max-width: 600px;
     }
     header {
         .fuzzy {
             width: 230px;
             background-position: bottom right;
             margin: 0 auto;
-            // &:hover {
-            //     background-position: bottom right;
-            // }
         }
         nav {
             min-height: 45px;
