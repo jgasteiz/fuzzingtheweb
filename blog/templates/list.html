@@ -9,12 +9,11 @@
 	<article>
 		<header>
 			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
-			<span class="date">{{ post.published|date }}</span>
-			<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a>
+			{% if not post.page %}
+			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
+			{% endif %}
 		</header>
-		<div class="body">
-			{{ post.body|markdown }}
-		</div>
+		<div class="entry-content">{{ post.body|markdown }}</div>
 		{% if user.is_superuser %}
 		<a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
 			<i class="icon-edit"></i>

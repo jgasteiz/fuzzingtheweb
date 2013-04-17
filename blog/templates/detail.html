@@ -7,15 +7,16 @@
 {% block content %}
 
 	{% if post %}
+
 	<h3 class="go-back"><a href="/">← Back</a></h3>
 	<article>
 		<header>
 			<h1>{{ post }}</h1>
 			{% if not post.page %}
-			<span class="date">{{ post.published|date }}</span>
+			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
 			{% endif %}
 		</header>
-		<div class="body">{{ post.body|markdown }}</div>
+		<div class="entry-content">{{ post.body|markdown }}</div>
 		{% if user.is_superuser %}
 		<a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
 			<i class="icon-edit"></i>
