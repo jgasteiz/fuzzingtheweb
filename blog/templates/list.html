@@ -10,6 +10,7 @@
 		<header>
 			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
 			{% if not post.page %}
+			<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a>
 			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
 			{% endif %}
 		</header>
