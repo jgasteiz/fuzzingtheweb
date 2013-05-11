@@ -1,15 +1,10 @@
 /* -- Media queries -- */
-@media(min-width: 1000px) {
+@media(min-width: 900px) {
     body {
         max-width: 700px;
     }
     iframe[src*="youtube"] {
         height: 420px !important;
-    }
-}
-@media(min-width: 1200px) {
-    body {
-        max-width: 800px;
     }
 }
 @media(min-width: $bk600-over) {
