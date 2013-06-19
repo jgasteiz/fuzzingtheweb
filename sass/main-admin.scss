@@ -5,6 +5,13 @@ body {
     padding-top: 60px;
 }
 
+.messages {
+	margin: 0;
+	.messages__item {
+		list-style: none;
+	}
+}
+
 form {
     max-width: 100%;
     textarea,

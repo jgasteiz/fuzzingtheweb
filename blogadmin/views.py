@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic.base import View
@@ -55,7 +56,8 @@ class BasePostEditView(BasePostView):
     context_object_name = 'post'
 
     def get_success_url(self):
-        return reverse('list_post')
+        messages.add_message(self.request, messages.SUCCESS, 'Updated correctly')
+        return reverse('edit_post', kwargs={'pk': self.kwargs['pk']})
 
 
 class ListPost(BasePostView, ListView):
