@@ -16,7 +16,7 @@
 		</header>
 		<div class="entry-content">{{ post.body|markdown }}</div>
 		{% if user.is_superuser %}
-		<a target="_blank" class="edit-post" href="/admin/blog/post/{{ post.pk }}/">
+		<a target="_blank" class="edit-post" href="/admin/post/{{ post.pk }}/edit/">
 			<i class="icon-edit"></i>
 		</a>
 		{% endif %}
