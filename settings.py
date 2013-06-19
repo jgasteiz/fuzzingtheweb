@@ -17,14 +17,6 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'db.sqlite',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    #     'HOST': '',
-    #     'PORT': '',
-    # }
 }
 
 TIME_ZONE = 'Europe/London'

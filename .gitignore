@@ -7,3 +7,4 @@ django
 markitup
 local_settings.py
 .idea
+data.json
