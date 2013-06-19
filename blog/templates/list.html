@@ -10,19 +10,21 @@
 		<header>
 			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
 			{% if not post.page %}
-			<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a>
+			{% ifequal forloop.counter 1 %}<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a>{% endifequal %}
 			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
 			{% endif %}
 		</header>
-		<div class="entry-content">{{ post.body|markdown }}</div>
-		{% if user.is_superuser %}
-		<a target="_blank" class="edit-post" href="/admin/post/{{ post.pk }}/edit/">
-			<i class="icon-edit"></i>
-		</a>
-		{% endif %}
-		<footer>
-			{% include "partials/sharebuttons.html" %}
-		</footer>
+		{% ifequal forloop.counter 1 %}
+			<div class="entry-content">{{ post.body|markdown }}</div>
+			{% if user.is_superuser %}
+			<a target="_blank" class="edit-post" href="/admin/post/{{ post.pk }}/edit/">
+				<i class="icon-edit"></i>
+			</a>
+			{% endif %}
+			<footer>
+				{% include "partials/sharebuttons.html" %}
+			</footer>
+		{% endifequal %}
 	</article>
 	{% empty %}
 	<h2>Nothing to show</h2>
