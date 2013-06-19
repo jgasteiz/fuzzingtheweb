@@ -15,7 +15,7 @@
 			{% for month, has_link in month_list %}
 			{% if has_link %}
 				<li>
-					<a href="/_ajax/archive/{{ month.year }}/{{ month.month }}/" class="date">
+					<a href="#" data-href="/_ajax/archive/{{ month.year }}/{{ month.month }}/" class="date">
 						{{ month|date:"F" }}
 					</a>
 				</li>

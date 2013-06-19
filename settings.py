@@ -9,27 +9,27 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    # 'postgres': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'fuzzopress',
-    #     'USER': '',
-    #     'PASSWORD': '',
-    #     'HOST': 'localhost',
-    #     'PORT': '',
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fuzzopress',
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',
+        'HOST': 'localhost',
         'PORT': '',
-    }
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': 'db.sqlite',
+    #     'USER': '',
+    #     'PASSWORD': '',
+    #     'HOST': '',
+    #     'PORT': '',
+    # }
 }
 
-TIME_ZONE = 'Europe/Madrid'
+TIME_ZONE = 'Europe/London'
 USE_TZ = True
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
@@ -91,7 +91,6 @@ INSTALLED_APPS = (
     'markitup',
     'gunicorn',
     'south',
-    'news',
     'blog',
 )
 

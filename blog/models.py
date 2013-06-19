@@ -74,7 +74,7 @@ class Post(models.Model):
     body = models.TextField(__('Body'))
     published = models.DateTimeField(
         __('Publish Date'),
-        default=datetime.now(),
+        default=datetime.now,
         help_text=__('Future-dated posts will only be published at the \
             specified date and time.'))
     live = models.BooleanField(

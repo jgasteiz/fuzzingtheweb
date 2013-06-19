@@ -24,5 +24,6 @@ class BaseModelForm(forms.ModelForm):
 
 
 class PostForm(BaseModelForm):
+
     class Meta:
         model = Post

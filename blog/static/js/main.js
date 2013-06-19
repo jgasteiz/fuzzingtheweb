@@ -32,7 +32,7 @@ $(document).ready(function () {
      */
     $('.archive').find('.date').bind('click', function(e) {
         e.preventDefault();
-        var url = $(this).attr('href'),
+        var url = $(this).attr('data-href'),
             parent = $(this).parent();
 
         $.get(url, {}, function(data) {

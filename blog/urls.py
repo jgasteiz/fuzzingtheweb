@@ -1,13 +1,9 @@
 from django.conf.urls import patterns, url
-from .views import SimplePage
 
 urlpatterns = patterns(
     'blog.views',
 
     url(r'^$', 'home_page', name='home_page'),
-    url(r'^hacker_news/',
-        SimplePage.as_view(template_name='hacker_news.html'),
-        name='hacker_news'),
 
     url(r'^404/', 'four_o_four', name='404'),
     url(r'^500/', 'five_hundred', name='500'),

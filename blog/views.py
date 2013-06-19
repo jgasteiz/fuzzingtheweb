@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 import calendar
+import json
+from datetime import datetime, date
+
 from django.conf import settings
-from datetime import date, datetime
-from django.utils import simplejson
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, View, TemplateView
-
-from news.views import get_news
 
 from .models import Post, NavItem, Widget, Tag
 from .utils import get_query as get_search_query
@@ -39,16 +38,6 @@ class HomePage(CustomContextMixin, ListView):
         return Post.objects.published()
 
 home_page = HomePage.as_view()
-
-
-class SimplePage(CustomContextMixin, TemplateView):
-    """ Some simple page """
-
-    def get_context_data(self, **kwargs):
-        context = super(SimplePage, self).get_context_data(**kwargs)
-        # Will fix this soon
-        context.update({'news': get_news()})
-        return context
 
 
 class TagPage(CustomContextMixin, ListView):
@@ -131,7 +120,7 @@ class LoadEntries(View):
                         post.title),
                     'url': '/%s/' % (post.slug)
                 })
-            return HttpResponse(simplejson.dumps(posts))
+            return HttpResponse(json.dumps(posts))
         return HttpResponse('Nothing found')
 
 load_entries = LoadEntries.as_view()
