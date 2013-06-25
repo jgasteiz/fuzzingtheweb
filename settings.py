@@ -8,7 +8,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-ALLOWED_HOSTS = ['176.58.120.22', 'fuzzopress.com']
+ALLOWED_HOSTS = ['176.58.120.22', 'fuzzingtheweb.com']
 
 DATABASES = {
     'default': {
