@@ -4,9 +4,14 @@ import json
 from datetime import datetime, date
 
 from django.conf import settings
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, View, TemplateView
+
+from rest_framework.renderers import JSONRenderer
+
+from blogapi.serializers import PostSerializer
 
 from .models import Post, NavItem, Widget, Tag
 from .utils import get_query as get_search_query
@@ -29,6 +34,25 @@ class CustomContextMixin(object):
             'request': self.request,
             'colour': settings.FUZZOPRESS_SETTINGS['colors'][datetime.today().weekday()]})
         return context
+
+
+# API views
+class PostListJSON(View):
+    def get(self, request, *args, **kwargs):
+        post_qs = Post.objects.filter(live=True, page=False)
+
+        # Paginate the results
+        paginator = Paginator(post_qs, 10)
+        page_num = 1
+        if 'page' in request.GET:
+            page_num = int(request.GET.get('page', 1))
+        page = paginator.page(page_num)
+
+        post_serializer = PostSerializer(page.object_list)
+        post_list = JSONRenderer().render(post_serializer.data)
+        return HttpResponse(post_list, mimetype='application/json')
+
+post_list_json = PostListJSON.as_view()
 
 
 # Page views

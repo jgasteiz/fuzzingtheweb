@@ -8,6 +8,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+ALLOWED_HOSTS = ['176.58.120.22', 'fuzzopress.com']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -78,7 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.markup',
-    'requests',
+    'rest_framework',
     'blogadmin',
     'markitup',
     'gunicorn',
