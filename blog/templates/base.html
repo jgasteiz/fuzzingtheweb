@@ -9,26 +9,6 @@
 
 		<!-- Fuzzopress styles -->
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
-		<style type="text/css">
-			body.night-mode a:hover {
-				color: #222;
-				background: {{ colour }};
-			}
-			a:hover {
-				color: {{ colour }};
-			}
-			article a:hover {
-				color: #FFFFFF;
-				background: {{ colour }};
-			}
-			::selection {
-				background: {{ colour }};
-			}
-			::-moz-selection {
-				background: {{ colour }};
-			}
-		</style>
-
 		<!-- Code block styles -->
 		<link rel="stylesheet" href="{{ STATIC_URL }}highlight/styles/monokai.css">
 		<script src="{{ STATIC_URL }}highlight/highlight.pack.js"></script>
@@ -36,7 +16,6 @@
 
 		<!-- Google fonts -->
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-
 	</head>
 	<body class="{{ request.session.layout }}">
 		<header>
