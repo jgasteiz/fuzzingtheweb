@@ -1,6 +1,6 @@
 *.pyc
 .sass-cache
-db.sqlite
+*.sqlite
 .DS_Store
 media
 django
