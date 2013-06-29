@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<a class="btn" href="{% url 'list_post' %}"><i class="icon-arrow-left"></i> Back</a>
+
 {% include "post/post_header.html" %}
 
 <form action="" method="post">{% csrf_token %}

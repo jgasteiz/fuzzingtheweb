@@ -1,5 +1,5 @@
-@import '_vars';
-@import '_mixins';
+@import 'vars';
+@import 'mixins';
 
 body {
     padding-top: 60px;
@@ -21,6 +21,7 @@ form {
         display: block;
         width: 800px;
         max-width: 100%;
+
         resize: none;
     }
     input[type=text] {

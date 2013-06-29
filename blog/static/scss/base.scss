@@ -1,8 +1,8 @@
 // External imports
-@import '_font-awesome';
+@import 'font-awesome';
 // Partials
-@import '_vars';
-@import '_mixins';
+@import 'vars';
+@import 'mixins';
 
 ////////////////
 // BASE RULES //
@@ -294,9 +294,7 @@ div[role="main"] {
                 }
             }
             .edit-post {
-                bottom: 0;
-                position: absolute;
-                right: 0;
+                font-size: 6em;
                 text-decoration: none;
             }
             img {
@@ -374,4 +372,4 @@ body.night-mode {
 }
 
 // Media queries
-@import '_mqs';
+@import 'mqs';

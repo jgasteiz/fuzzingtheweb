@@ -22,7 +22,7 @@ class CustomContextMixin(object):
     """ Same context data for every class view """
     paginate_by = settings.FUZZOPRESS_SETTINGS['entries_per_page']
     context_object_name = 'posts'
-    template_name = 'list.html'
+    template_name = 'post_list.html'
 
     def get_context_data(self, **kwargs):
         context = super(CustomContextMixin, self).get_context_data(**kwargs)
@@ -87,7 +87,7 @@ search_page = SearchPage.as_view()
 class EntryPage(CustomContextMixin, DetailView):
     """ A single post view """
     context_object_name = 'post'
-    template_name = 'detail.html'
+    template_name = 'post_detail.html'
 
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
@@ -98,7 +98,7 @@ entry_page = EntryPage.as_view()
 class ArchivePage(CustomContextMixin, ListView):
     """ For a month """
     context_object_name = 'archives'
-    template_name = 'archive.html'
+    template_name = 'post_archive.html'
 
     def get_queryset(self):
         archive = {}

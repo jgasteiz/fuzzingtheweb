@@ -56,8 +56,8 @@ class BasePostEditView(BasePostView):
     context_object_name = 'post'
 
     def get_success_url(self):
-        messages.add_message(self.request, messages.SUCCESS, 'Updated correctly')
-        return reverse('edit_post', kwargs={'pk': self.kwargs['pk']})
+        messages.add_message(self.request, messages.SUCCESS, self.message)
+        return reverse('edit_post', kwargs={'pk': self.object.pk})
 
 
 class ListPost(BasePostView, ListView):
@@ -72,6 +72,7 @@ list_post = ListPost.as_view()
 class CreatePost(BasePostEditView, CreateView):
     """ Creates a new post. """
     template_name = 'post/post_create.html'
+    message = 'Created correctly'
 
 create_post = CreatePost.as_view()
 
@@ -79,6 +80,7 @@ create_post = CreatePost.as_view()
 class EditPost(BasePostEditView, UpdateView):
     """ Edits an existing post. """
     template_name = 'post/post_create.html'
+    message = 'Updated correctly'
 
 edit_post = EditPost.as_view()
 
@@ -86,5 +88,11 @@ edit_post = EditPost.as_view()
 class DeletePost(BasePostEditView, DeleteView):
     """ Deletes an existing post. """
     template_name = 'post/post_confirm_delete.html'
+    message = 'Deleted correctly'
+
+    def get_success_url(self):
+        messages.add_message(self.request, messages.ERROR, self.message)
+        return reverse('list_post')
+
 
 delete_post = DeletePost.as_view()
