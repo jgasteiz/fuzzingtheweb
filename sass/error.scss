@@ -30,9 +30,12 @@ a {
     text-decoration: none;
     line-height: 1.2em;
     border: 1px solid #F0DD00;
-    box-shadow: 0px 2px 6px #F0DD00;
+    box-shadow: inset 0px 0px 10px #F0DD00, 0px 0px 10px #F0DD00;
     padding: 10px 12px;
     border-radius: 10px;
+	&:hover {
+		box-shadow: none;
+	}
 }
 @media(max-width: 600px) and (min-width: 321px) {
     h1 {
