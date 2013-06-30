@@ -43,7 +43,7 @@ h1 {
     font-family: $header-font;
     font-size: 2em;
     margin: 0 0 20px;
-    line-height: 1em;    
+    line-height: 1em;
 }
 img,
 iframe {
@@ -113,7 +113,7 @@ pre {
     color: $black;
     font-weight: 600;
 }
-.cf, .clearfix{ 
+.cf, .clearfix{
     *zoom: 1;
 }
 .cf:before, .cf:after, {

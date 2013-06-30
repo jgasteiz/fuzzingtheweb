@@ -46,5 +46,3 @@ table tr[data-live=False]:hover > td {
 @media (max-width: 979px) {
   body {
     padding-top: 0; } }
-
-/*@ sourceMappingURL=base-admin.css.map */
