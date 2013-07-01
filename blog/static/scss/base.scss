@@ -42,8 +42,11 @@ body {
 h1 {
     font-family: $header-font;
     font-size: 2em;
-    margin: 0 0 20px;
+    margin: 40px 0 20px;
     line-height: 1em;
+}
+h2 {
+	margin: 30px 0 15px;
 }
 img,
 iframe {
@@ -235,12 +238,8 @@ div[role="main"] {
             position: relative;
 
             header {
-                padding-top: 40px;
                 position: relative;
-
                 h1 {
-                    margin: 0;
-                    padding-right: 60px;
                     a {
                         font-weight: 600;
                         text-decoration: none;
@@ -307,6 +306,14 @@ div[role="main"] {
 					box-shadow: none;
 				}
             }
+			&.post {
+				header {
+					padding-top: 40px;
+					h1 {
+                    	padding-right: 60px;
+					}
+				}
+			}
         }
         .go-back {
             margin: 20px 0;

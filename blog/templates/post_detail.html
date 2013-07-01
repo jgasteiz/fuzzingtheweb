@@ -9,7 +9,7 @@
 	{% if post %}
 
 	<h3 class="go-back"><a href="/">← Back</a></h3>
-	<article>
+	<article {% if not post.page %}class="post"{% endif %}>
 		<header>
 			<h1>{{ post }}</h1>
 			{% if not post.page %}
