@@ -6,7 +6,7 @@
 
 {% block content %}
 	{% for post in posts %}
-	<article>
+	<article {% if not post.page %}class="post"{% endif %}>
 		<header>
 			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
 			{% if not post.page %}
