@@ -1018,7 +1018,7 @@ body {
 h1 {
   font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
   font-size: 2em;
-  margin: 0 0 20px;
+  margin: 20px 0;
   line-height: 1em; }
 
 h2 {
@@ -1078,34 +1078,6 @@ pre code {
   border-radius: 4px;
   padding: 10px;
   overflow: auto; }
-
-/* -- OOCSS -- */
-.block {
-  display: block; }
-
-.align-center {
-  text-align: center; }
-
-.strong {
-  color: black;
-  font-weight: 600; }
-
-.cf, .clearfix {
-  *zoom: 1; }
-
-.cf:before, .cf:after {
-  content: ' ';
-  display: table; }
-
-.cf:after {
-  clear: both; }
-
-.column-6 {
-  float: left;
-  margin-left: 2.564102564102564%;
-  width: 48.717948717948715%; }
-  .column-6:first-child {
-    margin-left: 0; }
 
 /* -- Header -- */
 header {
@@ -1184,67 +1156,6 @@ header {
 div[role="main"] .articles {
   margin-bottom: 80px;
   width: 100%; }
-  div[role="main"] .articles article {
-    border-bottom: 1px solid #e6e8ec;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    position: relative; }
-    div[role="main"] .articles article header {
-      position: relative; }
-      div[role="main"] .articles article header h1 a {
-        font-weight: 600;
-        text-decoration: none; }
-      div[role="main"] .articles article header .meta {
-        color: #888888;
-        margin: 0;
-        position: absolute;
-        text-transform: uppercase;
-        top: 0; }
-      div[role="main"] .articles article header .comments {
-        background-image: url("img/comments-bubble.png");
-        background-repeat: no-repeat;
-        color: #888888;
-        display: inline-block;
-        font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
-        font-size: 0.8em;
-        padding-bottom: 8px;
-        padding-top: 3px;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        text-decoration: none;
-        top: 0;
-        width: 54px; }
-    div[role="main"] .articles article .entry-content {
-      margin-top: 20px; }
-    div[role="main"] .articles article footer {
-      margin: 20px 0; }
-      div[role="main"] .articles article footer .sharebuttons {
-        margin: 0;
-        padding: 0; }
-        div[role="main"] .articles article footer .sharebuttons li {
-          float: left;
-          list-style: none;
-          margin-left: 10px; }
-          div[role="main"] .articles article footer .sharebuttons li:first-child {
-            margin-left: 0; }
-          div[role="main"] .articles article footer .sharebuttons li.gplus > div {
-            width: 34px !important; }
-    div[role="main"] .articles article .edit-post {
-      font-size: 6em;
-      text-decoration: none; }
-    div[role="main"] .articles article img {
-      padding: 6px;
-      background: whitesmoke;
-      box-shadow: 0px 1px 2px #888888; }
-      div[role="main"] .articles article img.original {
-        padding: 0;
-        background: none;
-        box-shadow: none; }
-    div[role="main"] .articles article.post header {
-      padding-top: 40px; }
-      div[role="main"] .articles article.post header h1 {
-        padding-right: 60px; }
   div[role="main"] .articles .go-back {
     margin: 20px 0; }
     div[role="main"] .articles .go-back a {
@@ -1284,6 +1195,82 @@ body.night-mode {
   body.night-mode footer {
     text-shadow: none;
     color: whitesmoke; }
+
+/* -- OOCSS -- */
+.block {
+  display: block; }
+
+.align-center {
+  text-align: center; }
+
+.strong {
+  color: black;
+  font-weight: 600; }
+
+.cf, .clearfix {
+  *zoom: 1; }
+
+.cf:before, .cf:after {
+  content: ' ';
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.column-6 {
+  float: left;
+  margin-left: 2.564102564102564%;
+  width: 48.717948717948715%; }
+  .column-6:first-child {
+    margin-left: 0; }
+
+.post {
+  border-bottom: 1px solid #e6e8ec;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  position: relative; }
+  .post .post__header {
+    position: relative; }
+    .post .post__header .post__header__meta {
+      color: #888888;
+      text-transform: uppercase; }
+      .post .post__header .post__header__meta .post__header__meta__comments {
+        color: #888888;
+        position: absolute;
+        right: 0;
+        top: 0; }
+      .post .post__header .post__header__meta .post__header__meta__comments__counter {
+        color: #888888; }
+    .post .post__header .post__header__heading {
+      font-weight: 600;
+      text-decoration: none; }
+  .post .post__body {
+    margin-top: 20px; }
+    .post .post__body img {
+      padding: 6px;
+      background: whitesmoke;
+      box-shadow: 0px 1px 2px #888888; }
+      .post .post__body img.original {
+        padding: 0;
+        background: none;
+        box-shadow: none; }
+  .post .post__edit-button {
+    font-size: 6em;
+    text-decoration: none; }
+  .post .post__footer {
+    margin: 20px 0; }
+
+.sharebuttons {
+  margin: 0;
+  padding: 0; }
+  .sharebuttons li {
+    float: left;
+    list-style: none;
+    margin-left: 10px; }
+    .sharebuttons li:first-child {
+      margin-left: 0; }
+    .sharebuttons li.gplus > div {
+      width: 34px !important; }
 
 /* -- Media queries -- */
 @media (min-width: 900px) {

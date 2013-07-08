@@ -6,24 +6,30 @@
 
 {% block content %}
 	{% for post in posts %}
-	<article {% if not post.page %}class="post"{% endif %}>
-		<header>
-			<h1><a href="/{{ post.slug }}">{{ post }}</a></h1>
+	<article class="post">
+		<header class="post__header">
 			{% if not post.page %}
-			{% ifequal forloop.counter 1 %}<a class="comments" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a>{% endifequal %}
-			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
+			<div class="post__header__meta">
+				<time datetime="{{ post.published|date }}">{{ post.published|date }}</time>
+				<div class="post__header__meta__comments">
+					<a class="post__header__meta__comments__counter" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a> comments
+				</div>
+			</div>
 			{% endif %}
+			<h1><a class="post__header__heading" href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h1>
 		</header>
 		{% ifequal forloop.counter 1 %}
-			<div class="entry-content">{{ post.body|markdown }}</div>
-			{% if user.is_superuser %}
-			<a target="_blank" class="edit-post" href="/admin/post/{{ post.pk }}/edit/">
-				<i class="icon-edit"></i>
-			</a>
-			{% endif %}
-			<footer>
-				{% include "partials/sharebuttons.html" %}
-			</footer>
+		<div class="post__body">
+			{{ post.body|markdown }}
+		</div>
+		{% if user.is_superuser %}
+		<a target="_blank" class="post__edit-button" href="/admin/post/{{ post.pk }}/edit/">
+			<i class="icon-edit"></i>
+		</a>
+		{% endif %}
+		<footer class="post__footer">
+			{% include "partials/sharebuttons.html" %}
+		</footer>
 		{% endifequal %}
 	</article>
 	{% empty %}

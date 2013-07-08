@@ -3,7 +3,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns(
     'blog.views',
 
-    url(r'^$', 'home_page', name='home_page'),
+    url(r'^$', 'post_list', name='post_list'),
 
     url(r'^404/', 'four_o_four', name='404'),
     url(r'^500/', 'five_hundred', name='500'),
@@ -24,5 +24,5 @@ urlpatterns = patterns(
     url(r'^archive/', 'archive_page', name='archive_page'),
 
     # A post or page
-    url(r'^(?P<slug>[-\w]+)/', 'entry_page', name='entry_page'),
+    url(r'^(?P<slug>[-\w]+)/', 'post_detail', name='post_detail'),
 )

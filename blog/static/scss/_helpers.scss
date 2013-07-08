@@ -1,3 +1,37 @@
+/* -- Sizes -- */
+$bk600-over: 641px;
+$bk600-below: 640px;
+$body-margin: 20px auto 40px;
+$body-margin-responsive: 20px 0 0;
+$header-height: 200px;
+
+/* -- Colours -- */
+$black: #000;
+$almost-black: #222;
+$dark-grey: #888;
+$white: #FFF;
+$cool-shadows-color: #888;
+$primary-color: #555;
+$secondary-color: #E6006C;
+$monday: #D65C3C;
+$tuesday: #FFC000;
+$wednesday: #40C080;
+$thursday: #2E6EB0;
+$friday: #770999;
+$saturday: #E6006C;
+$sunday: #04B1D8;
+$tertiary-color: #E6E8EC;
+$main-text-color: #555;
+$background-color: #F5F5F5;
+$primary-button-color: #F14E32;
+$secondary-button-color: #C11E02;
+$button-text-color: #F5F5F5;
+$orange: #ff6600;
+
+/* -- Fonts -- */
+$body-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
+$header-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
+
 @mixin grayscale() {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);

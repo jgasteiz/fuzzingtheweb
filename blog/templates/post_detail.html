@@ -9,20 +9,28 @@
 	{% if post %}
 
 	<h3 class="go-back"><a href="/">← Back</a></h3>
-	<article {% if not post.page %}class="post"{% endif %}>
-		<header>
-			<h1>{{ post }}</h1>
+
+	<article class="post">
+		<header class="post__header">
 			{% if not post.page %}
-			<p class="meta"><time datetime="{{ post.published|date }}">{{ post.published|date }}</time></p>
+			<div class="post__header__meta">
+				<time datetime="{{ post.published|date }}">{{ post.published|date }}</time>
+				<div class="post__header__meta__comments">
+					<a class="post__header__meta__comments__counter" href="http://fuzzingtheweb.com/{{ post.slug }}/#disqus_thread">0</a> comments
+				</div>
+			</div>
 			{% endif %}
+			<h1>{{ post.title }}</h1>
 		</header>
-		<div class="entry-content">{{ post.body|markdown }}</div>
+		<div class="post__body">
+			{{ post.body|markdown }}
+		</div>
 		{% if user.is_superuser %}
-		<a target="_blank" class="edit-post" href="/admin/post/{{ post.pk }}/edit/">
+		<a target="_blank" class="post__edit-button" href="/admin/post/{{ post.pk }}/edit/">
 			<i class="icon-edit"></i>
 		</a>
 		{% endif %}
-		<footer>
+		<footer class="post__footer">
 			{% include "partials/sharebuttons.html" %}
 		</footer>
 	</article>

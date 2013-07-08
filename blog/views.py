@@ -56,12 +56,12 @@ post_list_json = PostListJSON.as_view()
 
 
 # Page views
-class HomePage(CustomContextMixin, ListView):
+class PostList(CustomContextMixin, ListView):
     """ Main blog view """
     def get_queryset(self):
         return Post.objects.published()
 
-home_page = HomePage.as_view()
+post_list = PostList.as_view()
 
 
 class TagPage(CustomContextMixin, ListView):
@@ -84,7 +84,7 @@ class SearchPage(CustomContextMixin, ListView):
 search_page = SearchPage.as_view()
 
 
-class EntryPage(CustomContextMixin, DetailView):
+class PostDetail(CustomContextMixin, DetailView):
     """ A single post view """
     context_object_name = 'post'
     template_name = 'post_detail.html'
@@ -92,7 +92,7 @@ class EntryPage(CustomContextMixin, DetailView):
     def get_object(self):
         return get_object_or_404(Post, slug=self.kwargs['slug'])
 
-entry_page = EntryPage.as_view()
+post_detail = PostDetail.as_view()
 
 
 class ArchivePage(CustomContextMixin, ListView):

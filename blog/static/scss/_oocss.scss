@@ -1,0 +1,29 @@
+/* -- OOCSS -- */
+.block {
+    display: block;
+}
+.align-center {
+    text-align: center;
+}
+.strong {
+    color: $black;
+    font-weight: 600;
+}
+.cf, .clearfix{
+    *zoom: 1;
+}
+.cf:before, .cf:after, {
+    content: ' ';
+    display: table;
+}
+.cf:after, {
+    clear: both;
+}
+.column-6 {
+    float: left;
+    margin-left: 2.564102564102564%;
+    width: 48.717948717948715%;
+    &:first-child {
+        margin-left: 0;
+    }
+}
