@@ -18,7 +18,7 @@ form {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    width: 800px;
+    width: 800px !important;
     max-width: 100%;
     resize: none; }
   form input[type=text] {
@@ -42,6 +42,12 @@ table tr[data-live=False] > td {
   background-color: #fdd; }
 table tr[data-live=False]:hover > td {
   background-color: #fcc; }
+
+.markItUp {
+  width: 100%; }
+  .markItUp .markItUpEditor {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px; }
 
 @media (max-width: 979px) {
   body {

@@ -6,7 +6,10 @@
     <title>Admin</title>
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base-admin.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}markitup/skins/simple/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}markitup/sets/markdown/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base-admin.css">
+
 </head>
 <body>
 
@@ -46,7 +49,10 @@
     {% block content %}{% endblock content %}
     </div>
 
-    <script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.markitup.js"></script>
+	<script src="{{ STATIC_URL }}js/main.js"></script>
+	<script src="{{ STATIC_URL }}js/markitup.set.js"></script>
 </body>
 </html>
