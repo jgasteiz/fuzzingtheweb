@@ -1099,14 +1099,14 @@ header {
         margin-top: 0; }
   header .fuzzy {
     background-image: url("img/banner.png");
-    background-position: center bottom;
+    background-position: center top;
     background-repeat: no-repeat;
     height: 200px;
     padding: 0;
     position: relative; }
   header nav {
     border-bottom: 1px solid #e6e8ec;
-    margin: 20px 0;
+    margin: 0 0 20px;
     position: relative;
     width: 100%;
     -webkit-touch-callout: none;
@@ -1151,6 +1151,25 @@ header {
       right: 20px;
       top: 0;
       width: 30px; }
+  header .header__search {
+    height: 35px;
+    margin: 10px 0; }
+    header .header__search > div {
+      max-width: 100%;
+      position: absolute;
+      right: 0;
+      width: 400px; }
+    header .header__search .gsc-control-cse {
+      border: none;
+      padding: 0; }
+    header .header__search form.gsc-search-box {
+      margin-bottom: 0; }
+    header .header__search .cse .gsc-search-button input.gsc-search-button-v2, header .header__search input.gsc-search-button-v2 {
+      margin-top: 0; }
+    header .header__search table.gsc-search-box {
+      margin-bottom: 0; }
+    header .header__search table.gsc-search-box td {
+      vertical-align: top; }
 
 /* -- Main container -- */
 div[role="main"] .articles {

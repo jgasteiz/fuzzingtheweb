@@ -18,9 +18,24 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
 	</head>
 	<body class="{{ request.session.layout }}">
-		<header>
-			<div class="fuzzy"></div>
-			<nav>
+	<header>
+		<div class="fuzzy"></div>
+		<div class="header__search">
+			<script>
+				(function() {
+					var cx = '012380815090564824206:tzq7jrd-cxu';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+							'//www.google.com/cse/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				})();
+			</script>
+			<gcse:search></gcse:search>
+		</div>
+		<nav>
 				<h1 id="menu_opener"></h1>
 				<ul id="menu">
 					<li><a href="/">Home</a></li>

@@ -127,7 +127,7 @@ header {
     }
     .fuzzy {
         background-image: url('img/banner.png');
-        background-position: center bottom;
+        background-position: center top;
         background-repeat: no-repeat;
         height: $header-height;
         padding: 0;
@@ -136,7 +136,7 @@ header {
     /* -- Navigation bar -- */
     nav {
         border-bottom: 1px solid $tertiary-color;
-        margin: 20px 0;
+        margin: 0 0 20px;
         position:relative;
         width: 100%;
         -webkit-touch-callout: none;
@@ -190,6 +190,32 @@ header {
             width: 30px;
         }
     }
+	.header__search {
+		height: 35px;
+		margin: 10px 0;
+		> div {
+			max-width: 100%;
+			position: absolute;
+			right: 0;
+			width: 400px;
+		}
+		.gsc-control-cse {
+			border: none;
+			padding: 0;
+		}
+		form.gsc-search-box {
+			margin-bottom: 0;
+		}
+		.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+			margin-top: 0;
+		}
+		table.gsc-search-box {
+			margin-bottom: 0;
+		}
+		table.gsc-search-box td {
+			vertical-align: top;
+		}
+	}
 }
 
 /* -- Main container -- */
