@@ -1,0 +1,11 @@
+.archive {
+	padding-left: 20px;
+	a {
+		text-decoration: none;
+		.date {
+			color: $black;
+			font-size: 0.9em;
+			font-weight: 700;
+		}
+	}
+}

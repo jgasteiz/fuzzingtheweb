@@ -26,6 +26,22 @@
 			{% endfor %}
 		</div>
 		<div class="column-6">
+			<h2>Search</h2>
+			<div class="search">
+				<script>
+					(function() {
+						var cx = '012380815090564824206:tzq7jrd-cxu';
+						var gcse = document.createElement('script');
+						gcse.type = 'text/javascript';
+						gcse.async = true;
+						gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+								'//www.google.com/cse/cse.js?cx=' + cx;
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(gcse, s);
+					})();
+				</script>
+				<gcse:search></gcse:search>
+			</div>
 			<h2>Tags</h2>
 			<ul>
 				{% for tag in tags %}

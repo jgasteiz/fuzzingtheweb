@@ -18,48 +18,33 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
 	</head>
 	<body class="{{ request.session.layout }}">
-	<header>
-		<div class="fuzzy"></div>
-		<div class="header__search">
-			<script>
-				(function() {
-					var cx = '012380815090564824206:tzq7jrd-cxu';
-					var gcse = document.createElement('script');
-					gcse.type = 'text/javascript';
-					gcse.async = true;
-					gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-							'//www.google.com/cse/cse.js?cx=' + cx;
-					var s = document.getElementsByTagName('script')[0];
-					s.parentNode.insertBefore(gcse, s);
-				})();
-			</script>
-			<gcse:search></gcse:search>
-		</div>
-		<nav>
-				<h1 id="menu_opener"></h1>
-				<ul id="menu">
-					<li><a href="/">Home</a></li>
+		<header class="header">
+			<div class="header__fuzzy"></div>
+			<nav class="header__nav">
+				<h1 class="header__heading" id="menu_opener"></h1>
+				<ul class="header__nav__links" id="menu">
+					<li class="header__nav__link"><a href="/">Home</a></li>
 					{% for item in navItems %}
-					<li>
+					<li class="header__nav__link">
 						<a {% if item.url %}href="{{ item.url }}"{% endif %}>
 							{{ item.name }}
 						</a>
 					</li>
 					{% endfor %}
-					<li class="parent"><a href="/archive/">Archive</a></li>
+					<li class="header__nav__link parent"><a href="/archive/">Archive</a></li>
 				</ul>
-				<i id="light_switch" class="light-switch" data-href="/_ajax/night-mode/"></i>
+				<i id="light_switch" class="header__light-switch" data-href="/_ajax/night-mode/"></i>
 			</nav>
 		</header>
 		
-		<div role="main">
-			<div class="articles">
+		<div class="main-container" role="main">
+			<div class="main-container__articles">
 				{% block content %}{% endblock %}
 			</div>
 		</div>
 
-		<footer>
-			This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>.
+		<footer class="footer">
+			<p>This a simple blog app developed in Django by Javi Manzano. <a target="_blank" href="https://github.com/jgasteiz/fuzzopress">View on github</a>.</p>
 		</footer>
 
 		<!-- Le javascript
