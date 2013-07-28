@@ -16,24 +16,25 @@
 
 		<!-- Google fonts -->
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
 	</head>
 	<body class="{{ request.session.layout }}">
 		<header class="header">
-			<div class="header__fuzzy"></div>
-			<nav class="header__nav">
-				<h1 class="header__heading" id="menu_opener"></h1>
-				<ul class="header__nav__links" id="menu">
-					<li class="header__nav__link"><a href="/">Home</a></li>
+			<h1 class="header__title wrp">Fuzzing the Web</h1>
+			<i id="light_switch" class="header__light-switch" data-href="/_ajax/night-mode/"></i>
+			<nav class="nav" id="nav">
+				<i class="nav__opener" id="menu_opener"></i>
+				<ul class="nav__links" id="menu">
+					<li class="nav__link"><a href="/">Home</a></li>
 					{% for item in navItems %}
-					<li class="header__nav__link">
+					<li class="nav__link">
 						<a {% if item.url %}href="{{ item.url }}"{% endif %}>
 							{{ item.name }}
 						</a>
 					</li>
 					{% endfor %}
-					<li class="header__nav__link parent"><a href="/archive/">Archive</a></li>
+					<li class="nav__link"><a href="/archive/">Archive</a></li>
 				</ul>
-				<i id="light_switch" class="header__light-switch" data-href="/_ajax/night-mode/"></i>
 			</nav>
 		</header>
 		

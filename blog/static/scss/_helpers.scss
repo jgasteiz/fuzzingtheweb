@@ -1,8 +1,8 @@
 /* -- Sizes -- */
 $bk600-over: 641px;
 $bk600-below: 640px;
-$body-margin: 20px auto 40px;
-$body-margin-responsive: 20px 0 0;
+$body-margin: 120px auto 40px;
+$body-margin-responsive: 120px 0 0;
 $header-height: 200px;
 
 /* -- Colours -- */
@@ -32,35 +32,20 @@ $orange: #ff6600;
 $body-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
 $header-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
 
-@mixin grayscale() {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    transition: filter 0.8s ease;
-    -o-transition: -o-filter 0.4s ease;
-    -moz-transition: -moz-filter 0.4s ease;
-    -ms-transition: -ms-filter 0.4s ease;
-    -webkit-transition: -webkit-filter 0.4s ease;
-    &:hover {
-        filter: none;
-        -webkit-filter: none;
-        -moz-filter: none;
-        -ms-filter: none;
-        -o-filter: none;
-    }
-    @media (max-width: $breakpoint-2) {
-        filter: none;
-        -webkit-filter: none;
-        -moz-filter: none;
-        -ms-filter: none;
-        -o-filter: none;
-    }
+.wrp {
+	margin: 0 auto;
+	max-width: 600px;
 }
 
 @mixin box-sizing() {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin transition($property: all, $time: 1s, $effect: ease-in-out) {
+	-webkit-transition: #{$property} #{$time} #{$effect};
+	-moz-transition: #{$property} #{$time} #{$effect};
+	-o-transition: #{$property} #{$time} #{$effect};
+	transition: #{$property} #{$time} #{$effect};
 }

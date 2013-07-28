@@ -24,8 +24,12 @@ $(document).ready(function () {
     /*
      * When the go-button is pressed when writing some search, it searches it.
      */
+    // $('#menu_opener').click(function () {
+    //     $('#menu').slideToggle();
+    // });
+
     $('#menu_opener').click(function () {
-        $('#menu').slideToggle();
+        $('#nav').toggleClass('nav--is-open');
     });
 
     /*

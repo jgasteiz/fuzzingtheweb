@@ -1,0 +1,73 @@
+.nav {
+	background: $white;
+	bottom: 0;
+	margin: 0;
+	position: fixed;
+	top: 0;
+	@include transition(left, 0.3s, ease-in-out);
+	width: 200px;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	left: 0;
+	-webkit-transform: translate3d(-200px, 0, 999px);
+	-moz-transform: translate3d(-200px, 0, 999px);
+	-ms-transform: translate3d(-200px, 0, 999px);
+	-o-transform: translate3d(-200px, 0, 999px);
+	transform: translate3d(-200px, 0, 999px);
+	-webkit-transition: -webkit-transform 500ms ease;
+	-moz-transition: -moz-transform 500ms ease;
+	-o-transition: -o-transform 500ms ease;
+	transition: transform 500ms ease;
+}
+.nav--is-open {
+	z-index: 12;
+	-webkit-box-shadow: 2px 0 8px #222;
+	-moz-box-shadow: 2px 0 8px #222;
+	-ms-box-shadow: 2px 0 8px #222;
+	-o-box-shadow: 2px 0 8px #222;
+	box-shadow: 2px 0 8px #222;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: -webkit-transform 500ms ease;
+	-moz-transition: -moz-transform 500ms ease;
+	-o-transition: -o-transform 500ms ease;
+	transition: transform 500ms ease;
+}
+.nav__opener {
+	background-image: url(img/open-responsive.png);
+	cursor: pointer;
+	display: inline-block;
+	height: 20px;
+	position: absolute;
+	right: -50px;
+	width: 30px;
+	top: 30px;
+}
+.nav__links {
+	margin: 0;
+	padding: 0;
+}
+.nav__link {
+	border-bottom: 1px solid $tertiary-color;
+	display: block;
+	margin: 0;
+	position: relative;
+	a {
+		cursor: pointer;
+		display: block;
+		line-height: 2.6em;
+		font-family: $header-font;
+		padding: 10px 20px;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+}

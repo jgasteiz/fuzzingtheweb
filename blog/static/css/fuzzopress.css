@@ -983,6 +983,10 @@ ul.icons {
 /* -- Sizes -- */
 /* -- Colours -- */
 /* -- Fonts -- */
+.wrp {
+  margin: 0 auto;
+  max-width: 600px; }
+
 ::-webkit-scrollbar {
   height: 8px;
   width: 8px; }
@@ -1012,7 +1016,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6em;
-  margin: 20px auto 40px;
+  margin: 120px auto 40px;
   max-width: 600px; }
 
 h1 {
@@ -1081,77 +1085,31 @@ pre code {
 
 /* -- Header -- */
 .header {
-  position: relative;
-  /* -- Navigation bar -- */ }
-  .header .contact {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 200px;
-    width: 28px;
-    z-index: 999; }
-    .header .contact a {
-      display: block;
-      margin-top: 20px;
-      text-align: right;
-      text-decoration: none; }
-      .header .contact a:first-child {
-        margin-top: 0; }
-  .header .header__fuzzy {
-    background-image: url("img/banner.png");
-    background-position: center top;
-    background-repeat: no-repeat;
-    height: 200px;
-    padding: 0;
-    position: relative; }
-  .header .header__nav {
-    border-bottom: 1px solid #e6e8ec;
-    padding-bottom: 5px;
-    margin: 15px 0;
-    position: relative;
-    width: 100%;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .header .header__heading {
-    display: none;
-    background-image: url(img/open-responsive.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    cursor: pointer;
-    height: 45px;
-    margin: 0;
-    width: 80px; }
-  .header .header__nav__links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-  .header .header__nav__link {
-    display: inline-block;
-    padding-left: 15px;
-    position: relative; }
-    .header .header__nav__link a {
-      cursor: pointer;
-      display: inline-block;
-      line-height: 2.6em;
-      font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
-      text-decoration: none;
-      text-transform: uppercase; }
-    .header .header__nav__link:first-child {
-      padding-left: 0; }
-  .header .header__light-switch {
-    background-image: url("img/switches.png");
-    background-position: left;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    height: 50px;
-    position: absolute;
-    right: 20px;
-    top: 0;
-    width: 30px; }
+  background-color: white;
+  border-bottom: 1px solid #e6e8ec;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 9; }
+
+.header__title {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 42px;
+  line-height: 80px;
+  text-align: center; }
+
+.header__light-switch {
+  background-image: url("img/switches.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px; }
 
 /* -- Main container -- */
 .main-container .main-container__articles {
@@ -1178,10 +1136,12 @@ pre code {
     color: #666; }
   .night-mode blockquote {
     background: #333; }
-  .night-mode .header__nav .header__light-switch {
+  .night-mode .header {
+    background-color: #222222; }
+  .night-mode .header__title {
+    color: white; }
+  .night-mode .header__light-switch {
     background-position: right; }
-  .night-mode .header__nav ul li .subnav li a {
-    color: #555555; }
   .night-mode .main-container .main-container__articles {
     color: whitesmoke; }
   .night-mode .footer {
@@ -1291,37 +1251,106 @@ pre code {
   .search table.gsc-search-box td {
     vertical-align: top; }
 
+.nav {
+  background: white;
+  bottom: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: left 0.3s ease-in-out;
+  -moz-transition: left 0.3s ease-in-out;
+  -o-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+  width: 200px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 0;
+  -webkit-transform: translate3d(-200px, 0, 999px);
+  -moz-transform: translate3d(-200px, 0, 999px);
+  -ms-transform: translate3d(-200px, 0, 999px);
+  -o-transform: translate3d(-200px, 0, 999px);
+  transform: translate3d(-200px, 0, 999px);
+  -webkit-transition: -webkit-transform 500ms ease;
+  -moz-transition: -moz-transform 500ms ease;
+  -o-transition: -o-transform 500ms ease;
+  transition: transform 500ms ease; }
+
+.nav--is-open {
+  z-index: 12;
+  -webkit-box-shadow: 2px 0 8px #222;
+  -moz-box-shadow: 2px 0 8px #222;
+  -ms-box-shadow: 2px 0 8px #222;
+  -o-box-shadow: 2px 0 8px #222;
+  box-shadow: 2px 0 8px #222;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 500ms ease;
+  -moz-transition: -moz-transform 500ms ease;
+  -o-transition: -o-transform 500ms ease;
+  transition: transform 500ms ease; }
+
+.nav__opener {
+  background-image: url(img/open-responsive.png);
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  right: -50px;
+  width: 30px;
+  top: 30px; }
+
+.nav__links {
+  margin: 0;
+  padding: 0; }
+
+.nav__link {
+  border-bottom: 1px solid #e6e8ec;
+  display: block;
+  margin: 0;
+  position: relative; }
+  .nav__link a {
+    cursor: pointer;
+    display: block;
+    line-height: 2.6em;
+    font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase; }
+
 /* -- Media queries -- */
 @media (min-width: 900px) {
+  .wrp,
   body {
     max-width: 700px; }
 
   iframe[src*="youtube"] {
     height: 420px !important; } }
 @media (min-width: 641px) {
-  .header .header__links {
+  .header__links {
     display: block !important; } }
 @media (max-width: 640px) {
-  body {
-    margin: 20px 0 0;
+  .wrp {
     max-width: 600px; }
 
-  .header .header__fuzzy {
-    width: 230px;
-    background-position: bottom right;
-    margin: 0 auto; }
-  .header .header__fuzzy {
-    min-height: 45px;
-    margin: 0 0 20px; }
-  .header .header__heading {
-    display: block; }
-  .header .header__nav__links {
+  body {
+    margin: 120px 0 0;
+    max-width: 600px; }
+
+  .header__nav__links {
     display: none; }
-  .header .header__nav__link {
+
+  .header__nav__link {
     border-top: 1px solid #e6e8ec;
     display: block;
     padding: 0; }
-    .header .header__nav__link a {
+    .header__nav__link a {
       display: block; }
 
   .column-6 {

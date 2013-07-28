@@ -1,6 +1,10 @@
 /* -- Sizes -- */
 /* -- Colours -- */
 /* -- Fonts -- */
+.wrp {
+  margin: 0 auto;
+  max-width: 600px; }
+
 body {
   padding-top: 60px; }
 

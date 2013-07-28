@@ -1,51 +1,39 @@
 /* -- Media queries -- */
 @media(min-width: 900px) {
-    body {
-        max-width: 700px;
-    }
-    iframe[src*="youtube"] {
-        height: 420px !important;
-    }
+	.wrp,
+	body {
+		max-width: 700px;
+	}
+	iframe[src*="youtube"] {
+		height: 420px !important;
+	}
 }
 @media(min-width: $bk600-over) {
-    .header {
-        .header__links {
-            display: block !important;
-        }
-    }
+	.header__links {
+		display: block !important;
+	}
 }
 @media(max-width: $bk600-below) {
-    body {
-        margin: $body-margin-responsive;
-        max-width: 600px;
-    }
-    .header {
-        .header__fuzzy {
-            width: 230px;
-            background-position: bottom right;
-            margin: 0 auto;
-        }
-        .header__fuzzy {
-            min-height: 45px;
-            margin: 0 0 20px;
-        }
-        .header__heading {
-            display: block;
-        }
-        .header__nav__links {
-            display: none;
-        }
-        .header__nav__link {
-            border-top: 1px solid $tertiary-color;
-            display: block;
-            padding: 0;
-            a {
-                display: block;
-            }
-        }
-    }
-    .column-6 {
-        display: block;
-        width: 100%;
-    }
+	.wrp {
+		max-width: 600px;
+	}
+	body {
+		margin: $body-margin-responsive;
+		max-width: 600px;
+	}
+	.header__nav__links {
+		display: none;
+	}
+	.header__nav__link {
+		border-top: 1px solid $tertiary-color;
+		display: block;
+		padding: 0;
+		a {
+			display: block;
+		}
+	}
+	.column-6 {
+		display: block;
+		width: 100%;
+	}
 }
