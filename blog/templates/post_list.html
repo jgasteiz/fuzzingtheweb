@@ -18,7 +18,6 @@
 			{% endif %}
 			<h1><a class="post__header__heading" href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h1>
 		</header>
-		{% ifequal forloop.counter 1 %}
 		<div class="post__body">
 			{{ post.body|markdown }}
 		</div>
@@ -30,7 +29,6 @@
 		<footer class="post__footer">
 			{% include "partials/sharebuttons.html" %}
 		</footer>
-		{% endifequal %}
 	</article>
 	{% empty %}
 	<h2>Nothing to show</h2>

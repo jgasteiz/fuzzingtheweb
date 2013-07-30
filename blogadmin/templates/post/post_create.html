@@ -9,11 +9,11 @@
 {% include "post/post_header.html" %}
 
 <form action="" method="post">{% csrf_token %}
-    {{ form }}
-    <div class="buttonset">
-        <a class="btn btn-danger" href="{% url "list_post" %}"><i class="icon-arrow-left icon-white"></i> Cancel</a>
-        <button type="submit" class="btn btn-primary">Save</button>
-    </div>
+	{{ form }}
+	<div class="buttonset">
+		<a class="btn btn-danger" href="{% url "list_post" %}"><i class="icon-arrow-left icon-white"></i> Cancel</a>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</div>
 </form>
 
 {% endblock %}

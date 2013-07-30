@@ -32,6 +32,9 @@ body {
 	line-height: 1.6em;
 	margin: $body-margin;
 	max-width: 600px;
+	@include respond-to(small) {
+		font-size: 14px;
+	}
 }
 h1 {
 	font-family: $header-font;
@@ -48,7 +51,10 @@ iframe {
 	max-width: 100% !important;
 }
 iframe[src*="youtube"] {
-	height: 300px !important;
+	height: 420px !important;
+	@include respond-to(palm) {
+		height: 300px !important;
+	}
 }
 blockquote {
 	background: #f5f5f5;
@@ -100,8 +106,6 @@ pre {
 	}
 }
 
-
-
 //////////////////
 // LAYOUT RULES //
 //////////////////
@@ -109,6 +113,7 @@ pre {
 .header {
 	background-color: $white;
 	border-bottom: 1px solid $tertiary-color;
+	@include box-shadow(0px 0px 1px #666);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -121,6 +126,21 @@ pre {
 	font-size: 42px;
 	line-height: 80px;
 	text-align: center;
+	&:hover {
+		color: $sunday;
+	}
+	@include respond-to(desktop) {
+		text-align: right;
+	}
+	@include respond-to(tablet) {
+		text-align: center;
+	}
+	@include respond-to(palm) {
+		font-size: 32px;
+	}
+	@include respond-to(small) {
+		font-size: 24px;
+	}
 }
 .header__light-switch {
 	background-image: url('img/switches.png');
@@ -169,6 +189,9 @@ pre {
 	}
 	blockquote {
 		background: #333;
+	}
+	.nav {
+		background: $almost-black;
 	}
 	.header {
 		background-color: $almost-black;

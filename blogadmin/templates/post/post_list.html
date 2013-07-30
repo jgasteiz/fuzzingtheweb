@@ -5,27 +5,27 @@
 {% include "post/post_header.html" %}
 
 <table class="table table-hover">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>slug</th>
-            <th></th> 
-        </tr>
-    </thead>
-    <tbody>
-    {% for post in posts %}
-        <tr data-live="{{ post.live }}">
-            <td>{{ post.id }}</td>
-            <td><a target="_blank" href="/{{ post.slug }}/">{{ post.title }}</a></td>
-            <td>{{ post.slug }}</td>
-            <td class="buttons">
-                <a class="btn btn-danger pull-right" href="{% url "delete_post" post.id %}"><i class="icon-trash icon-white"></i> Delete</a>
-                <a href="{% url "edit_post" post.id %}" class="btn btn-primary pull-right"><i class="icon-edit icon-white"></i> Edit</a>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>title</th>
+			<th>slug</th>
+			<th></th> 
+		</tr>
+	</thead>
+	<tbody>
+	{% for post in posts %}
+		<tr data-live="{{ post.live }}">
+			<td>{{ post.id }}</td>
+			<td><a target="_blank" href="/{{ post.slug }}/">{{ post.title }}</a></td>
+			<td>{{ post.slug }}</td>
+			<td class="buttons">
+				<a class="btn btn-danger pull-right" href="{% url "delete_post" post.id %}"><i class="icon-trash icon-white"></i> Delete</a>
+				<a href="{% url "edit_post" post.id %}" class="btn btn-primary pull-right"><i class="icon-edit icon-white"></i> Edit</a>
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
 </table>
 
 {% endblock content %}

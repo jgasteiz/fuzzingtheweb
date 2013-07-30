@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import calendar
 import json
-from datetime import datetime, date
+from datetime import date
 
 from django.conf import settings
 from django.core.paginator import Paginator
@@ -31,8 +31,7 @@ class CustomContextMixin(object):
             'widgets': Widget.objects.all(),
             'tags': Tag.objects.all(),
             'settings': settings.FUZZOPRESS_SETTINGS,
-            'request': self.request,
-            'colour': settings.FUZZOPRESS_SETTINGS['colors'][datetime.today().weekday()]})
+            'request': self.request})
         return context
 
 
@@ -42,7 +41,7 @@ class PostListJSON(View):
         post_qs = Post.objects.filter(live=True, page=False)
 
         # Paginate the results
-        paginator = Paginator(post_qs, 10)
+        paginator = Paginator(post_qs, 5)
         page_num = 1
         if 'page' in request.GET:
             page_num = int(request.GET.get('page', 1))
@@ -102,14 +101,18 @@ class ArchivePage(CustomContextMixin, ListView):
 
     def get_queryset(self):
         archive = {}
-        archive_qs = Post.objects.dates('published', 'month', order='ASC').reverse()
+        archive_qs = Post.objects.dates(
+            'published',
+            'month',
+            order='ASC').reverse()
         for arch in archive_qs:
             year = arch.year
             month = arch.month
             try:
                 archive[year][month - 1][1] = True
             except KeyError:
-                archive[year] = [[date(year, m, 1), False] for m in xrange(1, 13)]
+                archive[year] = [[date(year, m, 1), False] for m in xrange(1,
+                                                                           13)]
                 archive[year][month - 1][1] = True
         for year in archive:
             archive[year] = reversed(archive[year])
@@ -134,7 +137,8 @@ class LoadEntries(View):
         if self.kwargs['year'] and self.kwargs['month']:
             year = self.kwargs['year']
             month = self.kwargs['month']
-            posts_qs = Post.objects.published().filter(published__year=year, published__month=month)
+            posts_qs = Post.objects.published().filter(published__year=year,
+                                                       published__month=month)
             posts = []
             for post in posts_qs:
                 posts.append({

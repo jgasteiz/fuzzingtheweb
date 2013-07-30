@@ -1,8 +1,10 @@
 /* -- Sizes -- */
-$bk600-over: 641px;
-$bk600-below: 640px;
+$bk-small: 300px;
+$bk-palm: 480px;
+$bk-tablet: 840px;
+$bk-desktop: 1200px;
 $body-margin: 120px auto 40px;
-$body-margin-responsive: 120px 0 0;
+$body-margin-responsive: 140px 0 0;
 $header-height: 200px;
 
 /* -- Colours -- */
@@ -34,7 +36,8 @@ $header-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
 
 .wrp {
 	margin: 0 auto;
-	max-width: 600px;
+	width: 600px;
+	max-width: 100%;
 }
 
 @mixin box-sizing() {
@@ -48,4 +51,26 @@ $header-font: "PT Serif",Georgia,Times,"Times New Roman",serif;
 	-moz-transition: #{$property} #{$time} #{$effect};
 	-o-transition: #{$property} #{$time} #{$effect};
 	transition: #{$property} #{$time} #{$effect};
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin respond-to($media) {
+	@if $media == desktop {
+		@media only screen and (max-width: $bk-desktop) { @content; }
+	}
+	@else if $media == tablet {
+		@media only screen and (max-width: $bk-tablet) { @content; }
+	}
+	@else if $media == palm {
+		@media only screen and (max-width: $bk-palm) { @content; }
+	}
+	@else if $media == small {
+		@media only screen and (max-width: $bk-small) { @content; }
+	}
 }

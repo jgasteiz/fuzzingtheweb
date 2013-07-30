@@ -26,13 +26,13 @@
 	.post__body {
 		margin-top: 20px;
 		img {
-			padding: 6px;
 			background: $background-color;
-			box-shadow: 0px 1px 2px $cool-shadows-color;
+			@include box-shadow(0px 1px 2px $cool-shadows-color);
+			padding: 6px;
 			&.original {
-				padding: 0;
 				background: none;
-				box-shadow: none;
+				@include box-shadow(0px 1px 2px $cool-shadows-color);
+				padding: 0;
 			}
 		}
 	}
