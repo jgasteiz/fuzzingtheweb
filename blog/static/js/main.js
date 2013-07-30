@@ -7,53 +7,50 @@
  */
 var fuzzopress = fuzzopress || {};
 $(document).ready(function () {
-    'use strict';
+	'use strict';
 
-    /*
-     * When the light switcher is clicked, toggles between normal and night-mode.
-     */
-    $('#light_switch').click(function (e) {
-        e.preventDefault();
-        $('body').toggleClass('night-mode').toggleClass('normal');
-        var url = $(this).attr('data-href') + $('body').attr('class');
-        $.get(url, {}, function(data) {
-            return false;
-        });
-    });
+	/*
+	 * When the light switcher is clicked, toggles between normal and night-mode.
+	 */
+	$('#light_switch').click(function (e) {
+		e.preventDefault();
+		$('body').toggleClass('night-mode').toggleClass('normal');
+		var url = $(this).attr('data-href') + $('body').attr('class');
+		$.get(url, {}, function(data) {
+			return false;
+		});
+	});
 
-    /*
-     * When the go-button is pressed when writing some search, it searches it.
-     */
-    // $('#menu_opener').click(function () {
-    //     $('#menu').slideToggle();
-    // });
+	/*
+	 * When the go-button is pressed when writing some search, it searches it.
+	 */
+	// $('#menu_opener').click(function () {
+	//     $('#menu').slideToggle();
+	// });
 
-    $('#menu_opener').click(function () {
-        $('#nav').toggleClass('nav--is-open');
-    });
+	$('#menu_opener').click(function () {
+		$('#nav').toggleClass('nav--is-open');
+	});
 
-    /*
-     * Ajax logic for archive viewing.
-     */
-    $('.archive').find('.date').bind('click', function(e) {
-        e.preventDefault();
-        var url = $(this).attr('data-href'),
-            parent = $(this).parent();
+	/*
+	 * Ajax logic for archive viewing.
+	 */
+	$('.archive').find('.date').bind('click', function(e) {
+		e.preventDefault();
+		var url = $(this).attr('data-href'),
+			parent = $(this).parent();
 
-        $.get(url, {}, function(data) {
-            var posts = JSON.parse(data),
-                $ul = $('<ul>');
-            for (var i in posts) {
-                $($ul).append($('<li>').append(
-                    $('<a>').attr('href', posts[i].url)
-                            .attr('target', '_blank')
-                            .html(posts[i].title)
-                ));
-            }
-            $(parent).append($ul);
-        });
-    });
-
-	$('.markitup-editor').markItUp(fuzzopress.mySettings);
-
+		$.get(url, {}, function(data) {
+			var posts = JSON.parse(data),
+				$ul = $('<ul>');
+			for (var i in posts) {
+				$($ul).append($('<li>').append(
+					$('<a>').attr('href', posts[i].url)
+							.attr('target', '_blank')
+							.html(posts[i].title)
+				));
+			}
+			$(parent).append($ul);
+		});
+	});
 });
