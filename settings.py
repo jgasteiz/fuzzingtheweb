@@ -51,7 +51,6 @@ SECRET_KEY = '%3maeu=guk3p#67j-2--drhy$*^vx+=l9r9bltk-n-^cw4#nic'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -65,9 +64,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     '/home/ubuntu/django_apps/fuzzopress/blog/templates',
 )
 
@@ -149,8 +145,7 @@ FUZZOPRESS_SETTINGS = {
     'finder': {
         'show': True
     },
-    'colors': ['#D65C3C', '#FFC000', '#40C080', '#2E6EB0', '#770999', '#E6006C', '#04B1D8'],
-    'entries_per_page': 10
+    'entries_per_page': 5
 }
 
 

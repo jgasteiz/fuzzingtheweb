@@ -41,7 +41,7 @@ class PostListJSON(View):
         post_qs = Post.objects.filter(live=True, page=False)
 
         # Paginate the results
-        paginator = Paginator(post_qs, 5)
+        paginator = Paginator(post_qs, 10)
         page_num = 1
         if 'page' in request.GET:
             page_num = int(request.GET.get('page', 1))
