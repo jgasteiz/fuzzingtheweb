@@ -1299,10 +1299,10 @@ pre code {
       margin: 0;
       position: fixed;
       top: 0;
-      -webkit-transition: left 0.3s ease-in-out;
-      -moz-transition: left 0.3s ease-in-out;
-      -o-transition: left 0.3s ease-in-out;
-      transition: left 0.3s ease-in-out;
+      -webkit-transition: left 0.2s ease-in-out;
+      -moz-transition: left 0.2s ease-in-out;
+      -o-transition: left 0.2s ease-in-out;
+      transition: left 0.2s ease-in-out;
       width: 200px;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
