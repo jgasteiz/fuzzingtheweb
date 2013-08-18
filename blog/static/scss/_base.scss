@@ -113,8 +113,7 @@ pre {
 .header {
 	background-color: $white;
 	border-bottom: 1px solid $tertiary-color;
-	@include box-shadow(0px 0px 1px #666);
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -190,7 +189,7 @@ pre {
 	blockquote {
 		background: #333;
 	}
-	.nav {
+	.nav__links {
 		background: $almost-black;
 	}
 	.header {

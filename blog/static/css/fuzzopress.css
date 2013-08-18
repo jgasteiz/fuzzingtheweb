@@ -1094,11 +1094,7 @@ pre code {
 .header {
   background-color: white;
   border-bottom: 1px solid #e6e8ec;
-  -webkit-box-shadow: 0px 0px 1px #666666;
-  -moz-box-shadow: 0px 0px 1px #666666;
-  -o-box-shadow: 0px 0px 1px #666666;
-  box-shadow: 0px 0px 1px #666666;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1161,7 +1157,7 @@ pre code {
     color: #666; }
   .night-mode blockquote {
     background: #333; }
-  .night-mode .nav {
+  .night-mode .nav__links {
     background: #222222; }
   .night-mode .header {
     background-color: #222222; }
@@ -1297,7 +1293,7 @@ pre code {
       background: white;
       bottom: 0;
       margin: 0;
-      position: fixed;
+      position: absolute;
       top: 0;
       -webkit-transition: left 0.2s ease-in-out;
       -moz-transition: left 0.2s ease-in-out;
@@ -1324,11 +1320,6 @@ pre code {
 @media only screen and (max-width: 840px) {
   .nav--is-open {
     z-index: 12;
-    border-right: 1px solid #e6e8ec;
-    -webkit-box-shadow: 0px 0px 1px #666666;
-    -moz-box-shadow: 0px 0px 1px #666666;
-    -o-box-shadow: 0px 0px 1px #666666;
-    box-shadow: 0px 0px 1px #666666;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -1338,6 +1329,13 @@ pre code {
     -moz-transition: -moz-transform 500ms ease;
     -o-transition: -o-transform 500ms ease;
     transition: transform 500ms ease; } }
+@media only screen and (max-width: 840px) {
+  .nav--is-open .nav__links {
+    border-right: 1px solid #e6e8ec;
+    -webkit-box-shadow: 0px 0px 1px #666666;
+    -moz-box-shadow: 0px 0px 1px #666666;
+    -o-box-shadow: 0px 0px 1px #666666;
+    box-shadow: 0px 0px 1px #666666; } }
 
 .nav__opener {
   display: none; }
@@ -1358,6 +1356,7 @@ pre code {
   text-align: center; }
   @media only screen and (max-width: 840px) {
     .nav__links {
+      background-color: white;
       margin: 0; } }
 
 .nav__link {
