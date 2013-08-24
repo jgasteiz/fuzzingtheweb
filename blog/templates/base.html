@@ -23,7 +23,9 @@
 			<h1 class="header__title wrp">Fuzzing the Web</h1>
 			<i id="light_switch" class="header__light-switch" data-href="/_ajax/night-mode/"></i>
 			<nav class="nav" id="nav">
-				<i class="nav__opener" id="menu_opener"></i>
+				<div id="menu_opener" class="nav__opener-wrapper">
+					<i class="nav__opener"></i>
+				</div>
 				<ul class="nav__links" id="menu">
 					<li class="nav__link"><a href="/">Home</a></li>
 					{% for item in navItems %}

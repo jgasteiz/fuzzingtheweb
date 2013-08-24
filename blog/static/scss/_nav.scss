@@ -50,17 +50,21 @@
 		}
 	}
 }
+.nav__opener-wrapper {
+	cursor: pointer;
+	position: absolute;
+	right: -80px;
+	top: 0;
+	bottom: 0;
+	padding: 30px;
+}
 .nav__opener {
 	display: none;
 	@include respond-to(tablet) {
 		background-image: url(img/open-responsive.png);
-		cursor: pointer;
 		display: inline-block;
 		height: 20px;
-		position: absolute;
-		right: -50px;
 		width: 30px;
-		top: 30px;
 	}
 }
 .nav__links {

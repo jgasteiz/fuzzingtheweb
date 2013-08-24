@@ -1337,18 +1337,22 @@ pre code {
     -o-box-shadow: 0px 0px 1px #666666;
     box-shadow: 0px 0px 1px #666666; } }
 
+.nav__opener-wrapper {
+  cursor: pointer;
+  position: absolute;
+  right: -80px;
+  top: 0;
+  bottom: 0;
+  padding: 30px; }
+
 .nav__opener {
   display: none; }
   @media only screen and (max-width: 840px) {
     .nav__opener {
       background-image: url(img/open-responsive.png);
-      cursor: pointer;
       display: inline-block;
       height: 20px;
-      position: absolute;
-      right: -50px;
-      width: 30px;
-      top: 30px; } }
+      width: 30px; } }
 
 .nav__links {
   margin: 0 0 0 -10px;
