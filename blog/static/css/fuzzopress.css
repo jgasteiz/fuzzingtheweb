@@ -985,7 +985,7 @@ ul.icons {
 /* -- Fonts -- */
 .wrp {
   margin: 0 auto;
-  width: 600px;
+  width: 800px;
   max-width: 100%; }
 
 ::-webkit-scrollbar {
@@ -1017,8 +1017,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6em;
-  margin: 120px auto 40px;
-  max-width: 600px; }
+  margin: 0 auto 40px;
+  max-width: 720px; }
   @media only screen and (max-width: 300px) {
     body {
       font-size: 14px; } }
@@ -1094,25 +1094,20 @@ pre code {
 .header {
   background-color: white;
   border-bottom: 1px solid #e6e8ec;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 9; }
+  margin-bottom: 20px; }
 
 .header__title {
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  float: left;
   font-size: 42px;
   line-height: 80px;
-  text-align: center; }
+  margin: 0;
+  text-align: left; }
   .header__title:hover {
     color: #04b1d8; }
-  @media only screen and (max-width: 1200px) {
-    .header__title {
-      text-align: right; } }
   @media only screen and (max-width: 840px) {
     .header__title {
+      float: none;
       text-align: center; } }
   @media only screen and (max-width: 480px) {
     .header__title {
@@ -1284,38 +1279,33 @@ pre code {
   .search table.gsc-search-box td {
     vertical-align: top; }
 
-.nav {
-  position: absolute;
-  left: 20px;
-  top: 0; }
-  @media only screen and (max-width: 840px) {
-    .nav {
-      background: white;
-      bottom: 0;
-      margin: 0;
-      position: absolute;
-      top: 0;
-      -webkit-transition: left 0.2s ease-in-out;
-      -moz-transition: left 0.2s ease-in-out;
-      -o-transition: left 0.2s ease-in-out;
-      transition: left 0.2s ease-in-out;
-      width: 200px;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      left: 0;
-      -webkit-transform: translate3d(-200px, 0, 999px);
-      -moz-transform: translate3d(-200px, 0, 999px);
-      -ms-transform: translate3d(-200px, 0, 999px);
-      -o-transform: translate3d(-200px, 0, 999px);
-      transform: translate3d(-200px, 0, 999px);
-      -webkit-transition: -webkit-transform 500ms ease;
-      -moz-transition: -moz-transform 500ms ease;
-      -o-transition: -o-transform 500ms ease;
-      transition: transform 500ms ease; } }
+@media only screen and (max-width: 840px) {
+  .nav {
+    background: white;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: left 0.2s ease-in-out;
+    -moz-transition: left 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out;
+    transition: left 0.2s ease-in-out;
+    width: 200px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    left: 0;
+    -webkit-transform: translate3d(-200px, 0, 999px);
+    -moz-transform: translate3d(-200px, 0, 999px);
+    -ms-transform: translate3d(-200px, 0, 999px);
+    -o-transform: translate3d(-200px, 0, 999px);
+    transform: translate3d(-200px, 0, 999px);
+    -webkit-transition: -webkit-transform 500ms ease;
+    -moz-transition: -moz-transform 500ms ease;
+    -o-transition: -o-transform 500ms ease;
+    transition: transform 500ms ease; } }
 
 @media only screen and (max-width: 840px) {
   .nav--is-open {
@@ -1339,11 +1329,15 @@ pre code {
 
 .nav__opener-wrapper {
   cursor: pointer;
+  display: none;
   position: absolute;
   right: -80px;
   top: 0;
   bottom: 0;
   padding: 30px; }
+  @media only screen and (max-width: 840px) {
+    .nav__opener-wrapper {
+      display: block; } }
 
 .nav__opener {
   display: none; }
@@ -1357,7 +1351,7 @@ pre code {
 .nav__links {
   margin: 0 0 0 -10px;
   padding: 0;
-  text-align: center; }
+  text-align: right; }
   @media only screen and (max-width: 840px) {
     .nav__links {
       background-color: white;

@@ -31,7 +31,7 @@ body {
 	font-size: 16px;
 	line-height: 1.6em;
 	margin: $body-margin;
-	max-width: 600px;
+	max-width: 720px;
 	@include respond-to(small) {
 		font-size: 14px;
 	}
@@ -113,25 +113,26 @@ pre {
 .header {
 	background-color: $white;
 	border-bottom: 1px solid $tertiary-color;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 80px;
-	z-index: 9;
+	margin-bottom: 20px;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// height: 80px;
+	// z-index: 9;
 }
 .header__title {
 	font-family: 'Yanone Kaffeesatz', sans-serif;
+	float: left;
 	font-size: 42px;
 	line-height: 80px;
-	text-align: center;
+	margin: 0;
+	text-align: left;
 	&:hover {
 		color: $sunday;
 	}
-	@include respond-to(desktop) {
-		text-align: right;
-	}
 	@include respond-to(tablet) {
+		float: none;
 		text-align: center;
 	}
 	@include respond-to(palm) {
@@ -171,9 +172,6 @@ pre {
 .footer {
 	font-size: 0.9em;
 }
-
-
-
 /* -- Night Mode -- */
 .night-mode {
 	background-color: $almost-black;
