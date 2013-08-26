@@ -1018,7 +1018,7 @@ body {
   font-size: 16px;
   line-height: 1.6em;
   margin: 0 auto 40px;
-  max-width: 720px; }
+  max-width: 660px; }
   @media only screen and (max-width: 300px) {
     body {
       font-size: 14px; } }
