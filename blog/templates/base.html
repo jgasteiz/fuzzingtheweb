@@ -20,14 +20,13 @@
 	</head>
 	<body class="{{ request.session.layout }}">
 		<header class="header wrp">
-			<h1 class="header__title">Fuzzing the Web</h1>
+			<h1 class="header__title"><a href="/">Fuzzing the Web</a></h1>
 			<i id="light_switch" class="header__light-switch" data-href="/_ajax/night-mode/"></i>
 			<nav class="nav" id="nav">
 				<div id="menu_opener" class="nav__opener-wrapper">
 					<i class="nav__opener"></i>
 				</div>
 				<ul class="nav__links" id="menu">
-					<li class="nav__link"><a href="/">Home</a></li>
 					{% for item in navItems %}
 					<li class="nav__link">
 						<a {% if item.url %}href="{{ item.url }}"{% endif %}>

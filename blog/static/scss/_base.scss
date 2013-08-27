@@ -131,6 +131,9 @@ pre {
 	&:hover {
 		color: $sunday;
 	}
+	a {
+		text-decoration: none;
+	}
 	@include respond-to(tablet) {
 		float: none;
 		text-align: center;
