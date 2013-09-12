@@ -1,73 +1,59 @@
-/*
-Syntax error: File to import not found or unreadable: helpers.
-              Load paths:
-                /Users/jgasteiz/dev/fuzzopress
-                /Users/jgasteiz/dev/fuzzopress/sass
-                /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets
-                /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets
-                Compass::SpriteImporter
-        on line 1 of blog/static/scss/base-admin.scss
+/* -- Sizes -- */
+/* -- Colours -- */
+/* -- Fonts -- */
+.wrp {
+  margin: 0 auto;
+  width: 800px;
+  max-width: 100%; }
 
-1: @import 'helpers';
-2: 
-3: body {
-4:     padding-top: 60px;
-5: }
-6: 
+body {
+  padding-top: 60px; }
 
-Backtrace:
-blog/static/scss/base-admin.scss:1
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/import_node.rb:67:in `import'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:218:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:109:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:128:in `visit_root'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/engine.rb:265:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:325:in `update_stylesheet'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:182:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:179:in `each'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:179:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:278:in `watch'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/multi_listener.rb:117:in `initialize_adapter'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapter.rb:198:in `call'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapters/darwin.rb:38:in `start'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapters/darwin.rb:38:in `initialize'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapters/darwin.rb:38:in `new'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/adapters/darwin.rb:38:in `start'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/vendor/listen/lib/listen/multi_listener.rb:44:in `start'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin/compiler.rb:286:in `watch'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin.rb:107:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/plugin.rb:107:in `method_missing'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/exec.rb:476:in `watch_or_update'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/exec.rb:317:in `process_result'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/exec.rb:41:in `parse'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/../lib/sass/../sass/exec.rb:21:in `parse!'
-/Library/Ruby/Gems/1.8/gems/sass-3.3.0.alpha.103/bin/sass:9
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: helpers.\A               Load paths:\A                 /Users/jgasteiz/dev/fuzzopress\A                 /Users/jgasteiz/dev/fuzzopress/sass\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 1 of blog/static/scss/base-admin.scss\A \A 1: @import 'helpers';\A 2: \A 3: body {\A 4:     padding-top: 60px;\A 5: }\A 6: "; }
+.messages {
+  margin: 0; }
+  .messages .messages__item {
+    list-style: none; }
+
+form {
+  max-width: 100%; }
+  form textarea,
+  form input[type=text],
+  form input[type=file] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 800px !important;
+    max-width: 100%;
+    resize: none; }
+  form input[type=text] {
+    height: 30px; }
+  form input[type=checkbox] {
+    margin: 0; }
+  form label {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px; }
+  form .helptext {
+    color: #888888;
+    display: block;
+    margin-bottom: 20px; }
+  form .buttonset {
+    margin: 20px 0; }
+
+table .buttons .btn {
+  margin-left: 5px; }
+table tr[data-live=False] > td {
+  background-color: #fdd; }
+table tr[data-live=False]:hover > td {
+  background-color: #fcc; }
+
+.markItUp {
+  width: 100%; }
+  .markItUp .markItUpEditor {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px; }
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0; } }
