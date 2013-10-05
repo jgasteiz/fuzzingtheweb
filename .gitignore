@@ -1,10 +1,7 @@
 *.pyc
 .sass-cache
-*.sqlite
 .DS_Store
 media
 django
 markitup
-local_settings.py
 .idea
-data.json
