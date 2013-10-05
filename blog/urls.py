@@ -8,8 +8,6 @@ urlpatterns = patterns(
     url(r'^404/', 'four_o_four', name='404'),
     url(r'^500/', 'five_hundred', name='500'),
 
-    url(r'^api/posts/', 'post_list_json', name='post_list_json'),
-
     # Ajax requests
     url(r'^_ajax/archive/(?P<year>\d+)/(?P<month>\d+)/$', 'load_entries', name='load_entries'),
     url(r'^_ajax/night-mode/(?P<layout>[-\w]+)', 'night_mode', name='night_mode'),

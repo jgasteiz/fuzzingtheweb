@@ -10,17 +10,6 @@ MANAGERS = ADMINS
 
 ALLOWED_HOSTS = ['176.58.120.22', 'fuzzingtheweb.com']
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fuzzopress',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
-}
-
 TIME_ZONE = 'Europe/London'
 USE_TZ = True
 LANGUAGE_CODE = 'en-gb'
@@ -76,10 +65,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.markup',
-    'rest_framework',
     'blogadmin',
     'markitup',
-    'gunicorn',
     'south',
     'blog',
 )
