@@ -4,5 +4,5 @@ South==0.8.1
 argparse==1.2.1
 django-markitup==1.0.0
 ipdb==0.7
-ipython==0.13.2
+ipython==7.16.3
 wsgiref==0.1.2
